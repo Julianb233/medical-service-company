@@ -14,7 +14,7 @@ import { contactInfo } from "@/lib/content-data";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join the Medical Service Company team. We're hiring compassionate caregivers, nurses, and healthcare professionals in San Diego County.",
+    "Join the Happy Home Care team. We're hiring compassionate caregivers, nurses, and healthcare professionals in San Diego County.",
 };
 
 const benefits = [
@@ -92,7 +92,7 @@ export default function CareersPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-primary-teal text-white section-padding">
+      <section className="bg-primary-teal text-white section-padding pt-32">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -258,7 +258,7 @@ export default function CareersPage() {
             "@type": "JobPosting",
             hiringOrganization: {
               "@type": "MedicalBusiness",
-              name: "Medical Service Company",
+              name: "Happy Home Care",
               sameAs: "https://medicalservicecompany.com",
             },
             jobLocation: {

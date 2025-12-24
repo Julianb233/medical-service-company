@@ -70,6 +70,21 @@
 
 /* === PRIMARY BUTTON (Orange - Main CTA) === */
 .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-button);
+  border: var(--border-2) solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-colors), var(--transition-transform), var(--transition-shadow);
+  padding: var(--button-padding-y-md) var(--button-padding-x-md);
+  font-size: var(--text-base);
+  min-height: 44px;
   background-color: var(--color-orange-500);
   color: var(--color-text-inverse);
   border-color: var(--color-orange-500);
@@ -93,6 +108,21 @@
 
 /* === SECONDARY BUTTON (Teal) === */
 .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-button);
+  border: var(--border-2) solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-colors), var(--transition-transform), var(--transition-shadow);
+  padding: var(--button-padding-y-md) var(--button-padding-x-md);
+  font-size: var(--text-base);
+  min-height: 44px;
   background-color: var(--color-teal-500);
   color: var(--color-text-inverse);
   border-color: var(--color-teal-500);
@@ -112,9 +142,23 @@
 
 /* === OUTLINE BUTTON === */
 .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-button);
+  border: var(--border-2) solid var(--color-teal-500);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-colors), var(--transition-transform), var(--transition-shadow);
+  padding: var(--button-padding-y-md) var(--button-padding-x-md);
+  font-size: var(--text-base);
+  min-height: 44px;
   background-color: transparent;
   color: var(--color-teal-500);
-  border-color: var(--color-teal-500);
 }
 
 .btn-outline:hover:not(:disabled) {
