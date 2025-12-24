@@ -30,7 +30,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-4"
           >
             Ready to Get Started?
           </motion.h2>
@@ -40,7 +40,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto px-4"
           >
             Contact us today for a free consultation. Our care coordinators are
             available 24/7 to answer your questions and help you find the right
@@ -52,7 +52,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
           >
             <motion.div
               whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
@@ -61,9 +61,10 @@ export function CTASection() {
               <Link
                 href="/contact"
                 className={cn(
-                  "btn-primary flex items-center gap-2",
-                  "text-lg px-8 py-4",
-                  "relative overflow-hidden group"
+                  "btn-primary flex items-center justify-center gap-2",
+                  "text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4",
+                  "relative overflow-hidden group",
+                  "w-full sm:w-auto min-w-[280px] sm:min-w-[300px]"
                 )}
               >
                 {/* Pulsing glow effect */}
@@ -93,15 +94,17 @@ export function CTASection() {
             <a
               href={`tel:${contactInfo.phone.replace(/[^\d]/g, "")}`}
               className={cn(
-                "flex items-center gap-2",
-                "text-white text-lg font-semibold",
+                "flex items-center justify-center gap-2",
+                "text-white text-base sm:text-lg font-semibold",
                 "border-2 border-white/50 rounded-lg",
-                "px-8 py-4",
-                "hover:bg-white/10 transition-colors"
+                "px-6 sm:px-8 py-3.5 sm:py-4",
+                "hover:bg-white/10 transition-colors",
+                "w-full sm:w-auto min-w-[280px] sm:min-w-[300px]",
+                "touch-manipulation"
               )}
             >
               <Phone className="w-5 h-5" />
-              {contactInfo.phone}
+              <span className="truncate">{contactInfo.phone}</span>
             </a>
           </motion.div>
 
@@ -111,19 +114,19 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col md:flex-row gap-6 justify-center items-center text-white/80"
+            className="flex flex-col md:flex-row gap-4 sm:gap-6 justify-center items-center text-white/80 px-4 text-sm sm:text-base"
           >
             <a
               href={`mailto:${contactInfo.email}`}
               className="flex items-center gap-2 hover:text-white transition-colors"
             >
-              <Mail className="w-5 h-5" />
-              {contactInfo.email}
+              <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
+              <span className="truncate">{contactInfo.email}</span>
             </a>
 
             <span className="hidden md:block">|</span>
 
-            <p>
+            <p className="text-center">
               {contactInfo.address.street}, {contactInfo.address.city},{" "}
               {contactInfo.address.state} {contactInfo.address.zip}
             </p>

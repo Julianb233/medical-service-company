@@ -140,82 +140,82 @@ function IPhoneMockup() {
             }
       }
     >
-      {/* Floating notification badges */}
+      {/* Floating notification badges - hidden on small mobile screens */}
       <motion.div
-        className="absolute -left-4 top-20 z-10"
+        className="absolute -left-2 sm:-left-4 top-16 sm:top-20 z-10 hidden xs:block"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.2, duration: 0.5 }}
       >
-        <div className="bg-white rounded-2xl shadow-xl p-3 max-w-[180px]">
-          <div className="flex items-start gap-2">
-            <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center shrink-0">
-              <Bell className="w-4 h-4 text-accent-orange" />
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-2 sm:p-3 max-w-[140px] sm:max-w-[180px]">
+          <div className="flex items-start gap-1.5 sm:gap-2">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-orange-100 rounded-full flex items-center justify-center shrink-0">
+              <Bell className="w-3 h-3 sm:w-4 sm:h-4 text-accent-orange" />
             </div>
             <div>
-              <div className="text-xs font-semibold text-gray-900">
+              <div className="text-[10px] sm:text-xs font-semibold text-gray-900 leading-tight">
                 Sarah is 5 min away
               </div>
-              <div className="text-xs text-gray-500">Just now</div>
+              <div className="text-[9px] sm:text-xs text-gray-500 leading-tight">Just now</div>
             </div>
           </div>
         </div>
       </motion.div>
 
       <motion.div
-        className="absolute -right-4 top-32 z-10"
+        className="absolute -right-2 sm:-right-4 top-28 sm:top-32 z-10 hidden xs:block"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.5, duration: 0.5 }}
       >
-        <div className="bg-white rounded-2xl shadow-xl p-3 max-w-[180px]">
-          <div className="flex items-start gap-2">
-            <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center shrink-0">
-              <CheckCircle2 className="w-4 h-4 text-primary-teal" />
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl p-2 sm:p-3 max-w-[140px] sm:max-w-[180px]">
+          <div className="flex items-start gap-1.5 sm:gap-2">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-teal-100 rounded-full flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-primary-teal" />
             </div>
             <div>
-              <div className="text-xs font-semibold text-gray-900">
+              <div className="text-[10px] sm:text-xs font-semibold text-gray-900 leading-tight">
                 Visit completed
               </div>
-              <div className="text-xs text-gray-500">View summary</div>
+              <div className="text-[9px] sm:text-xs text-gray-500 leading-tight">View summary</div>
             </div>
           </div>
         </div>
       </motion.div>
 
-      {/* iPhone Frame */}
-      <div className="relative mx-auto w-[300px] bg-gray-900 rounded-[50px] shadow-2xl p-3 border-8 border-gray-800">
+      {/* iPhone Frame - responsive sizing */}
+      <div className="relative mx-auto w-[260px] sm:w-[300px] bg-gray-900 rounded-[40px] sm:rounded-[50px] shadow-2xl p-2.5 sm:p-3 border-[6px] sm:border-8 border-gray-800">
         {/* Notch */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-10" />
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 sm:w-40 h-6 sm:h-7 bg-gray-900 rounded-b-2xl sm:rounded-b-3xl z-10" />
 
         {/* Screen */}
-        <div className="relative w-full aspect-[9/19.5] bg-gradient-to-br from-primary-teal to-teal-600 rounded-[40px] overflow-hidden">
+        <div className="relative w-full aspect-[9/19.5] bg-gradient-to-br from-primary-teal to-teal-600 rounded-[32px] sm:rounded-[40px] overflow-hidden">
           {/* Status bar */}
-          <div className="flex justify-between items-center px-8 pt-8 pb-4 text-white text-xs">
+          <div className="flex justify-between items-center px-5 sm:px-8 pt-6 sm:pt-8 pb-3 sm:pb-4 text-white text-[10px] sm:text-xs">
             <span>9:41</span>
-            <div className="flex gap-1">
-              <div className="w-4 h-3 border border-white rounded-sm" />
-              <div className="w-1 h-3 bg-white rounded-sm" />
+            <div className="flex gap-0.5 sm:gap-1">
+              <div className="w-3 sm:w-4 h-2.5 sm:h-3 border border-white rounded-sm" />
+              <div className="w-0.5 sm:w-1 h-2.5 sm:h-3 bg-white rounded-sm" />
             </div>
           </div>
 
-          {/* App content preview */}
-          <div className="px-4 pt-2">
-            <div className="text-white text-center mb-4">
+          {/* App content preview - properly scaled to look like actual iPhone content */}
+          <div className="px-3 pt-1.5">
+            <div className="text-white text-center mb-3">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
               >
-                <Smartphone className="w-8 h-8 mx-auto mb-2" />
-                <h2 className="text-lg font-bold mb-1">Welcome</h2>
-                <p className="text-teal-100 text-xs">Your care, connected</p>
+                <Smartphone className="w-5 h-5 mx-auto mb-1" />
+                <h2 className="text-xs font-bold mb-0.5">Welcome</h2>
+                <p className="text-teal-100 text-[9px]">Your care, connected</p>
               </motion.div>
             </div>
 
             {/* Mock appointment card */}
             <motion.div
-              className="bg-white rounded-xl p-3 shadow-xl mb-3"
+              className="bg-white rounded-lg p-2 shadow-xl mb-2"
               animate={{
                 scale: [1, 1.02, 1],
               }}
@@ -225,20 +225,20 @@ function IPhoneMockup() {
                 ease: "easeInOut",
               }}
             >
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center text-base">
+              <div className="flex items-center gap-1.5 mb-1.5">
+                <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center text-xs">
                   👨‍⚕️
                 </div>
                 <div className="flex-1">
-                  <div className="text-xs font-semibold text-gray-900">
+                  <div className="text-[9px] font-semibold text-gray-900 leading-tight">
                     Today&apos;s Appointment
                   </div>
-                  <div className="text-[10px] text-gray-500">2:00 PM - 3:00 PM</div>
+                  <div className="text-[8px] text-gray-500 leading-tight">2:00 PM - 3:00 PM</div>
                 </div>
               </div>
-              <div className="flex items-center gap-1 text-[10px] text-primary-teal font-medium">
+              <div className="flex items-center gap-1 text-[8px] text-primary-teal font-medium">
                 <motion.div
-                  className="w-1.5 h-1.5 bg-primary-teal rounded-full"
+                  className="w-1 h-1 bg-primary-teal rounded-full"
                   animate={{ opacity: [1, 0.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
@@ -247,22 +247,22 @@ function IPhoneMockup() {
             </motion.div>
 
             {/* Mock buttons */}
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-1.5">
               <motion.div
-                className="bg-white/20 backdrop-blur-sm rounded-lg p-2 text-center"
+                className="bg-white/20 backdrop-blur-sm rounded-md p-1.5 text-center"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <MapPin className="w-4 h-4 mx-auto mb-0.5 text-white" />
-                <div className="text-[10px] text-white">Track</div>
+                <MapPin className="w-3.5 h-3.5 mx-auto mb-0.5 text-white" />
+                <div className="text-[8px] text-white">Track</div>
               </motion.div>
               <motion.div
-                className="bg-white/20 backdrop-blur-sm rounded-lg p-2 text-center"
+                className="bg-white/20 backdrop-blur-sm rounded-md p-1.5 text-center"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <Users className="w-4 h-4 mx-auto mb-0.5 text-white" />
-                <div className="text-[10px] text-white">Family</div>
+                <Users className="w-3.5 h-3.5 mx-auto mb-0.5 text-white" />
+                <div className="text-[8px] text-white">Family</div>
               </motion.div>
             </div>
           </div>

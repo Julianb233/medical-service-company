@@ -49,7 +49,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
         className={cn(
           "group relative h-full",
           // Light blue card background (mobile-friendly contrast)
-          "bg-teal-50 rounded-xl p-5 sm:p-6 md:p-8",
+          "bg-teal-50 rounded-xl p-6 sm:p-6 md:p-8",
           "border border-teal-100",
           "cursor-pointer overflow-hidden",
           "card-3d-tilt" // Apply CSS class for base 3D styling
@@ -86,7 +86,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
         </div>
 
         {/* Icon with rotation animation */}
-        <div className="flex justify-center sm:justify-start">
+        <div className="flex justify-center">
           <motion.div
             className={cn(
               "inline-flex items-center justify-center",
@@ -105,19 +105,19 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl md:text-2xl font-accent font-bold text-teal-900 mb-3 relative z-10 text-center sm:text-left">
+        <h3 className="text-xl md:text-2xl font-accent font-bold text-teal-900 mb-3 relative z-10 text-center">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-teal-900/70 text-sm md:text-base leading-relaxed mb-4 relative z-10 text-center sm:text-left">
+        <p className="text-teal-900/70 text-base md:text-base leading-relaxed mb-4 relative z-10 text-center">
           {service.shortDescription}
         </p>
 
         {/* Learn More Link */}
         <div
           className={cn(
-            "flex justify-center sm:justify-start",
+            "flex justify-center",
             "relative z-10"
           )}
         >
@@ -200,12 +200,12 @@ export function ServicesGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, ease: easings.spring }}
-          className="text-center mb-12 md:mb-16"
+          className="text-center mb-12 md:mb-16 px-4"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-accent font-bold text-gray-900 mb-4">
             Our Services
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive home health care solutions tailored to your unique needs
           </p>
         </motion.div>
@@ -218,7 +218,8 @@ export function ServicesGrid() {
           viewport={{ once: true, margin: "-100px" }}
           className={cn(
             "grid gap-6 md:gap-8",
-            "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+            "grid-cols-1 md:grid-cols-2 lg:grid-cols-4",
+            "px-4 sm:px-0"
           )}
         >
           {services.map((service) => (

@@ -91,7 +91,7 @@ export default function LocationHero({ locationName, description }: LocationHero
   const motionProps = useMotionProps();
 
   return (
-    <section className="relative bg-gradient-to-br from-teal-50 to-teal-100 py-16 md:py-24 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-teal-50 to-teal-100 py-12 sm:py-16 md:py-24 overflow-hidden">
       {/* Animated background pattern with parallax */}
       <motion.div
         ref={parallaxRef}
@@ -136,7 +136,7 @@ export default function LocationHero({ locationName, description }: LocationHero
         }}
       />
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 px-4 sm:px-6">
         <div className="max-w-4xl">
           {/* Main heading with dramatic reveal */}
           <motion.div
@@ -145,7 +145,7 @@ export default function LocationHero({ locationName, description }: LocationHero
             animate="visible"
             {...motionProps}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 leading-tight">
               Home Health Care in{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-teal to-teal-dark">
                 {locationName}
@@ -155,7 +155,7 @@ export default function LocationHero({ locationName, description }: LocationHero
 
           {/* Subtitle with blur reveal */}
           <motion.p
-            className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-gray-700 mb-6 sm:mb-8 leading-relaxed"
             variants={subtitleVariants}
             initial="hidden"
             animate="visible"
@@ -165,7 +165,7 @@ export default function LocationHero({ locationName, description }: LocationHero
           </motion.p>
 
           {/* CTA buttons with staggered elastic entrance */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
             <motion.a
               href="tel:(619) 555-0100"
               custom={0}
@@ -178,10 +178,10 @@ export default function LocationHero({ locationName, description }: LocationHero
             >
               <motion.div
                 variants={buttonHoverVariants}
-                className="btn-primary inline-flex items-center gap-2"
+                className="btn-primary inline-flex items-center justify-center gap-2 min-h-[44px] w-full sm:w-auto text-sm sm:text-base"
               >
-                <Phone className="w-5 h-5" />
-                Call Now: (619) 555-0100
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="whitespace-nowrap">Call Now: (619) 555-0100</span>
               </motion.div>
             </motion.a>
 
@@ -197,10 +197,10 @@ export default function LocationHero({ locationName, description }: LocationHero
               >
                 <motion.div
                   variants={buttonHoverVariants}
-                  className="btn-outline inline-flex items-center gap-2"
+                  className="btn-outline inline-flex items-center justify-center gap-2 min-h-[44px] w-full sm:w-auto text-sm sm:text-base"
                 >
-                  <MessageSquare className="w-5 h-5" />
-                  Request Consultation
+                  <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="whitespace-nowrap">Request Consultation</span>
                 </motion.div>
               </motion.div>
             </Link>
@@ -208,7 +208,7 @@ export default function LocationHero({ locationName, description }: LocationHero
 
           {/* Animated accent line */}
           <motion.div
-            className="mt-12 h-1 bg-gradient-to-r from-primary-teal via-teal-light to-transparent rounded-full"
+            className="mt-8 sm:mt-12 h-1 bg-gradient-to-r from-primary-teal via-teal-light to-transparent rounded-full"
             initial={{ scaleX: 0, originX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{

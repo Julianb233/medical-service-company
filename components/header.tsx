@@ -94,9 +94,9 @@ export default function Header() {
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
           >
             <div className="flex items-baseline">
-              <span className="text-2xl font-bold text-white">Happy</span>
-              <span className="text-2xl font-bold text-white">Home</span>
-              <span className="text-2xl font-bold text-primary-orange">Care</span>
+              <span className="text-xl sm:text-2xl font-bold text-white">Happy</span>
+              <span className="text-xl sm:text-2xl font-bold text-white">Home</span>
+              <span className="text-xl sm:text-2xl font-bold text-primary-orange">Care</span>
             </div>
           </Link>
 
@@ -222,7 +222,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white hover:text-white transition-colors"
+            className="lg:hidden p-2 min-h-[44px] min-w-[44px] flex items-center justify-center text-white hover:text-white transition-colors"
             aria-label="Toggle menu"
             whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
           >
@@ -264,25 +264,25 @@ export default function Header() {
                 duration: prefersReducedMotion ? durations.instant : durations.moderate,
                 ease: easings.dramatic
               }}
-              className="fixed top-20 right-0 bottom-0 w-80 shadow-2xl lg:hidden overflow-y-auto border-l border-white/10"
+              className="fixed top-20 right-0 bottom-0 w-full sm:w-80 max-w-sm shadow-2xl lg:hidden overflow-y-auto border-l border-white/10"
               style={{ backgroundColor: "#0D9488" }}
             >
               <motion.div
                 variants={staggerContainer}
                 initial="hidden"
                 animate="visible"
-                className="p-6 space-y-6"
+                className="p-4 sm:p-6 space-y-6"
               >
                 {/* Call Button in Mobile Menu */}
                 <motion.div variants={fadeInDown}>
                   <motion.a
                     href={`tel:${contactInfo.phone}`}
-                    className="btn-primary w-full flex items-center justify-center space-x-2"
+                    className="btn-primary w-full min-h-[44px] flex items-center justify-center space-x-2"
                     onClick={() => setIsOpen(false)}
                     whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
                   >
                     <Phone className="w-4 h-4" />
-                    <span>{contactInfo.phone}</span>
+                    <span className="text-sm sm:text-base">{contactInfo.phone}</span>
                   </motion.a>
                 </motion.div>
 
@@ -303,7 +303,7 @@ export default function Header() {
                         <div>
                           <motion.button
                             onClick={() => handleDropdownToggle(item.name)}
-                            className="flex items-center justify-between w-full text-left text-white font-semibold text-lg"
+                            className="flex items-center justify-between w-full min-h-[44px] text-left text-white font-semibold text-base sm:text-lg py-2"
                             whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
                           >
                             <span>{item.name}</span>
@@ -340,7 +340,7 @@ export default function Header() {
                                     >
                                       <Link
                                         href={child.href}
-                                        className="block py-2 text-white hover:text-white transition-colors"
+                                        className="block py-2 min-h-[44px] flex items-center text-sm sm:text-base text-white hover:text-white transition-colors"
                                         onClick={() => setIsOpen(false)}
                                       >
                                         {child.name}
@@ -356,9 +356,9 @@ export default function Header() {
                         <Link
                           href={item.href}
                           className={cn(
-                            "block font-semibold text-lg transition-colors",
+                            "block font-semibold text-base sm:text-lg min-h-[44px] flex items-center transition-colors",
                             item.href === "/app"
-                              ? "px-4 py-3 rounded-xl bg-primary-orange text-white font-bold hover:bg-orange-dark"
+                              ? "px-4 py-3 rounded-xl bg-primary-orange text-white font-bold hover:bg-orange-dark justify-center"
                               : "text-white hover:text-white"
                           )}
                           onClick={() => setIsOpen(false)}
@@ -375,10 +375,10 @@ export default function Header() {
                   variants={fadeInDown}
                   className="pt-6 border-t border-white/10"
                 >
-                  <p className="text-sm text-white mb-2">Contact Us</p>
+                  <p className="text-xs sm:text-sm text-white mb-2 font-semibold">Contact Us</p>
                   <a
                     href={`mailto:${contactInfo.email}`}
-                    className="text-white hover:text-white transition-colors text-sm"
+                    className="text-white hover:text-white transition-colors text-xs sm:text-sm break-all min-h-[44px] flex items-center"
                   >
                     {contactInfo.email}
                   </a>

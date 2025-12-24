@@ -185,7 +185,7 @@ export function HeroSection() {
         <h1
           className={cn(
             "font-accent font-bold tracking-tight mb-4 sm:mb-6",
-            "text-xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+            "text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
             "max-w-5xl mx-auto leading-tight",
             "text-white"
           )}
@@ -226,7 +226,7 @@ export function HeroSection() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-10 md:mb-12"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-4 justify-center items-center mb-8 sm:mb-10 md:mb-12"
         >
           <motion.div variants={itemVariants}>
             <Link
@@ -234,12 +234,12 @@ export function HeroSection() {
               className={cn(
                 "block bg-primary-orange hover:bg-orange-dark",
                 "text-white font-semibold",
-                "px-6 py-3 sm:px-8 sm:py-4 rounded-lg",
+                "px-6 py-3.5 sm:px-8 sm:py-4 rounded-lg",
                 "transition-all duration-300",
                 "transform hover:scale-105 hover:shadow-2xl active:scale-95",
-                "text-sm sm:text-base md:text-lg",
+                "text-base sm:text-base md:text-lg",
                 "w-full sm:w-auto text-center",
-                "min-w-[180px] sm:min-w-[200px]",
+                "min-w-[200px] sm:min-w-[220px]",
                 "relative overflow-hidden group"
               )}
             >
@@ -267,12 +267,12 @@ export function HeroSection() {
               className={cn(
                 "block border-2 border-white text-white",
                 "hover:bg-white hover:text-primary-teal",
-                "font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-lg",
+                "font-semibold px-6 py-3.5 sm:px-8 sm:py-4 rounded-lg",
                 "transition-all duration-300",
                 "transform hover:scale-105 active:scale-95",
-                "text-sm sm:text-base md:text-lg",
+                "text-base sm:text-base md:text-lg",
                 "w-full sm:w-auto text-center",
-                "min-w-[180px] sm:min-w-[200px]"
+                "min-w-[200px] sm:min-w-[220px]"
               )}
             >
               Our Services
@@ -285,12 +285,12 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2, ease: easings.spring }}
-          className="flex flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8"
+          className="flex flex-row flex-wrap justify-center items-center gap-6 sm:gap-6 md:gap-8"
         >
           {/* Licensed badge */}
           <motion.div
             animate={floatingAnimation}
-            className="flex flex-col items-center gap-2 text-xs sm:text-sm md:text-base text-white font-semibold"
+            className="flex flex-col items-center gap-2 text-sm sm:text-sm md:text-base text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
@@ -316,7 +316,7 @@ export function HeroSection() {
           {/* Insured badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } } : undefined}
-            className="flex flex-col items-center gap-2 text-xs sm:text-sm md:text-base text-white font-semibold"
+            className="flex flex-col items-center gap-2 text-sm sm:text-sm md:text-base text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
@@ -342,7 +342,7 @@ export function HeroSection() {
           {/* 24/7 Support badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } } : undefined}
-            className="flex flex-col items-center gap-2 text-xs sm:text-sm md:text-base text-white font-semibold"
+            className="flex flex-col items-center gap-2 text-sm sm:text-sm md:text-base text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}

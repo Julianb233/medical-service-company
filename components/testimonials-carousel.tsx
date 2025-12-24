@@ -123,7 +123,7 @@ export function TestimonialsCarousel() {
   return (
     <div
       ref={containerRef}
-      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12"
       role="region"
       aria-label="Customer testimonials carousel"
       tabIndex={0}
@@ -185,16 +185,16 @@ export function TestimonialsCarousel() {
       </div>
 
       {/* Navigation Controls */}
-      <div className="flex items-center justify-center gap-6 mt-12">
+      <div className="flex items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-12">
         {/* Previous Button */}
         <motion.button
           onClick={scrollPrev}
-          className="bg-primary-teal text-white p-3 rounded-full hover:bg-teal-dark transition-colors shadow-md disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary-teal focus:ring-offset-2"
+          className="bg-primary-teal text-white p-2.5 sm:p-3 rounded-full hover:bg-teal-dark transition-colors shadow-md disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary-teal focus:ring-offset-2 touch-manipulation"
           aria-label="Previous testimonial"
           whileHover={prefersReducedMotion ? {} : { scale: 1.1 }}
           whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
         >
-          <ChevronLeft size={24} aria-hidden="true" />
+          <ChevronLeft size={20} className="sm:w-6 sm:h-6" aria-hidden="true" />
         </motion.button>
 
         {/* Dots Indicator */}
@@ -219,12 +219,12 @@ export function TestimonialsCarousel() {
         {/* Next Button */}
         <motion.button
           onClick={scrollNext}
-          className="bg-primary-teal text-white p-3 rounded-full hover:bg-teal-dark transition-colors shadow-md disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary-teal focus:ring-offset-2"
+          className="bg-primary-teal text-white p-2.5 sm:p-3 rounded-full hover:bg-teal-dark transition-colors shadow-md disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary-teal focus:ring-offset-2 touch-manipulation"
           aria-label="Next testimonial"
           whileHover={prefersReducedMotion ? {} : { scale: 1.1 }}
           whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
         >
-          <ChevronRight size={24} aria-hidden="true" />
+          <ChevronRight size={20} className="sm:w-6 sm:h-6" aria-hidden="true" />
         </motion.button>
       </div>
 
@@ -260,7 +260,7 @@ function TestimonialCard({
     <motion.article
       className={cn(
         "card-testimonial card-elevated card-3d-tilt bg-white rounded-xl relative overflow-hidden",
-        "p-8 md:p-12 h-full min-h-[400px] flex flex-col justify-between"
+        "p-6 sm:p-8 md:p-12 h-full min-h-[380px] sm:min-h-[400px] flex flex-col justify-between"
       )}
       initial={false}
       animate={{
@@ -278,12 +278,12 @@ function TestimonialCard({
       }}
     >
       {/* Quote Icon Background */}
-      <div className="absolute top-6 left-6 text-primary-orange opacity-[0.08] pointer-events-none">
-        <Quote size={64} fill="currentColor" aria-hidden="true" />
+      <div className="absolute top-4 sm:top-6 left-4 sm:left-6 text-primary-orange opacity-[0.08] pointer-events-none">
+        <Quote size={48} className="sm:w-16 sm:h-16" fill="currentColor" aria-hidden="true" />
       </div>
 
       {/* Star Rating with Reveal Animation */}
-      <div className="flex items-center gap-1 mb-6 relative z-10">
+      <div className="flex items-center gap-1 mb-4 sm:mb-6 relative z-10">
         {testimonial.rating && (
           <div className="flex gap-1">
             {[...Array(testimonial.rating)].map((_, i) => (
@@ -302,8 +302,8 @@ function TestimonialCard({
                 }}
               >
                 <Star
-                  size={20}
-                  className="text-primary-orange fill-current"
+                  size={18}
+                  className="sm:w-5 sm:h-5 text-primary-orange fill-current"
                   aria-hidden="true"
                 />
               </motion.div>
@@ -315,16 +315,16 @@ function TestimonialCard({
 
       {/* Quote Text */}
       <blockquote className="relative z-10 flex-grow">
-        <p className="text-lg md:text-xl text-gray-900 font-semibold leading-relaxed mb-6 italic">
+        <p className="text-base sm:text-lg md:text-xl text-gray-900 font-semibold leading-relaxed mb-4 sm:mb-6 italic">
           &ldquo;{testimonial.quote}&rdquo;
         </p>
       </blockquote>
 
       {/* Author Info with Avatar */}
-      <div className="flex items-center gap-4 pt-6 border-t border-gray-200 relative z-10">
+      <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-gray-200 relative z-10">
         {/* Avatar */}
         {testimonial.avatar && (
-          <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-primary-teal/20">
+          <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full overflow-hidden ring-2 ring-primary-teal/20">
             <ImagePresets.Testimonial
               src={testimonial.avatar}
               alt={`${testimonial.author} - ${testimonial.role}`}
@@ -335,13 +335,13 @@ function TestimonialCard({
 
         {/* Author Details */}
         <div className="flex-grow min-w-0">
-          <p className="font-semibold text-gray-900 text-lg truncate">
+          <p className="font-semibold text-gray-900 text-base sm:text-lg truncate">
             {testimonial.author}
           </p>
-          <p className="text-gray-600 text-sm truncate">
+          <p className="text-gray-600 text-xs sm:text-sm truncate">
             {testimonial.role}
           </p>
-          <p className="text-primary-teal font-medium text-sm flex items-center gap-1 mt-1">
+          <p className="text-primary-teal font-medium text-xs sm:text-sm flex items-center gap-1 mt-1">
             <svg
               className="w-4 h-4 flex-shrink-0"
               fill="currentColor"

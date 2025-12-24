@@ -230,11 +230,11 @@ export function getPlaceholderImage(
   type: 'hero' | 'service' | 'staff' | 'location' | 'default' = 'default'
 ): string {
   const placeholders = {
-    hero: '/images/placeholders/hero-placeholder.jpg',
-    service: '/images/placeholders/service-placeholder.jpg',
-    staff: '/images/placeholders/staff-placeholder.jpg',
-    location: '/images/placeholders/location-placeholder.jpg',
-    default: '/images/placeholders/default-placeholder.jpg',
+    hero: '/images/placeholders/default-placeholder.svg',
+    service: '/images/placeholders/service-placeholder.svg',
+    staff: '/images/placeholders/default-placeholder.svg',
+    location: '/images/placeholders/default-placeholder.svg',
+    default: '/images/placeholders/default-placeholder.svg',
   };
 
   return placeholders[type];

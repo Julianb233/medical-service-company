@@ -293,7 +293,6 @@ export function OptimizedImage({
           style={imageStyle}
           onLoad={handleLoad}
           onError={handleError}
-          unoptimized // Required for static export
         />
       )}
 
