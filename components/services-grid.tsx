@@ -105,12 +105,12 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl md:text-2xl font-accent font-bold text-teal-900 mb-3 relative z-10 text-center sm:text-left">
+        <h3 className="text-xl md:text-2xl font-accent font-bold text-primary-teal mb-3 relative z-10 text-center sm:text-left">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-teal-900/70 text-sm md:text-base leading-relaxed mb-4 relative z-10 text-center sm:text-left">
+        <p className="text-teal-dark text-sm md:text-base leading-relaxed mb-4 relative z-10 text-center sm:text-left">
           {service.shortDescription}
         </p>
 
@@ -192,7 +192,7 @@ export function ServicesGrid() {
   });
 
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-white">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
