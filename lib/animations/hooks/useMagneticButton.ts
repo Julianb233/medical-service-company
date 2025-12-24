@@ -37,7 +37,7 @@ interface MagneticHandlers {
  * @returns Magnetic value and event handlers
  */
 export function useMagneticButton(
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement | null>,
   options: MagneticOptions = {}
 ): [MagneticValue, MagneticHandlers] {
   const { strength = 10 } = options;

@@ -4,6 +4,9 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { stats } from "@/lib/content-data";
 import { cn } from "@/lib/utils";
+import { useReducedMotion } from "@/lib/animations/hooks/useReducedMotion";
+// import { staggerContainer, fadeInUp } from "@/lib/animations/variants";
+// import { easings } from "@/lib/animations/easings";
 
 // Animated counter component
 function AnimatedCounter({ value, duration = 2 }: { value: string; duration?: number }) {
@@ -57,15 +60,29 @@ function AnimatedCounter({ value, duration = 2 }: { value: string; duration?: nu
 }
 
 export function StatsSection() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section className="section-padding bg-primary-teal">
-      <div className="container-custom">
+    <section className="section-padding bg-primary-teal relative overflow-hidden">
+      {/* Animated background gradient */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-teal-dark/20 to-transparent"
+        animate={prefersReducedMotion ? {} : {
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.6, ease: easings.smooth }}
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-accent font-bold text-white mb-4">

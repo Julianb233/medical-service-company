@@ -5,8 +5,12 @@ import Link from "next/link";
 import { Phone, Mail, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { contactInfo } from "@/lib/content-data";
+import { useReducedMotion } from "@/lib/animations/hooks/useReducedMotion";
+// import { easings } from "@/lib/animations/easings";
 
 export function CTASection() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="section-padding bg-primary-teal relative overflow-hidden">
       {/* Background pattern */}
@@ -50,17 +54,41 @@ export function CTASection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <Link
-              href="/contact"
-              className={cn(
-                "btn-primary flex items-center gap-2",
-                "text-lg px-8 py-4",
-                "transform hover:scale-105 transition-transform"
-              )}
+            <motion.div
+              whileHover={prefersReducedMotion ? {} : { scale: 1.05 }}
+              whileTap={prefersReducedMotion ? {} : { scale: 0.98 }}
             >
-              Schedule a Consultation
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+              <Link
+                href="/contact"
+                className={cn(
+                  "btn-primary flex items-center gap-2",
+                  "text-lg px-8 py-4",
+                  "relative overflow-hidden group"
+                )}
+              >
+                {/* Pulsing glow effect */}
+                <motion.span
+                  className="absolute inset-0 bg-white/20 rounded-lg"
+                  animate={prefersReducedMotion ? {} : {
+                    scale: [1, 1.05, 1],
+                    opacity: [0.5, 0.3, 0.5],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+                <span className="relative z-10">Schedule a Consultation</span>
+                <motion.span
+                  className="relative z-10"
+                  animate={prefersReducedMotion ? {} : { x: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </motion.span>
+              </Link>
+            </motion.div>
 
             <a
               href={`tel:${contactInfo.phone.replace(/[^\d]/g, "")}`}

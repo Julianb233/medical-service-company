@@ -33,7 +33,7 @@ interface ParallaxValue {
  * @returns Parallax transform values
  */
 export function useParallax(
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement | null>,
   options: ParallaxOptions = {}
 ): ParallaxValue {
   const {

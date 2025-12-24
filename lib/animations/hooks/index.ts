@@ -11,3 +11,4 @@ export {
 export { useParallax, useSimpleParallax } from "./useParallax";
 export { useMagneticButton, getMagneticStyle } from "./useMagneticButton";
 export { useStaggerReveal, getStaggerDelay } from "./useStaggerReveal";
+export { use3DTilt } from "./use3DTilt";

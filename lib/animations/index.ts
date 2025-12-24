@@ -23,6 +23,7 @@ export {
   useStaggerReveal,
   getStaggerDelay,
 } from "./hooks/useStaggerReveal";
+export { useCounter } from "./hooks/useCounter";
 
 // Re-export types
 export type { Variants, Transition } from "framer-motion";

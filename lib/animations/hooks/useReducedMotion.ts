@@ -42,13 +42,21 @@ export function useReducedMotion(): boolean {
 
 /**
  * Get animation props based on reduced motion preference
- * @param normalProps - Props to use when motion is allowed
- * @param reducedProps - Props to use when reduced motion is preferred
- * @returns The appropriate props based on user preference
+ * @param normalProps - Props to use when motion is allowed (optional)
+ * @param reducedProps - Props to use when reduced motion is preferred (optional)
+ * @returns The appropriate props based on user preference, or empty object for reduced motion
  */
-export function useMotionProps<T>(normalProps: T, reducedProps: T): T {
+export function useMotionProps<T extends object = Record<string, never>>(
+  normalProps?: T,
+  reducedProps?: T
+): T | Record<string, never> {
   const prefersReducedMotion = useReducedMotion();
-  return prefersReducedMotion ? reducedProps : normalProps;
+
+  if (prefersReducedMotion) {
+    return reducedProps ?? {};
+  }
+
+  return normalProps ?? {};
 }
 
 export default useReducedMotion;

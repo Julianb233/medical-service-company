@@ -3,6 +3,9 @@ import { Roboto, ABeeZee } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { SmoothScroll } from "@/components/animations/SmoothScroll";
+import { PageTransition } from "@/components/animations/PageTransition";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -43,16 +46,35 @@ export const metadata: Metadata = {
     title: "Happy Home Care | Home Health Care in San Diego",
     description:
       "Compassionate home health care services in San Diego County. Skilled nursing, personal care, respite, and hospice support.",
+    images: [
+      {
+        url: "https://happyhomecare.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Happy Home Care - Professional Home Health Services",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Happy Home Care | Home Health Care in San Diego",
     description:
       "Compassionate home health care services in San Diego County.",
+    images: ["https://happyhomecare.com/twitter-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://happyhomecare.com",
   },
 };
 
@@ -64,63 +86,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MedicalBusiness",
-              name: "Happy Home Care",
-              description:
-                "Compassionate home health care services in San Diego County",
-              url: "https://happyhomecare.com",
-              telephone: "+1-619-555-0100",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "123 Healthcare Drive",
-                addressLocality: "San Diego",
-                addressRegion: "CA",
-                postalCode: "92101",
-                addressCountry: "US",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 32.7157,
-                longitude: -117.1611,
-              },
-              areaServed: [
-                { "@type": "City", name: "San Diego" },
-                { "@type": "City", name: "La Jolla" },
-                { "@type": "City", name: "Del Mar" },
-                { "@type": "City", name: "Encinitas" },
-                { "@type": "City", name: "Carlsbad" },
-                { "@type": "City", name: "Oceanside" },
-                { "@type": "City", name: "Escondido" },
-                { "@type": "City", name: "Chula Vista" },
-              ],
-              priceRange: "$$",
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                  "Saturday",
-                  "Sunday",
-                ],
-                opens: "00:00",
-                closes: "23:59",
-              },
-            }),
-          }}
-        />
+        <SchemaMarkup pathname="/" />
       </head>
       <body className={`${roboto.variable} ${abeezee.variable} antialiased`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <SmoothScroll>
+          <Header />
+          <PageTransition>
+            <main>{children}</main>
+          </PageTransition>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
