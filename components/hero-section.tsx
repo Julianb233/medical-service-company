@@ -78,9 +78,9 @@ export function HeroSection() {
         },
       };
 
-  // Split headline into words for animation
-  const headlineText = "San Diego & Los Angeles Home Health Care";
-  const words = useMemo(() => headlineText.split(" "), []);
+  // Headlines (mobile version is shorter to avoid cramped wrapping)
+  const desktopHeadlineText = "San Diego & Los Angeles Home Health Care";
+  const desktopWords = useMemo(() => desktopHeadlineText.split(" "), []);
 
   // Word reveal variant
   const wordReveal = {
@@ -129,7 +129,7 @@ export function HeroSection() {
       };
 
   return (
-    <section className="relative h-[78svh] sm:h-[70vh] min-h-[520px] sm:min-h-[600px] max-h-[820px] flex items-end sm:items-center justify-center overflow-hidden pb-14 sm:pb-0">
+    <section className="relative h-[84svh] sm:h-[70vh] min-h-[560px] sm:min-h-[600px] max-h-[860px] flex items-end sm:items-center justify-center overflow-hidden pb-10 sm:pb-0">
       {/* Carousel Background Images */}
       <div ref={backgroundRef} className="absolute inset-0">
         <AnimatePresence mode="sync">
@@ -170,34 +170,62 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container-custom text-center text-white px-4 sm:px-6 lg:px-8">
+        {/* Mobile content panel to keep layout clean */}
+        <div className="mx-auto w-full max-w-2xl sm:max-w-none">
         {/* Tagline with subtle entrance */}
         <motion.p
           variants={heroSubtitleReveal}
           initial="hidden"
           animate="visible"
-          className="text-sm sm:text-base uppercase tracking-widest mb-4 text-primary-orange font-semibold drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
+          className="text-sm sm:text-base uppercase tracking-widest mb-3 sm:mb-4 text-primary-orange font-semibold drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
         >
           California Home Care You Can Trust
         </motion.p>
 
-        {/* Main headline with word-by-word reveal */}
+        {/* Mobile headline (shorter, less jumbled) */}
+        <motion.h1
+          variants={heroSubtitleReveal}
+          initial="hidden"
+          animate="visible"
+          className={cn(
+            "sm:hidden font-accent font-bold tracking-tight",
+            "text-4xl leading-tight",
+            "mb-3 drop-shadow-[0_3px_18px_rgba(0,0,0,0.35)]"
+          )}
+        >
+          Home Health Care
+        </motion.h1>
+        <motion.p
+          variants={heroSubtitleReveal}
+          initial="hidden"
+          animate="visible"
+          className={cn(
+            "sm:hidden",
+            "text-lg font-semibold text-white/95",
+            "mb-5 drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
+          )}
+        >
+          San Diego &amp; Los Angeles
+        </motion.p>
+
+        {/* Desktop headline with word-by-word reveal */}
         <h1
           className={cn(
-            "font-accent font-bold tracking-tight mb-6",
-            "text-4xl sm:text-5xl md:text-6xl lg:text-7xl",
+            "hidden sm:block font-accent font-bold tracking-tight mb-6",
+            "text-5xl md:text-6xl lg:text-7xl",
             "max-w-5xl mx-auto",
-            "leading-tight sm:leading-tight drop-shadow-[0_3px_18px_rgba(0,0,0,0.35)]"
+            "leading-tight drop-shadow-[0_3px_18px_rgba(0,0,0,0.35)]"
           )}
           style={{ perspective: "1000px" }}
         >
-          {words.map((word, i) => (
+          {desktopWords.map((word, i) => (
             <motion.span
               key={i}
               custom={i}
               variants={wordReveal}
               initial="hidden"
               animate="visible"
-              className="inline-block mr-2 sm:mr-3 md:mr-4"
+              className="inline-block mr-3 md:mr-4"
               style={{ transformStyle: "preserve-3d" }}
             >
               {word}
@@ -211,7 +239,7 @@ export function HeroSection() {
           initial="hidden"
           animate="visible"
           className={cn(
-            "text-lg sm:text-xl md:text-2xl mb-10",
+            "text-base sm:text-xl md:text-2xl mb-6 sm:mb-10",
             "max-w-3xl mx-auto leading-relaxed",
             "text-white font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
           )}
@@ -224,7 +252,7 @@ export function HeroSection() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12"
         >
           <motion.div variants={itemVariants}>
             <Link
@@ -232,12 +260,12 @@ export function HeroSection() {
               className={cn(
                 "block bg-primary-orange hover:bg-orange-dark",
                 "text-white font-semibold",
-                "px-8 py-4 rounded-lg",
+                "px-6 py-3 sm:px-8 sm:py-4 rounded-lg",
                 "transition-all duration-300",
                 "transform hover:scale-105 hover:shadow-2xl",
                 "text-base sm:text-lg",
                 "w-full sm:w-auto text-center",
-                "min-w-[200px]",
+                "sm:min-w-[200px] max-w-sm",
                 "relative overflow-hidden group"
               )}
             >
@@ -265,12 +293,12 @@ export function HeroSection() {
               className={cn(
                 "block border-2 border-white text-white",
                 "hover:bg-white hover:text-primary-teal",
-                "font-semibold px-8 py-4 rounded-lg",
+                "font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-lg",
                 "transition-all duration-300",
                 "transform hover:scale-105",
                 "text-base sm:text-lg",
                 "w-full sm:w-auto text-center",
-                "min-w-[200px]"
+                "sm:min-w-[200px] max-w-sm"
               )}
             >
               Our Services
@@ -278,91 +306,50 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* Floating trust badges */}
+        {/* Trust badges (simple on mobile; fuller on desktop) */}
+        <div className="sm:hidden flex flex-wrap justify-center gap-2 mt-2">
+          <span className="px-3 py-1 rounded-full bg-white/15 border border-white/25 text-white text-sm font-semibold">
+            Licensed
+          </span>
+          <span className="px-3 py-1 rounded-full bg-white/15 border border-white/25 text-white text-sm font-semibold">
+            Insured
+          </span>
+          <span className="px-3 py-1 rounded-full bg-white/15 border border-white/25 text-white text-sm font-semibold">
+            24/7 Support
+          </span>
+        </div>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2, ease: easings.spring }}
-          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8"
+          transition={{ duration: 0.6, delay: 1.0, ease: easings.spring }}
+          className="hidden sm:flex flex-row flex-wrap justify-center items-center gap-6 md:gap-8"
         >
-          {/* Licensed badge */}
-          <motion.div
-            animate={floatingAnimation}
-            className="flex flex-row items-center gap-3 text-sm sm:text-lg text-white font-semibold"
-          >
-            <motion.div
-              animate={pulseGlowAnimation}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
-            >
-              <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-primary-orange"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                />
+          <div className="flex items-center gap-3 text-white font-semibold">
+            <div className="w-12 h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center">
+              <svg className="w-6 h-6 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-            </motion.div>
-            <span className="font-semibold text-left">CA Licensed</span>
-          </motion.div>
-
-          {/* Insured badge */}
-          <motion.div
-            animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } } : undefined}
-            className="flex flex-row items-center gap-3 text-sm sm:text-lg text-white font-semibold"
-          >
-            <motion.div
-              animate={pulseGlowAnimation}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-teal/20 border-2 border-white flex items-center justify-center mx-auto"
-            >
-              <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                />
+            </div>
+            <span>CA Licensed</span>
+          </div>
+          <div className="flex items-center gap-3 text-white font-semibold">
+            <div className="w-12 h-12 rounded-full bg-primary-teal/20 border-2 border-white flex items-center justify-center">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-            </motion.div>
-            <span className="font-semibold text-left">Fully Insured</span>
-          </motion.div>
-
-          {/* 24/7 Support badge */}
-          <motion.div
-            animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } } : undefined}
-            className="flex flex-row items-center gap-3 text-sm sm:text-lg text-white font-semibold"
-          >
-            <motion.div
-              animate={pulseGlowAnimation}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
-            >
-              <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-primary-orange"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
+            </div>
+            <span>Fully Insured</span>
+          </div>
+          <div className="flex items-center gap-3 text-white font-semibold">
+            <div className="w-12 h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center">
+              <svg className="w-6 h-6 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-            </motion.div>
-            <span className="font-semibold text-left">24/7 Support</span>
-          </motion.div>
+            </div>
+            <span>24/7 Support</span>
+          </div>
         </motion.div>
+        </div>
       </div>
 
       {/* Carousel Navigation Dots */}
