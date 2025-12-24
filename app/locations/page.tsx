@@ -104,12 +104,12 @@ export default function LocationsPage() {
   const motionProps = useMotionProps();
 
   // Counter animations for stats
-  const [citiesCount, citiesRef] = useCounter(15, { suffix: "+", duration: 2000 });
-  const [neighborhoodsCount, neighborhoodsRef] = useCounter(100, {
+  const [citiesCount, citiesRef] = useCounter<HTMLDivElement>(15, { suffix: "+", duration: 2000 });
+  const [neighborhoodsCount, neighborhoodsRef] = useCounter<HTMLDivElement>(100, {
     suffix: "+",
     duration: 2500,
   });
-  const [zipCodesCount, zipCodesRef] = useCounter(75, { suffix: "+", duration: 2200 });
+  const [zipCodesCount, zipCodesRef] = useCounter<HTMLDivElement>(75, { suffix: "+", duration: 2200 });
 
   // Stagger reveal for location cards
   const { containerVariants, itemVariants } = useStaggerReveal({

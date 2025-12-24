@@ -128,7 +128,7 @@ export function validateSchemaMarkup(schema: SchemaType): {
  */
 export function validateAllSchemas(schemas: SchemaType[]): {
   allValid: boolean;
-  results: Array<{ schema: string; valid: boolean; errors: string[] }>;
+  results: Array<{ schema: string | string[]; valid: boolean; errors: string[] }>;
 } {
   const results = schemas.map((schema) => ({
     schema: schema["@type"],

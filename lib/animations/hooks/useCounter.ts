@@ -5,7 +5,7 @@
 
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, RefObject } from "react";
 import { useReducedMotion } from "./useReducedMotion";
 
 interface CounterOptions {
@@ -38,10 +38,10 @@ const easeOutExpo = (t: number): number => {
  * @param options - Configuration options
  * @returns The current animated value and ref to attach to element
  */
-export function useCounter(
+export function useCounter<T extends HTMLElement = HTMLElement>(
   end: number,
   options: CounterOptions = {}
-): [string, (node: HTMLElement | null) => void] {
+): [string, RefObject<T | null>] {
   const {
     duration = 2000,
     startOnMount = false,
@@ -54,7 +54,7 @@ export function useCounter(
 
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(startOnMount);
-  const countRef = useRef<HTMLElement | null>(null);
+  const countRef = useRef<T | null>(null);
   const prefersReducedMotion = useReducedMotion();
 
   // Format number with separators

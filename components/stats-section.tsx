@@ -5,8 +5,7 @@ import { useEffect, useRef } from "react";
 import { stats } from "@/lib/content-data";
 import { cn } from "@/lib/utils";
 import { useReducedMotion } from "@/lib/animations/hooks/useReducedMotion";
-// import { staggerContainer, fadeInUp } from "@/lib/animations/variants";
-// import { easings } from "@/lib/animations/easings";
+import { easings } from "@/lib/animations/easings";
 
 // Animated counter component
 function AnimatedCounter({ value, duration = 2 }: { value: string; duration?: number }) {

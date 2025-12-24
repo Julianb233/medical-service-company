@@ -15,7 +15,7 @@ const COMPANY_EMAIL = "info@happyhomecare.com";
 // Type definitions
 export interface SchemaMarkup {
   "@context": string;
-  "@type": string;
+  "@type": string | string[];
   [key: string]: unknown;
 }
 
@@ -30,6 +30,7 @@ interface BreadcrumbSchema {
   "@context": string;
   "@type": "BreadcrumbList";
   itemListElement: BreadcrumbItem[];
+  [key: string]: unknown;
 }
 
 /**
@@ -560,6 +561,326 @@ export function generateOfferSchema(
       name: COMPANY_NAME,
       url: DOMAIN,
     },
+  };
+}
+
+/**
+ * Subarea Local Business Schema
+ * Location-specific schema with neighborhood detail for hyperlocal SEO
+ * Targets location + service queries like "home care in Downtown San Diego"
+ */
+export function generateSubareaLocalBusinessSchema(
+  location: (typeof locations)[0],
+  subarea: string
+): SchemaMarkup {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "MedicalBusiness"],
+    name: `Happy Home Care - ${subarea}, ${location.name}`,
+    description: `Professional home care services in ${subarea}, ${location.name}. We provide skilled nursing, personal care, and 24-hour home care in your neighborhood.`,
+    url: `${DOMAIN}/locations/${location.slug}#${subarea.toLowerCase().replace(/\s+/g, "-")}`,
+    telephone: COMPANY_PHONE,
+    email: COMPANY_EMAIL,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: `${subarea}, ${location.name}`,
+      addressRegion: "CA",
+      postalCode: location.zipCodes[0],
+      addressCountry: "US",
+      areaServed: location.zipCodes,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: location.coordinates.lat,
+      longitude: location.coordinates.lng,
+    },
+    areaServed: [
+      {
+        "@type": "City",
+        name: `${subarea}, ${location.name}`,
+      },
+      {
+        "@type": "City",
+        name: location.name,
+      },
+    ],
+    priceRange: "$$",
+    image: `${DOMAIN}/locations/${location.slug}-${subarea.toLowerCase().replace(/\s+/g, "-")}-hero.jpg`,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      ratingCount: "127",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+      description: "24/7 On-Call Support Available",
+    },
+    parentOrganization: {
+      "@type": "Organization",
+      name: COMPANY_NAME,
+      url: DOMAIN,
+    },
+    servesCuisine: "Medical Care Services",
+    knowsAbout: [
+      `Home Care in ${subarea}`,
+      `Skilled Nursing in ${location.name}`,
+      `Personal Care in ${subarea}`,
+      "24-Hour In-Home Care",
+      "Respite Care",
+      "Hospice Support",
+    ],
+  };
+}
+
+/**
+ * Subarea FAQ Schema
+ * Voice-search and question-based schema for local neighborhoods
+ * Targets voice queries like "What home care services are available in Hillcrest?"
+ */
+export function generateSubareaFAQSchema(
+  location: (typeof locations)[0],
+  subarea: string
+): SchemaMarkup {
+  const locationName = location.name;
+  const areaName = `${subarea}, ${locationName}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `What home care services are available in ${areaName}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Happy Home Care provides comprehensive home health services throughout ${areaName}, including skilled nursing care, personal care assistance, 24-hour home care, respite care, and hospice support. Our local team serves the ${subarea} neighborhood and surrounding areas of ${locationName}.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Is there 24-hour home care available in ${subarea}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Yes, we offer 24-hour home care services in ${areaName}. Our local caregivers provide round-the-clock support for those recovering from illness, with Alzheimer's or dementia, or with limited mobility. We also offer flexible hourly and overnight care options.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `How do I get started with home care in ${subarea}, ${locationName}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Getting started is easy. Contact our local team in ${locationName} to schedule a free in-home assessment. We'll evaluate your care needs and create a personalized care plan tailored to you. Our caregivers can typically begin services within 24-48 hours.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Are caregivers in ${areaName} licensed and trained?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Yes, all our caregivers serving ${areaName} are fully licensed, insured, and professionally trained. They are background-checked, certified in their specialties, and committed to providing compassionate care in the ${subarea} community.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `What is the cost of home care in ${subarea}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Home care costs in ${areaName} vary based on the level of care needed. We offer flexible hourly, overnight, and 24-hour care options at competitive rates. Contact us for a free, no-obligation estimate specific to your needs.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Does Happy Home Care serve ${subarea} neighborhoods?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Yes, Happy Home Care proudly serves ${areaName} and all neighborhoods throughout ${locationName}. Whether you need care in downtown areas, residential neighborhoods, or anywhere in between, our local team is ready to help.`,
+        },
+      },
+    ],
+  };
+}
+
+/**
+ * Subarea Place Schema
+ * Schema for geographic locations and landmarks within neighborhoods
+ * Helps Google understand the physical geography and context
+ */
+export function generateSubareaPlaceSchema(
+  location: (typeof locations)[0],
+  subarea: string,
+  landmarks?: string[]
+): SchemaMarkup {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    name: subarea,
+    description: `${subarea} is a neighborhood in ${location.name}, San Diego County, California. We provide home care services to residents and families in this community.`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: `${subarea}, ${location.name}`,
+      addressRegion: "CA",
+      postalCode: location.zipCodes[0],
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: location.coordinates.lat,
+      longitude: location.coordinates.lng,
+    },
+    containedIn: {
+      "@type": "City",
+      name: location.name,
+      containedIn: {
+        "@type": "State",
+        name: "California",
+      },
+    },
+    isPartOf: {
+      "@type": "City",
+      name: location.name,
+    },
+    potentialAction: {
+      "@type": "FindAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${DOMAIN}/locations/${location.slug}`,
+        actionPlatform: ["DesktopWebPlatform", "MobileWebPlatform"],
+      },
+      result: {
+        "@type": "MedicalBusiness",
+        name: `Home Care Services in ${subarea}`,
+      },
+    },
+    ...(landmarks && landmarks.length > 0 && {
+      knowsAbout: landmarks.map((landmark) => ({
+        "@type": "Place",
+        name: landmark,
+        containedIn: {
+          "@type": "City",
+          name: location.name,
+        },
+      })),
+    }),
+  };
+}
+
+/**
+ * Subarea Breadcrumb Schema
+ * Enhanced breadcrumb navigation for location + subarea hierarchy
+ * Improves click-through from SERPs
+ */
+export function generateSubareaBreadcrumbSchema(
+  location: (typeof locations)[0],
+  subarea: string
+): BreadcrumbSchema {
+  const breadcrumbs = [
+    { name: "Home", url: DOMAIN },
+    { name: "Locations", url: `${DOMAIN}/locations` },
+    { name: location.name, url: `${DOMAIN}/locations/${location.slug}` },
+    { name: subarea, url: `${DOMAIN}/locations/${location.slug}#${subarea.toLowerCase().replace(/\s+/g, "-")}` },
+  ];
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.url,
+    })),
+  };
+}
+
+/**
+ * Subarea Service Schema
+ * Service schema tied to specific location and neighborhood
+ * Targets long-tail queries like "skilled nursing care in Hillcrest"
+ */
+export function generateSubareaServiceSchema(
+  service: (typeof services)[0],
+  location: (typeof locations)[0],
+  subarea: string
+): SchemaMarkup {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `${service.title} in ${subarea}, ${location.name}`,
+    description: `${service.fullDescription} Available in ${subarea}, ${location.name}. We provide local, compassionate ${service.title.toLowerCase()} services to residents of this neighborhood.`,
+    provider: {
+      "@type": "MedicalBusiness",
+      name: COMPANY_NAME,
+      url: DOMAIN,
+      telephone: COMPANY_PHONE,
+      areaServed: {
+        "@type": "City",
+        name: `${subarea}, ${location.name}`,
+      },
+    },
+    url: `${DOMAIN}/services/${service.slug}?location=${location.slug}&area=${subarea.toLowerCase().replace(/\s+/g, "-")}`,
+    serviceArea: [
+      {
+        "@type": "City",
+        name: `${subarea}, ${location.name}`,
+      },
+      {
+        "@type": "City",
+        name: location.name,
+      },
+    ],
+    areaServed: {
+      "@type": "City",
+      name: `${subarea}, ${location.name}`,
+    },
+    hasOfferingDescription: {
+      "@type": "OfferingDescription",
+      description: service.shortDescription,
+      priceCurrency: "USD",
+      priceRange: "$$",
+    },
+    image: `${DOMAIN}/services/${service.slug}-hero.jpg`,
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${DOMAIN}/contact?service=${service.slug}&location=${location.slug}`,
+        actionPlatform: ["DesktopWebPlatform", "MobileWebPlatform"],
+      },
+      result: {
+        "@type": "Reservation",
+        name: `Book ${service.title} in ${subarea}`,
+      },
+    },
+    availableAtOrFrom: {
+      "@type": "LocalBusiness",
+      name: `Happy Home Care - ${subarea}, ${location.name}`,
+      url: `${DOMAIN}/locations/${location.slug}`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: `${subarea}, ${location.name}`,
+        addressRegion: "CA",
+      },
+    },
+    knows: [
+      `${service.title} in ${subarea}`,
+      `Professional ${service.title.toLowerCase()} providers`,
+      `${location.name} ${service.title.toLowerCase()} specialists`,
+      "Licensed caregivers",
+      "Compassionate in-home care",
+    ],
   };
 }
 

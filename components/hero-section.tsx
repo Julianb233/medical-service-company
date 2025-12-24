@@ -270,7 +270,7 @@ export function HeroSection() {
 
           {/* Insured badge */}
           <motion.div
-            animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } }}
+            animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } } : undefined}
             className="flex items-center gap-2 text-sm sm:text-base text-white/90"
           >
             <motion.div
@@ -296,7 +296,7 @@ export function HeroSection() {
 
           {/* 24/7 Support badge */}
           <motion.div
-            animate={{ ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } }}
+            animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } } : undefined}
             className="flex items-center gap-2 text-sm sm:text-base text-white/90"
           >
             <motion.div

@@ -480,7 +480,7 @@ function StatCard({ stat, index }: { stat: (typeof stats)[0]; index: number }) {
   const hasNumber = numericMatch !== null;
   const numericValue = hasNumber ? parseInt(numericMatch[0], 10) : 0;
 
-  const [formattedValue, counterRef] = useCounter(numericValue, {
+  const [formattedValue, counterRef] = useCounter<HTMLDivElement>(numericValue, {
     duration: 2000,
     suffix: stat.number.includes("+") ? "+" : "",
   });

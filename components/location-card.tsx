@@ -25,7 +25,7 @@ const cardVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -40,7 +40,7 @@ const iconVariants = {
     rotate: 5,
     transition: {
       duration: 0.3,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -53,7 +53,7 @@ const textVariants = {
     x: 4,
     transition: {
       duration: 0.3,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
 };
@@ -120,7 +120,7 @@ export default function LocationCard({
             className="h-0.5 bg-gradient-to-r from-primary-teal to-teal-light mt-4"
             initial={{ scaleX: 0, originX: 0 }}
             whileHover={{ scaleX: 1 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] as const }}
           />
         </div>
       </motion.div>

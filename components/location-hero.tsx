@@ -23,7 +23,7 @@ const heroTextVariants = {
     clipPath: "inset(0% 0 0 0)",
     transition: {
       duration: 1.2,
-      ease: [0.6, 0.01, 0.05, 0.95],
+      ease: [0.6, 0.01, 0.05, 0.95] as const,
     },
   },
 };
@@ -40,7 +40,7 @@ const subtitleVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.1, 0.25, 1],
+      ease: [0.25, 0.1, 0.25, 1] as const,
       delay: 0.3,
     },
   },
@@ -58,7 +58,7 @@ const buttonVariants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: [0.68, -0.6, 0.32, 1.6],
+      ease: [0.68, -0.6, 0.32, 1.6] as const,
       delay: 0.5 + i * 0.1,
     },
   }),
@@ -75,7 +75,7 @@ const buttonHoverVariants = {
     y: -2,
     transition: {
       duration: 0.2,
-      ease: [0.22, 1, 0.36, 1],
+      ease: [0.22, 1, 0.36, 1] as const,
     },
   },
   tap: {
@@ -213,7 +213,7 @@ export default function LocationHero({ locationName, description }: LocationHero
             animate={{ scaleX: 1 }}
             transition={{
               duration: 1,
-              ease: [0.22, 1, 0.36, 1],
+              ease: [0.22, 1, 0.36, 1] as const,
               delay: 0.8,
             }}
           />
