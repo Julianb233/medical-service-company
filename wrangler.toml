@@ -1,15 +1,11 @@
-# Wrangler configuration for Cloudflare Pages
+# Wrangler configuration for Cloudflare Pages with OpenNext
 name = "medical-service-company"
-compatibility_date = "2024-12-01"
+compatibility_date = "2024-12-30"
 compatibility_flags = ["nodejs_compat"]
 
-# Pages configuration
+# Pages configuration - deploy entire .open-next directory
 pages_build_output_dir = ".open-next"
 
-# Environment variables (set in Cloudflare dashboard for production)
+# Environment variables
 [vars]
 NODE_ENV = "production"
-
-# Development settings
-[dev]
-port = 3000
