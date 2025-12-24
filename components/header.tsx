@@ -92,13 +92,10 @@ export default function Header() {
             href="/"
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
           >
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold text-primary-teal">
-                Happy Home
-              </span>
-              <span className="text-lg font-semibold text-primary-orange -mt-1">
-                Care
-              </span>
+            <div className="flex items-baseline">
+              <span className="text-2xl font-bold text-primary-teal">Happy</span>
+              <span className="text-2xl font-bold text-primary-teal">Home</span>
+              <span className="text-2xl font-bold text-primary-orange">Care</span>
             </div>
           </Link>
 

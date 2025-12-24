@@ -16,6 +16,7 @@ import { cn } from "@/lib/utils";
 import { use3DTilt, useStaggerReveal } from "@/lib/animations/hooks";
 import { iconHover } from "@/lib/animations/variants";
 import { easings } from "@/lib/animations/easings";
+import { ImagePresets } from "@/components/OptimizedImage";
 
 // Map icon strings to lucide-react components
 const iconMap: Record<string, LucideIcon> = {
@@ -72,6 +73,16 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
             height: "200%",
           }}
         />
+
+        {/* Service Image */}
+        <div className="mb-5 -mx-6 md:-mx-8 -mt-6 md:-mt-8 overflow-hidden rounded-t-xl">
+          <ImagePresets.ServiceCard
+            src={`/images/services/${service.slug}.jpg`}
+            alt={`${service.title} - Professional home health care services`}
+            context={{ service: service.title, description: service.shortDescription }}
+            containerClassName="transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
 
         {/* Icon with rotation animation */}
         <motion.div

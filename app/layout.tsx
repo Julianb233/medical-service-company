@@ -22,8 +22,8 @@ const abeezee = ABeeZee({
 export const metadata: Metadata = {
   metadataBase: new URL("https://happyhomecare.com"),
   title: {
-    default: "Happy Home Care | Home Health Care in San Diego",
-    template: "%s | Happy Home Care",
+    default: "HappyHomeCare | Home Health Care in San Diego",
+    template: "%s | HappyHomeCare",
   },
   description:
     "Compassionate home health care services in San Diego County. We provide skilled nursing, personal care, respite care, and hospice support. Serving La Jolla, Del Mar, Encinitas, and all of San Diego.",
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
     "La Jolla home health",
     "Del Mar nursing care",
     "Encinitas home care",
-    "Happy Home Care",
+    "HappyHomeCare",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Happy Home Care",
-    title: "Happy Home Care | Home Health Care in San Diego",
+    siteName: "HappyHomeCare",
+    title: "HappyHomeCare | Home Health Care in San Diego",
     description:
       "Compassionate home health care services in San Diego County. Skilled nursing, personal care, respite, and hospice support.",
     images: [
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
         url: "https://happyhomecare.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Happy Home Care - Professional Home Health Services",
+        alt: "HappyHomeCare - Professional Home Health Services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Happy Home Care | Home Health Care in San Diego",
+    title: "HappyHomeCare | Home Health Care in San Diego",
     description:
       "Compassionate home health care services in San Diego County.",
     images: ["https://happyhomecare.com/twitter-image.jpg"],

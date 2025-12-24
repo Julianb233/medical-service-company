@@ -104,9 +104,9 @@ export function HeroSection() {
       >
         {/* Image overlay with Ken Burns effect */}
         <motion.div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-cover bg-center opacity-50"
           style={{
-            backgroundImage: "url('/images/hero-bg.jpg')",
+            backgroundImage: "url('/images/hero/san-diego-home-care.jpg')",
             backgroundBlendMode: "overlay",
             transformOrigin: "center center",
           }}

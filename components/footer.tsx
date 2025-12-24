@@ -16,10 +16,13 @@ export default function Footer() {
           {/* Company Info Column */}
           <div className="space-y-4">
             <div>
-              <h3 className="text-2xl font-bold mb-1">Happy Home</h3>
-              <h4 className="text-xl font-semibold text-orange-light">Care</h4>
+              <h3 className="text-2xl font-bold">
+                <span className="text-white">Happy</span>
+                <span className="text-white">Home</span>
+                <span className="text-orange-light">Care</span>
+              </h3>
             </div>
-            <p className="text-teal-light text-sm leading-relaxed">
+            <p className="text-teal-100 text-sm leading-relaxed">
               Providing compassionate, professional home health care services throughout San Diego County.
               Your trusted partner in quality care.
             </p>
@@ -70,7 +73,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-teal-light hover:text-white transition-colors text-sm"
+                  className="text-teal-100 hover:text-white transition-colors text-sm"
                 >
                   About Us
                 </Link>
@@ -78,7 +81,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-teal-light hover:text-white transition-colors text-sm"
+                  className="text-teal-100 hover:text-white transition-colors text-sm"
                 >
                   Our Services
                 </Link>
@@ -86,7 +89,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/locations"
-                  className="text-teal-light hover:text-white transition-colors text-sm"
+                  className="text-teal-100 hover:text-white transition-colors text-sm"
                 >
                   Service Areas
                 </Link>
@@ -94,7 +97,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/careers"
-                  className="text-teal-light hover:text-white transition-colors text-sm"
+                  className="text-teal-100 hover:text-white transition-colors text-sm"
                 >
                   Careers
                 </Link>
@@ -102,7 +105,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-teal-light hover:text-white transition-colors text-sm"
+                  className="text-teal-100 hover:text-white transition-colors text-sm"
                 >
                   Contact Us
                 </Link>
@@ -110,7 +113,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-teal-light hover:text-white transition-colors text-sm"
+                  className="text-teal-100 hover:text-white transition-colors text-sm"
                 >
                   Privacy Policy
                 </Link>
@@ -118,7 +121,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-teal-light hover:text-white transition-colors text-sm"
+                  className="text-teal-100 hover:text-white transition-colors text-sm"
                 >
                   Terms of Service
                 </Link>
@@ -134,7 +137,7 @@ export default function Footer() {
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="text-teal-light hover:text-white transition-colors text-sm"
+                    className="text-teal-100 hover:text-white transition-colors text-sm"
                   >
                     {service.title}
                   </Link>
@@ -151,7 +154,7 @@ export default function Footer() {
                 <li key={location.slug}>
                   <Link
                     href={`/locations/${location.slug}`}
-                    className="text-teal-light hover:text-white transition-colors text-sm"
+                    className="text-teal-100 hover:text-white transition-colors text-sm"
                   >
                     {location.name}
                   </Link>
@@ -164,7 +167,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${contactInfo.phone}`}
-                  className="flex items-start space-x-2 text-teal-light hover:text-white transition-colors group"
+                  className="flex items-start space-x-2 text-teal-100 hover:text-white transition-colors group"
                 >
                   <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-orange-light" />
                   <span className="text-sm">{contactInfo.phone}</span>
@@ -173,14 +176,14 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="flex items-start space-x-2 text-teal-light hover:text-white transition-colors group"
+                  className="flex items-start space-x-2 text-teal-100 hover:text-white transition-colors group"
                 >
                   <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-orange-light" />
                   <span className="text-sm break-all">{contactInfo.email}</span>
                 </a>
               </li>
               <li>
-                <div className="flex items-start space-x-2 text-teal-light">
+                <div className="flex items-start space-x-2 text-teal-100">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
                     <p>{contactInfo.address.street}</p>
@@ -201,25 +204,25 @@ export default function Footer() {
       <div className="border-t border-white/20">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <p className="text-teal-light text-sm text-center md:text-left">
-              &copy; {currentYear} Happy Home Care. All rights reserved.
+            <p className="text-teal-100 text-sm text-center md:text-left">
+              &copy; {currentYear} HappyHomeCare. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
               <Link
                 href="/privacy"
-                className="text-teal-light hover:text-white transition-colors text-sm"
+                className="text-teal-100 hover:text-white transition-colors text-sm"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="text-teal-light hover:text-white transition-colors text-sm"
+                className="text-teal-100 hover:text-white transition-colors text-sm"
               >
                 Terms
               </Link>
               <Link
                 href="/accessibility"
-                className="text-teal-light hover:text-white transition-colors text-sm"
+                className="text-teal-100 hover:text-white transition-colors text-sm"
               >
                 Accessibility
               </Link>

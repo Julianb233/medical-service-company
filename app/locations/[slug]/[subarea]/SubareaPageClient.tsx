@@ -357,7 +357,7 @@ export default function SubareaPageClient({
                       onClick={() => handleShareFact(fact, index)}
                       whileHover={{ scale: 1.1, rotate: 15 }}
                       whileTap={{ scale: 0.9 }}
-                      className="text-gray-400 hover:text-primary-teal transition-colors"
+                      className="text-gray-500 hover:text-primary-teal transition-colors"
                       aria-label="Share this fact"
                     >
                       {copiedFact === index ? (

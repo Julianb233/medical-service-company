@@ -252,6 +252,7 @@ export const testimonials = [
     role: "Veteran",
     location: "Oceanside",
     rating: 5,
+    avatar: "/images/testimonials/james-t.jpg",
   },
   {
     id: 2,
@@ -260,6 +261,7 @@ export const testimonials = [
     role: "Family Member",
     location: "Carlsbad",
     rating: 5,
+    avatar: "/images/testimonials/margaret-k.jpg",
   },
   {
     id: 3,
@@ -268,6 +270,7 @@ export const testimonials = [
     role: "Patient",
     location: "Del Mar",
     rating: 5,
+    avatar: "/images/testimonials/robert-j.jpg",
   },
   {
     id: 4,
@@ -276,6 +279,7 @@ export const testimonials = [
     role: "Family Caregiver",
     location: "Encinitas",
     rating: 5,
+    avatar: "/images/testimonials/jennifer-l.jpg",
   },
   {
     id: 5,
@@ -284,6 +288,7 @@ export const testimonials = [
     role: "Family Caregiver",
     location: "La Jolla",
     rating: 5,
+    avatar: "/images/testimonials/sarah-m.jpg",
   },
   {
     id: 6,
@@ -292,6 +297,7 @@ export const testimonials = [
     role: "Family Member",
     location: "San Diego",
     rating: 5,
+    avatar: "/images/testimonials/david-p.jpg",
   },
 ];
 

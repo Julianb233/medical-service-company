@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { useReducedMotion } from "@/lib/animations";
 import { springs, easings } from "@/lib/animations/easings";
 import { durations } from "@/lib/animations/transitions";
+import { ImagePresets } from "@/components/OptimizedImage";
 
 /**
  * Award-winning 3D Testimonials Carousel
@@ -228,7 +229,7 @@ export function TestimonialsCarousel() {
       </div>
 
       {/* Auto-play Indicator */}
-      <div className="text-center mt-4 text-sm text-gray-500">
+      <div className="text-center mt-4 text-sm text-gray-600">
         {isHovered ? (
           <span>Paused</span>
         ) : prefersReducedMotion ? (
@@ -339,11 +340,11 @@ function TestimonialCard({
         </AnimatePresence>
       </blockquote>
 
-      {/* Author Info with Slide-up Animation */}
+      {/* Author Info with Avatar and Slide-up Animation */}
       <AnimatePresence mode="wait">
         {isActive && (
           <motion.div
-            className="flex flex-col sm:flex-row sm:items-center sm:justify-between pt-6 border-t border-gray-200 relative z-10"
+            className="flex items-center gap-4 pt-6 border-t border-gray-200 relative z-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
@@ -353,18 +354,28 @@ function TestimonialCard({
               ease: easings.spring,
             }}
           >
-            <div>
-              <p className="font-semibold text-gray-900 text-lg">
+            {/* Avatar */}
+            {testimonial.avatar && (
+              <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-primary-teal/20">
+                <ImagePresets.Testimonial
+                  src={testimonial.avatar}
+                  alt={`${testimonial.author} - ${testimonial.role}`}
+                  className="rounded-full"
+                />
+              </div>
+            )}
+
+            {/* Author Details */}
+            <div className="flex-grow min-w-0">
+              <p className="font-semibold text-gray-900 text-lg truncate">
                 {testimonial.author}
               </p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-sm truncate">
                 {testimonial.role}
               </p>
-            </div>
-            <div className="mt-2 sm:mt-0">
-              <p className="text-primary-teal font-medium text-sm flex items-center gap-1">
+              <p className="text-primary-teal font-medium text-sm flex items-center gap-1 mt-1">
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   aria-hidden="true"
@@ -375,7 +386,7 @@ function TestimonialCard({
                     clipRule="evenodd"
                   />
                 </svg>
-                {testimonial.location}
+                <span className="truncate">{testimonial.location}</span>
               </p>
             </div>
           </motion.div>

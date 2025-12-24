@@ -304,7 +304,7 @@ export function OptimizedImage({
           role="img"
           aria-label="Image failed to load"
         >
-          <div className="text-center text-gray-400 p-4">
+          <div className="text-center text-gray-600 p-4">
             <svg
               className="w-12 h-12 mx-auto mb-2"
               fill="none"
