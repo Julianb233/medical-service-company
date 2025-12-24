@@ -105,22 +105,24 @@ def generate_image(prompt: str, output_path: Path, retries: int = 3) -> bool:
 
     for attempt in range(retries):
         try:
-            # Use Gemini 2.5 Flash Image (Nano Banana) with generate_content
-            response = client.models.generate_content(
-                model='gemini-2.5-flash-image',
-                contents=full_prompt,
-                config=types.GenerateContentConfig(
-                    response_modalities=['IMAGE', 'TEXT']
+            # Use Imagen 4 (billing enabled) for highest quality
+            response = client.models.generate_images(
+                model='imagen-4.0-generate-001',
+                prompt=full_prompt,
+                config=types.GenerateImagesConfig(
+                    number_of_images=1,
+                    aspect_ratio='16:9',
+                    safety_filter_level='BLOCK_LOW_AND_ABOVE',
+                    person_generation='ALLOW_ADULT'
                 )
             )
 
-            if hasattr(response, 'candidates') and response.candidates:
-                for part in response.candidates[0].content.parts:
-                    if hasattr(part, 'inline_data') and part.inline_data:
-                        with open(output_path, 'wb') as f:
-                            f.write(part.inline_data.data)
-                        print(f"  [OK] Generated: {output_path.name} ({len(part.inline_data.data):,} bytes)")
-                        return True
+            if response.generated_images:
+                image = response.generated_images[0]
+                with open(output_path, 'wb') as f:
+                    f.write(image.image.image_bytes)
+                print(f"  [OK] Generated: {output_path.name} ({len(image.image.image_bytes):,} bytes)")
+                return True
 
             print(f"  [WARN] No image returned for {output_path.name}")
 

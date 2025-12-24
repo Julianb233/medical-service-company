@@ -21,6 +21,7 @@ import {
 import { services, contactInfo } from "@/lib/content-data";
 import { cn } from "@/lib/utils";
 import { useReducedMotion } from "@/lib/animations";
+import { ServiceHeroCarousel } from "@/components/service-hero-carousel";
 
 const iconMap: Record<string, React.ElementType> = {
   home: Home,
@@ -29,6 +30,40 @@ const iconMap: Record<string, React.ElementType> = {
   "hand-holding-heart": HandHeart,
   stethoscope: Stethoscope,
   brain: Brain,
+};
+
+// Service-specific hero images
+const serviceHeroImages: Record<string, Array<{ src: string; alt: string }>> = {
+  "home-care": [
+    { src: "/images/services/home-care.jpg", alt: "Professional home care assistance" },
+    { src: "/images/hero/caregiver-caring.jpg", alt: "Caregiver providing compassionate care" },
+    { src: "/images/hero/happy-senior-home.jpg", alt: "Happy senior at home" },
+  ],
+  "personal-care": [
+    { src: "/images/services/personal-care.jpg", alt: "24-hour personal care" },
+    { src: "/images/hero/family-with-senior.jpg", alt: "Family with senior loved one" },
+    { src: "/images/hero/caregiver-caring.jpg", alt: "Round-the-clock care" },
+  ],
+  "respite-care": [
+    { src: "/images/services/respite-care.jpg", alt: "Respite care services" },
+    { src: "/images/hero/happy-senior-home.jpg", alt: "Quality respite care" },
+    { src: "/images/hero/caregiver-caring.jpg", alt: "Temporary relief care" },
+  ],
+  "hospice-support": [
+    { src: "/images/hero/caregiver-caring.jpg", alt: "Compassionate hospice support" },
+    { src: "/images/hero/family-with-senior.jpg", alt: "Family hospice care" },
+    { src: "/images/hero/happy-senior-home.jpg", alt: "Dignified end-of-life care" },
+  ],
+  "skilled-nursing": [
+    { src: "/images/services/skilled-nursing.jpg", alt: "Skilled nursing care" },
+    { src: "/images/hero/caregiver-caring.jpg", alt: "Professional nursing services" },
+    { src: "/images/hero/happy-senior-home.jpg", alt: "Expert medical care at home" },
+  ],
+  "specialty-services": [
+    { src: "/images/services/alzheimers-care.jpg", alt: "Alzheimer's and dementia care" },
+    { src: "/images/hero/caregiver-caring.jpg", alt: "Specialized care services" },
+    { src: "/images/hero/happy-senior-home.jpg", alt: "Expert specialty care" },
+  ],
 };
 
 const whyChooseUsItems = [
@@ -287,6 +322,13 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
   const otherServices = services.filter((s) => s.slug !== slug).slice(0, 3);
   const prefersReducedMotion = useReducedMotion();
 
+  // Get hero images for this service, fallback to generic hero images
+  const heroImages = serviceHeroImages[slug] || [
+    { src: "/images/hero/caregiver-caring.jpg", alt: "Professional care services" },
+    { src: "/images/hero/family-with-senior.jpg", alt: "Family care" },
+    { src: "/images/hero/happy-senior-home.jpg", alt: "Quality home care" },
+  ];
+
   const processSteps = [
     {
       number: 1,
@@ -307,8 +349,15 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-primary-teal text-white section-padding">
+      {/* Hero Carousel */}
+      <ServiceHeroCarousel
+        title={service.title}
+        description={service.shortDescription}
+        images={heroImages}
+      />
+
+      {/* Breadcrumb Navigation */}
+      <section className="bg-gray-50 py-4">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -317,40 +366,12 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
           >
             <Link
               href="/services"
-              className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
+              className="inline-flex items-center text-gray-600 hover:text-primary-teal transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Services
             </Link>
           </motion.div>
-
-          <motion.div
-            className="flex items-center gap-6 mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <motion.div
-              className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 15, delay: 0.2 }}
-            >
-              <Icon className="w-10 h-10 text-white" />
-            </motion.div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white">
-              {service.title}
-            </h1>
-          </motion.div>
-
-          <motion.p
-            className="text-xl text-white/90 max-w-3xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            {service.shortDescription}
-          </motion.p>
         </div>
       </section>
 

@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { locations } from "@/lib/content-data";
+import { locations, services } from "@/lib/content-data";
 import { subareas, getSubareaBySlug, getSubareasForLocation } from "@/lib/subareas-data";
 import SubareaPageClient from "./SubareaPageClient";
+import LocationServiceClient from "../../../locations/[slug]/[subarea]-service-backup/LocationServiceClient";
 
 interface SubareaPageProps {
   params: Promise<{
@@ -12,7 +13,7 @@ interface SubareaPageProps {
 }
 
 /**
- * Generate static paths for all subareas
+ * Generate static paths for all subareas AND location × service combinations
  * Required for static export with dynamic routes
  */
 export async function generateStaticParams() {
@@ -26,19 +27,135 @@ export async function generateStaticParams() {
     });
   });
 
+  // Generate params for all parent locations × services
+  locations.forEach((location) => {
+    services.forEach((service) => {
+      params.push({
+        slug: location.slug,
+        subarea: service.slug,
+      });
+    });
+  });
+
+  // Generate params for all subareas × services (e.g., /locations/downtown/home-care)
+  subareas.forEach((subarea) => {
+    services.forEach((service) => {
+      params.push({
+        slug: subarea.slug,
+        subarea: service.slug,
+      });
+    });
+  });
+
   return params;
 }
 
 /**
- * Generate metadata for each subarea page
+ * Generate metadata for each subarea OR location-service page
  * Optimized for SEO with local keywords and structured data
  */
 export async function generateMetadata({ params }: SubareaPageProps): Promise<Metadata> {
-  const { slug, subarea: subareaSlug } = await params;
+  const { slug, subarea: secondSlug } = await params;
 
-  // Find the location and subarea
+  // Check if secondSlug is a service
+  const service = services.find((s) => s.slug === secondSlug);
+
+  if (service) {
+    // This is a location × service page
+    const subarea = getSubareaBySlug(slug);
+    const location = subarea
+      ? locations.find((loc) => loc.slug === subarea.parentLocation)
+      : locations.find((loc) => loc.slug === slug);
+
+    if (!location || !service) {
+      return {
+        title: "Service Not Found | Happy Home Care",
+      };
+    }
+
+    const areaName = subarea ? subarea.name : location.name;
+    const zipCodes = subarea ? subarea.zipCodes : location.zipCodes;
+    const localNickname = subarea ? subarea.localNickname : location.region;
+
+    const keywords = [
+      `${service.title} ${areaName}`,
+      `${areaName} ${service.title}`,
+      `home health care ${areaName}`,
+      `${localNickname} ${service.title}`,
+      `senior care ${areaName}`,
+      `caregivers ${areaName}`,
+      `${service.title} near me`,
+      ...zipCodes.map((zip) => `${service.title} ${zip}`),
+    ];
+
+    if (subarea) {
+      const landmarkNames = subarea.landmarks.map((l) => l.name.toLowerCase());
+      keywords.push(
+        ...landmarkNames.map((name) => `${service.title} near ${name}`),
+        `${subarea.weather.climate} ${service.title}`,
+        ...subarea.localSlang.map((slang) => `${service.title} ${slang.term}`)
+      );
+    }
+
+    const title = subarea
+      ? `${service.title} in ${areaName} | ${subarea.localNickname} Senior Care`
+      : `${service.title} in ${areaName} | ${location.region} Home Health Care`;
+
+    const description = subarea
+      ? `Expert ${service.title.toLowerCase()} in ${areaName}. ${service.shortDescription} Serving ${zipCodes.join(", ")} with 24/7 professional care.`
+      : `Professional ${service.title.toLowerCase()} in ${areaName}. ${service.shortDescription} Serving ${location.region} with compassionate care.`;
+
+    const imageUrl = subarea
+      ? subarea.heroImageUrl
+      : `/images/services/${service.slug}-hero.jpg`;
+
+    return {
+      title,
+      description,
+      keywords,
+      openGraph: {
+        title,
+        description,
+        type: "website",
+        locale: "en_US",
+        siteName: "Happy Home Care",
+        images: [
+          {
+            url: imageUrl,
+            width: 1200,
+            height: 630,
+            alt: `${service.title} in ${areaName}`,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [imageUrl],
+      },
+      alternates: {
+        canonical: subarea
+          ? `/locations/${subarea.slug}/${service.slug}`
+          : `/locations/${slug}/${service.slug}`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
+    };
+  }
+
+  // This is a subarea page
   const location = locations.find((loc) => loc.slug === slug);
-  const subarea = getSubareaBySlug(subareaSlug);
+  const subarea = getSubareaBySlug(secondSlug);
 
   if (!location || !subarea) {
     return {
@@ -46,7 +163,6 @@ export async function generateMetadata({ params }: SubareaPageProps): Promise<Me
     };
   }
 
-  // Extract landmark names for keywords
   const landmarkNames = subarea.landmarks.map((l) => l.name.toLowerCase());
 
   return {
@@ -85,7 +201,7 @@ export async function generateMetadata({ params }: SubareaPageProps): Promise<Me
       images: [subarea.heroImageUrl],
     },
     alternates: {
-      canonical: `/locations/${slug}/${subareaSlug}`,
+      canonical: `/locations/${slug}/${secondSlug}`,
     },
     robots: {
       index: true,
@@ -102,15 +218,45 @@ export async function generateMetadata({ params }: SubareaPageProps): Promise<Me
 }
 
 /**
- * Subarea page server component
- * Handles data fetching and validation before rendering client component
+ * Dynamic page server component
+ * Handles both subarea pages AND location-service pages
  */
 export default async function SubareaPage({ params }: SubareaPageProps) {
-  const { slug, subarea: subareaSlug } = await params;
+  const { slug, subarea: secondSlug } = await params;
 
-  // Find the location and subarea
+  // Check if secondSlug is a service
+  const service = services.find((s) => s.slug === secondSlug);
+
+  if (service) {
+    // This is a location × service page
+    // Try to find as subarea first, then as parent location
+    const subarea = getSubareaBySlug(slug);
+    const location = subarea
+      ? locations.find((loc) => loc.slug === subarea.parentLocation)
+      : locations.find((loc) => loc.slug === slug);
+
+    if (!location || !service) {
+      notFound();
+    }
+
+    // Get related subareas for the location (for "other areas" section)
+    const relatedSubareas = getSubareasForLocation(location.slug).filter(
+      (area) => area.slug !== slug
+    );
+
+    return (
+      <LocationServiceClient
+        location={location}
+        service={service}
+        subarea={subarea}
+        relatedSubareas={relatedSubareas}
+      />
+    );
+  }
+
+  // This is a subarea page
   const location = locations.find((loc) => loc.slug === slug);
-  const subarea = getSubareaBySlug(subareaSlug);
+  const subarea = getSubareaBySlug(secondSlug);
 
   // Validate that the subarea belongs to the parent location
   if (!location || !subarea || subarea.parentLocation !== slug) {

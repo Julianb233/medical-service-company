@@ -19,10 +19,10 @@ export default function Footer() {
               <h3 className="text-xl font-bold">
                 <span className="text-white">Happy</span>
                 <span className="text-white">Home</span>
-                <span className="text-orange-light">Care</span>
+                <span className="text-white">Care</span>
               </h3>
             </div>
-            <p className="text-white/90 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               Providing compassionate, professional home health care services throughout San Diego County.
               Your trusted partner in quality care.
             </p>
@@ -68,12 +68,12 @@ export default function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="text-base font-bold mb-3 text-orange-light">Quick Links</h3>
+            <h3 className="text-base font-bold mb-3 text-white">Quick Links</h3>
             <ul className="space-y-1.5">
               <li>
                 <Link
                   href="/about"
-                  className="text-white/90 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-white transition-colors text-sm"
                 >
                   About Us
                 </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-white/90 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-white transition-colors text-sm"
                 >
                   Our Services
                 </Link>
@@ -89,7 +89,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/locations"
-                  className="text-white/90 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-white transition-colors text-sm"
                 >
                   Service Areas
                 </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/careers"
-                  className="text-white/90 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-white transition-colors text-sm"
                 >
                   Careers
                 </Link>
@@ -105,7 +105,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-white/90 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-white transition-colors text-sm"
                 >
                   Contact Us
                 </Link>
@@ -113,7 +113,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-white/90 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-white transition-colors text-sm"
                 >
                   Privacy Policy
                 </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-white/90 hover:text-white transition-colors text-sm"
+                  className="text-white hover:text-white transition-colors text-sm"
                 >
                   Terms of Service
                 </Link>
@@ -131,13 +131,13 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="text-base font-bold mb-3 text-orange-light">Our Services</h3>
+            <h3 className="text-base font-bold mb-3 text-white">Our Services</h3>
             <ul className="space-y-1.5">
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="text-white/90 hover:text-white transition-colors text-sm"
+                    className="text-white hover:text-white transition-colors text-sm"
                   >
                     {service.title}
                   </Link>
@@ -148,13 +148,13 @@ export default function Footer() {
 
           {/* Locations & Contact Column */}
           <div>
-            <h3 className="text-base font-bold mb-3 text-orange-light">Service Locations</h3>
+            <h3 className="text-base font-bold mb-3 text-white">Service Locations</h3>
             <ul className="space-y-1.5 mb-4">
               {firstSixLocations.map((location) => (
                 <li key={location.slug}>
                   <Link
                     href={`/locations/${location.slug}`}
-                    className="text-white/90 hover:text-white transition-colors text-sm"
+                    className="text-white hover:text-white transition-colors text-sm"
                   >
                     {location.name}
                   </Link>
@@ -162,14 +162,14 @@ export default function Footer() {
               ))}
             </ul>
 
-            <h3 className="text-base font-bold mb-3 text-orange-light">Contact Us</h3>
+            <h3 className="text-base font-bold mb-3 text-white">Contact Us</h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href={`tel:${contactInfo.phone}`}
                   className="flex items-start space-x-2 text-white hover:text-white transition-colors group"
                 >
-                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-orange-light" />
+                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-white" />
                   <span className="text-sm">{contactInfo.phone}</span>
                 </a>
               </li>
@@ -178,7 +178,7 @@ export default function Footer() {
                   href={`mailto:${contactInfo.email}`}
                   className="flex items-start space-x-2 text-white hover:text-white transition-colors group"
                 >
-                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-orange-light" />
+                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-white" />
                   <span className="text-sm break-all">{contactInfo.email}</span>
                 </a>
               </li>
@@ -210,19 +210,19 @@ export default function Footer() {
             <div className="flex items-center space-x-4">
               <Link
                 href="/privacy"
-                className="text-white/90 hover:text-white transition-colors text-xs"
+                className="text-white hover:text-white transition-colors text-xs"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="text-white/90 hover:text-white transition-colors text-xs"
+                className="text-white hover:text-white transition-colors text-xs"
               >
                 Terms
               </Link>
               <Link
                 href="/accessibility"
-                className="text-white/90 hover:text-white transition-colors text-xs"
+                className="text-white hover:text-white transition-colors text-xs"
               >
                 Accessibility
               </Link>

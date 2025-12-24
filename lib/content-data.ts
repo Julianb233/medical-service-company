@@ -335,6 +335,7 @@ export const navigation = [
     href: "/services",
     children: services.map((s) => ({ name: s.title, href: `/services/${s.slug}` })),
   },
+  { name: "Supplies", href: "/supplies" },
   {
     name: "Locations",
     href: "/locations",
