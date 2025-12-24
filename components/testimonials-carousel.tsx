@@ -283,115 +283,115 @@ function TestimonialCard({
 
       {/* Star Rating with Reveal Animation */}
       <div className="flex items-center gap-1 mb-6 relative z-10">
-        <AnimatePresence mode="wait">
-          {isActive && testimonial.rating && (
-            <motion.div
-              className="flex gap-1"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{
-                duration: prefersReducedMotion ? 0.01 : durations.normal,
-                staggerChildren: prefersReducedMotion ? 0 : 0.05,
-              }}
-            >
-              {[...Array(testimonial.rating)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0, rotate: -180 }}
-                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                  transition={{
-                    duration: prefersReducedMotion ? 0.01 : durations.normal,
-                    delay: prefersReducedMotion ? 0 : i * 0.05,
-                    ease: easings.bounce,
-                  }}
-                >
-                  <Star
-                    size={20}
-                    className="text-primary-orange fill-current"
-                    aria-hidden="true"
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {testimonial.rating && (
+          <motion.div
+            className="flex gap-1"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{
+              opacity: isActive ? 1 : 0.7,
+              y: 0
+            }}
+            transition={{
+              duration: prefersReducedMotion ? 0.01 : durations.normal,
+              staggerChildren: prefersReducedMotion ? 0 : 0.05,
+            }}
+          >
+            {[...Array(testimonial.rating)].map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                animate={{
+                  opacity: 1,
+                  scale: isActive ? 1 : 0.9,
+                  rotate: 0
+                }}
+                transition={{
+                  duration: prefersReducedMotion ? 0.01 : durations.normal,
+                  delay: prefersReducedMotion ? 0 : i * 0.05,
+                  ease: easings.bounce,
+                }}
+              >
+                <Star
+                  size={20}
+                  className="text-primary-orange fill-current"
+                  aria-hidden="true"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
         <span className="sr-only">{testimonial.rating} out of 5 stars</span>
       </div>
 
       {/* Quote Text with Fade-in Animation */}
       <blockquote className="relative z-10 flex-grow">
-        <AnimatePresence mode="wait">
-          {isActive && (
-            <motion.p
-              className="text-lg md:text-xl text-gray-900 font-medium leading-relaxed mb-6 italic"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{
-                duration: prefersReducedMotion ? 0.01 : durations.slow,
-                delay: prefersReducedMotion ? 0 : 0.1,
-                ease: easings.smooth,
-              }}
-            >
-              &ldquo;{testimonial.quote}&rdquo;
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <motion.p
+          className="text-lg md:text-xl text-gray-900 font-medium leading-relaxed mb-6 italic"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: isActive ? 1 : 0.6,
+            y: 0
+          }}
+          transition={{
+            duration: prefersReducedMotion ? 0.01 : durations.slow,
+            delay: prefersReducedMotion ? 0 : 0.1,
+            ease: easings.smooth,
+          }}
+        >
+          &ldquo;{testimonial.quote}&rdquo;
+        </motion.p>
       </blockquote>
 
       {/* Author Info with Avatar and Slide-up Animation */}
-      <AnimatePresence mode="wait">
-        {isActive && (
-          <motion.div
-            className="flex items-center gap-4 pt-6 border-t border-gray-200 relative z-10"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{
-              duration: prefersReducedMotion ? 0.01 : durations.normal,
-              delay: prefersReducedMotion ? 0 : 0.2,
-              ease: easings.spring,
-            }}
-          >
-            {/* Avatar */}
-            {testimonial.avatar && (
-              <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-primary-teal/20">
-                <ImagePresets.Testimonial
-                  src={testimonial.avatar}
-                  alt={`${testimonial.author} - ${testimonial.role}`}
-                  className="rounded-full"
-                />
-              </div>
-            )}
-
-            {/* Author Details */}
-            <div className="flex-grow min-w-0">
-              <p className="font-semibold text-gray-900 text-lg truncate">
-                {testimonial.author}
-              </p>
-              <p className="text-gray-600 text-sm truncate">
-                {testimonial.role}
-              </p>
-              <p className="text-primary-teal font-medium text-sm flex items-center gap-1 mt-1">
-                <svg
-                  className="w-4 h-4 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  aria-hidden="true"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-                <span className="truncate">{testimonial.location}</span>
-              </p>
-            </div>
-          </motion.div>
+      <motion.div
+        className="flex items-center gap-4 pt-6 border-t border-gray-200 relative z-10"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{
+          opacity: isActive ? 1 : 0.6,
+          y: 0
+        }}
+        transition={{
+          duration: prefersReducedMotion ? 0.01 : durations.normal,
+          delay: prefersReducedMotion ? 0 : 0.2,
+          ease: easings.spring,
+        }}
+      >
+        {/* Avatar */}
+        {testimonial.avatar && (
+          <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-primary-teal/20">
+            <ImagePresets.Testimonial
+              src={testimonial.avatar}
+              alt={`${testimonial.author} - ${testimonial.role}`}
+              className="rounded-full"
+            />
+          </div>
         )}
-      </AnimatePresence>
+
+        {/* Author Details */}
+        <div className="flex-grow min-w-0">
+          <p className="font-semibold text-gray-900 text-lg truncate">
+            {testimonial.author}
+          </p>
+          <p className="text-gray-600 text-sm truncate">
+            {testimonial.role}
+          </p>
+          <p className="text-primary-teal font-medium text-sm flex items-center gap-1 mt-1">
+            <svg
+              className="w-4 h-4 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span className="truncate">{testimonial.location}</span>
+          </p>
+        </div>
+      </motion.div>
 
       {/* Decorative Gradient Overlay for Depth */}
       <div

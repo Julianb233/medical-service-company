@@ -175,7 +175,7 @@ export function HeroSection() {
           variants={heroSubtitleReveal}
           initial="hidden"
           animate="visible"
-          className="text-sm sm:text-base uppercase tracking-widest mb-4 text-primary-orange font-semibold"
+          className="text-xs sm:text-sm md:text-base uppercase tracking-wider sm:tracking-widest mb-3 sm:mb-4 text-primary-orange font-semibold"
         >
           California Home Care You Can Trust
         </motion.p>
@@ -183,9 +183,9 @@ export function HeroSection() {
         {/* Main headline with word-by-word reveal */}
         <h1
           className={cn(
-            "font-accent font-bold tracking-tight mb-6",
-            "text-4xl sm:text-5xl md:text-6xl lg:text-7xl",
-            "max-w-5xl mx-auto"
+            "font-accent font-bold tracking-tight mb-4 sm:mb-6",
+            "text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+            "max-w-5xl mx-auto leading-tight"
           )}
           style={{ perspective: "1000px" }}
         >
@@ -196,7 +196,7 @@ export function HeroSection() {
               variants={wordReveal}
               initial="hidden"
               animate="visible"
-              className="inline-block mr-3 md:mr-4"
+              className="inline-block mr-2 sm:mr-3 md:mr-4"
               style={{ transformStyle: "preserve-3d" }}
             >
               {word}
@@ -210,9 +210,9 @@ export function HeroSection() {
           initial="hidden"
           animate="visible"
           className={cn(
-            "text-lg sm:text-xl md:text-2xl mb-10",
+            "text-sm sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 md:mb-10",
             "max-w-3xl mx-auto leading-relaxed",
-            "text-white font-medium"
+            "text-white font-medium px-2"
           )}
         >
           The best solutions for affordable and trustworthy home care. Free in-home needs evaluation available.
@@ -223,7 +223,7 @@ export function HeroSection() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-10 md:mb-12"
         >
           <motion.div variants={itemVariants}>
             <Link
@@ -231,12 +231,12 @@ export function HeroSection() {
               className={cn(
                 "block bg-primary-orange hover:bg-orange-dark",
                 "text-white font-semibold",
-                "px-8 py-4 rounded-lg",
+                "px-6 py-3 sm:px-8 sm:py-4 rounded-lg",
                 "transition-all duration-300",
-                "transform hover:scale-105 hover:shadow-2xl",
-                "text-base sm:text-lg",
+                "transform hover:scale-105 hover:shadow-2xl active:scale-95",
+                "text-sm sm:text-base md:text-lg",
                 "w-full sm:w-auto text-center",
-                "min-w-[200px]",
+                "min-w-[180px] sm:min-w-[200px]",
                 "relative overflow-hidden group"
               )}
             >
@@ -264,12 +264,12 @@ export function HeroSection() {
               className={cn(
                 "block border-2 border-white text-white",
                 "hover:bg-white hover:text-primary-teal",
-                "font-semibold px-8 py-4 rounded-lg",
+                "font-semibold px-6 py-3 sm:px-8 sm:py-4 rounded-lg",
                 "transition-all duration-300",
-                "transform hover:scale-105",
-                "text-base sm:text-lg",
+                "transform hover:scale-105 active:scale-95",
+                "text-sm sm:text-base md:text-lg",
                 "w-full sm:w-auto text-center",
-                "min-w-[200px]"
+                "min-w-[180px] sm:min-w-[200px]"
               )}
             >
               Our Services
@@ -282,19 +282,19 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2, ease: easings.spring }}
-          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8"
+          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8"
         >
           {/* Licensed badge */}
           <motion.div
             animate={floatingAnimation}
-            className="flex flex-col sm:flex-row items-center gap-2 text-base sm:text-lg text-white font-semibold"
+            className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
             >
               <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-primary-orange"
+                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-orange"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -313,14 +313,14 @@ export function HeroSection() {
           {/* Insured badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } } : undefined}
-            className="flex flex-col sm:flex-row items-center gap-2 text-base sm:text-lg text-white font-semibold"
+            className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-teal/20 border-2 border-white flex items-center justify-center mx-auto"
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-primary-teal/20 border-2 border-white flex items-center justify-center mx-auto"
             >
               <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-white"
+                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -339,14 +339,14 @@ export function HeroSection() {
           {/* 24/7 Support badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } } : undefined}
-            className="flex flex-col sm:flex-row items-center gap-2 text-base sm:text-lg text-white font-semibold"
+            className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
-              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
             >
               <svg
-                className="w-5 h-5 sm:w-6 sm:h-6 text-primary-orange"
+                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-orange"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -369,19 +369,19 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.4 }}
-        className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-8 sm:bottom-12 md:bottom-16 lg:bottom-20 left-1/2 -translate-x-1/2 z-20"
       >
-        <div className="flex gap-3">
+        <div className="flex gap-2 sm:gap-3">
           {HERO_IMAGES.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentImageIndex(index)}
               className={cn(
                 "transition-all duration-300",
-                "hover:scale-110",
+                "hover:scale-110 active:scale-95",
                 currentImageIndex === index
-                  ? "w-8 h-2 bg-primary-orange rounded-full"
-                  : "w-2 h-2 bg-white/60 rounded-full hover:bg-white/80"
+                  ? "w-6 sm:w-8 h-1.5 sm:h-2 bg-primary-orange rounded-full"
+                  : "w-1.5 sm:w-2 h-1.5 sm:h-2 bg-white/60 rounded-full hover:bg-white/80 active:bg-white"
               )}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -389,21 +389,24 @@ export function HeroSection() {
         </div>
       </motion.div>
 
-      {/* Scroll indicator with enhanced animation */}
+      {/* Scroll indicator with enhanced animation - visible on all devices */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5, ease: easings.spring }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:block"
+        className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-20"
       >
         <motion.div
-          animate={prefersReducedMotion ? {} : { y: [0, 10, 0] }}
+          animate={prefersReducedMotion ? {} : { y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           className="text-white text-center"
         >
-          <div className="mb-2 text-sm uppercase tracking-wider opacity-80">Scroll Down</div>
+          <div className="mb-1 sm:mb-2 text-xs sm:text-sm uppercase tracking-wider opacity-80 font-medium">
+            <span className="hidden sm:inline">Scroll Down</span>
+            <span className="sm:hidden">Swipe to Explore</span>
+          </div>
           <motion.svg
-            className="w-6 h-6 mx-auto"
+            className="w-5 h-5 sm:w-6 sm:h-6 mx-auto"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

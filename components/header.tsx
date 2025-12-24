@@ -76,8 +76,8 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50",
         scrolled
-          ? "bg-[#07162b] shadow-lg"
-          : "bg-[#07162b]/95 backdrop-blur-sm"
+          ? "bg-teal-600 shadow-lg"
+          : "bg-teal-600/95 backdrop-blur-sm"
       )}
       style={{
         transition: scrolled
@@ -134,7 +134,7 @@ export default function Header() {
                           initial="hidden"
                           animate="visible"
                           exit="exit"
-                          className="absolute top-full left-0 mt-2 w-56 bg-[#07162b] rounded-lg shadow-2xl overflow-hidden border border-white/10"
+                          className="absolute top-full left-0 mt-2 w-56 bg-teal-600 rounded-lg shadow-2xl overflow-hidden border border-white/10"
                           onMouseEnter={() => setOpenDropdown(item.name)}
                           onMouseLeave={() => setOpenDropdown(null)}
                         >
@@ -262,7 +262,7 @@ export default function Header() {
                 duration: prefersReducedMotion ? durations.instant : durations.moderate,
                 ease: easings.dramatic
               }}
-              className="fixed top-20 right-0 bottom-0 w-80 bg-[#07162b] shadow-2xl lg:hidden overflow-y-auto border-l border-white/10"
+              className="fixed top-20 right-0 bottom-0 w-80 bg-teal-600 shadow-2xl lg:hidden overflow-y-auto border-l border-white/10"
             >
               <motion.div
                 variants={staggerContainer}
