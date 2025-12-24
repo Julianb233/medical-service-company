@@ -30,7 +30,7 @@ export default function AppMockupsShowcase() {
   const CurrentComponent = screens[currentScreen].component;
 
   return (
-    <div className="w-full bg-gradient-to-br from-gray-900 via-teal-900 to-gray-900 py-16 px-4">
+    <div className="w-full bg-gradient-to-br from-[#07162b] via-[#0b1f3b] to-[#07162b] py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -55,7 +55,9 @@ export default function AppMockupsShowcase() {
 
           {/* Phone Mockup */}
           <div className="relative">
-            <CurrentComponent />
+            <div className="origin-top transform scale-[0.82] sm:scale-100">
+              <CurrentComponent />
+            </div>
           </div>
 
           {/* Navigation - Right */}

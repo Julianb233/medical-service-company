@@ -229,7 +229,7 @@ export function TestimonialsCarousel() {
       </div>
 
       {/* Auto-play Indicator */}
-      <div className="text-center mt-4 text-sm text-gray-600">
+      <div className="text-center mt-4 text-sm text-white/70">
         {isHovered ? (
           <span>Paused</span>
         ) : prefersReducedMotion ? (

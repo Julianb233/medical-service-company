@@ -35,7 +35,7 @@ function SuppliesContent() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with gradient-teal background */}
-      <section className="bg-gradient-to-br from-primary-teal to-teal-dark text-white py-16 md:py-24">
+      <section className="bg-brand-dark text-white py-14 md:py-20">
         <div className="container-custom">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -117,7 +117,7 @@ function SuppliesContent() {
       </section>
 
       {/* Main Content Area with Sidebar Layout */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-brand-dark section-dark">
         <div className="container-custom">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left: Main Content (70% on desktop) */}
@@ -186,7 +186,7 @@ function SuppliesContent() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="text-center text-gray-600 mt-8 text-sm"
+                className="text-center text-white/80 mt-8 text-sm"
               >
                 Showing {filteredProducts.length} of {products.length} products
               </motion.p>

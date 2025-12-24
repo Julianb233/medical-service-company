@@ -124,7 +124,7 @@ export default function AboutPage() {
       {/* Hero Section with Parallax */}
       <section
         ref={heroRef}
-        className="relative bg-primary-teal text-white section-padding overflow-hidden"
+        className="relative bg-brand-dark text-white section-padding overflow-hidden"
       >
         {/* Parallax background elements */}
         <motion.div
@@ -319,7 +319,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section with Animated Counters */}
-      <section className="section-padding bg-primary-teal text-white">
+      <section className="section-padding bg-brand-dark text-white">
         <div className="container-custom">
           <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"

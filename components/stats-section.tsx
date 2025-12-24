@@ -62,10 +62,10 @@ export function StatsSection() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="section-padding bg-primary-teal relative overflow-hidden">
+    <section className="section-padding bg-brand-dark relative overflow-hidden">
       {/* Animated background gradient */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-teal-dark/20 to-transparent"
+        className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"
         animate={prefersReducedMotion ? {} : {
           opacity: [0.3, 0.5, 0.3],
         }}
@@ -87,7 +87,7 @@ export function StatsSection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-accent font-bold text-white mb-4">
             Trusted by San Diego Families
           </h2>
-          <p className="text-lg sm:text-xl text-teal-light max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
             Decades of experience delivering exceptional home health care
           </p>
         </motion.div>

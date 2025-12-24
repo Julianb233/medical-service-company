@@ -191,7 +191,7 @@ export function ServicesGrid() {
   });
 
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-brand-dark section-dark">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -201,10 +201,10 @@ export function ServicesGrid() {
           transition={{ duration: 0.6, ease: easings.spring }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-accent font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-accent font-bold text-white mb-4">
             Our Services
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
             Comprehensive home health care solutions tailored to your unique needs
           </p>
         </motion.div>

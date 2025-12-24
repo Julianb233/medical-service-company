@@ -370,7 +370,7 @@ export default function ComingSoonClient() {
       {/* Hero Section with Parallax */}
       <section
         ref={heroRef}
-        className="relative bg-gradient-to-br from-primary-teal via-teal-600 to-teal-700 text-white section-padding overflow-hidden"
+        className="relative bg-brand-dark text-white section-padding overflow-hidden"
       >
         {/* Parallax background elements */}
         <motion.div
@@ -443,7 +443,7 @@ export default function ComingSoonClient() {
       </section>
 
       {/* Features Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-brand-dark section-dark">
         <div className="container-custom">
           <motion.div
             className="text-center mb-12"
@@ -453,13 +453,13 @@ export default function ComingSoonClient() {
             variants={staggerContainer}
           >
             <motion.h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              className="text-3xl md:text-4xl font-bold text-white mb-4"
               variants={fadeInUp}
             >
               Everything You Need
             </motion.h2>
             <motion.p
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              className="text-xl text-white/80 max-w-2xl mx-auto"
               variants={fadeInUp}
             >
               Powerful features designed to keep you and your loved ones connected

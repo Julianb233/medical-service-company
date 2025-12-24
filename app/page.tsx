@@ -3,6 +3,7 @@ import { ServicesGrid } from "@/components/services-grid";
 import { StatsSection } from "@/components/stats-section";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import { CTASection } from "@/components/cta-section";
+import AppMockupsShowcase from "@/components/app-mockups/AppMockupsShowcase";
 
 export default function HomePage() {
   return (
@@ -10,15 +11,18 @@ export default function HomePage() {
       <HeroSection />
       <ServicesGrid />
       <StatsSection />
+
+      {/* App Highlight / User Screens */}
+      <AppMockupsShowcase />
       
       {/* Testimonials Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-brand-dark section-dark">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
               Hear from families who trust us with their loved ones&apos; care
             </p>
           </div>

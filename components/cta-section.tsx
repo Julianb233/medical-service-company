@@ -12,7 +12,7 @@ export function CTASection() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="section-padding bg-primary-teal relative overflow-hidden">
+    <section className="section-padding bg-brand-dark relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div

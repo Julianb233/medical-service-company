@@ -343,4 +343,5 @@ export const navigation = [
   },
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
+  { name: "New App", href: "/app" },
 ];
