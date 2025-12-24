@@ -5,23 +5,41 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
+    "build:cloudflare": "npx @opennextjs/cloudflare build",
+    "preview": "wrangler pages dev",
+    "deploy": "wrangler pages deploy",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "scrape": "tsx scripts/scrape-content.ts"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@mendable/firecrawl-js": "^4.9.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.23.26",
+    "lenis": "^1.3.16",
+    "lucide-react": "^0.562.0",
+    "next": "15.5.9",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.9"
+    "react-hook-form": "^7.69.0",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.2.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@opennextjs/cloudflare": "^1.14.7",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.5.9",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "wrangler": "^4.56.0"
   }
 }
