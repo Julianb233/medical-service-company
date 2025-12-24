@@ -85,42 +85,49 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
         </div>
 
         {/* Icon with rotation animation */}
-        <motion.div
-          className={cn(
-            "inline-flex items-center justify-center",
-            "w-14 h-14 md:w-16 md:h-16 mb-5",
-            "rounded-lg",
-            "bg-gradient-to-br from-primary-teal to-teal-dark",
-            "text-white",
-            "relative z-10"
-          )}
-          initial="rest"
-          whileHover="hover"
-          variants={iconHover}
-        >
-          <IconComponent className="w-7 h-7 md:w-8 md:h-8" />
-        </motion.div>
+        <div className="flex justify-center sm:justify-start">
+          <motion.div
+            className={cn(
+              "inline-flex items-center justify-center",
+              "w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mb-5",
+              "rounded-lg",
+              "bg-gradient-to-br from-primary-teal to-teal-dark",
+              "text-white",
+              "relative z-10"
+            )}
+            initial="rest"
+            whileHover="hover"
+            variants={iconHover}
+          >
+            <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+          </motion.div>
+        </div>
 
         {/* Title */}
-        <h3 className="text-xl md:text-2xl font-accent font-bold text-gray-900 mb-3 relative z-10">
+        <h3 className="text-xl md:text-2xl font-accent font-bold text-gray-900 mb-3 relative z-10 text-center sm:text-left">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-4 relative z-10">
+        <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-4 relative z-10 text-center sm:text-left">
           {service.shortDescription}
         </p>
 
         {/* Learn More Link */}
         <div
           className={cn(
-            "inline-flex items-center gap-2",
-            "text-primary-teal font-semibold text-sm md:text-base",
-            "transition-all duration-300",
-            "group-hover:gap-3 group-hover:text-teal-dark",
+            "flex justify-center sm:justify-start",
             "relative z-10"
           )}
         >
+          <div
+            className={cn(
+              "inline-flex items-center gap-2",
+              "text-primary-teal font-semibold text-sm md:text-base",
+              "transition-all duration-300",
+              "group-hover:gap-3 group-hover:text-teal-dark"
+            )}
+          >
           <span>Learn More</span>
           <motion.svg
             className="w-4 h-4"
@@ -140,6 +147,7 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
               d="M9 5l7 7-7 7"
             />
           </motion.svg>
+          </div>
         </div>
 
         {/* Hover accent border with gradient */}

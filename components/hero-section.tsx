@@ -282,19 +282,19 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2, ease: easings.spring }}
-          className="flex flex-wrap justify-center items-center gap-6 sm:gap-8"
+          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8"
         >
           {/* Licensed badge */}
           <motion.div
             animate={floatingAnimation}
-            className="flex items-center gap-2 text-sm sm:text-base text-white font-semibold"
+            className="flex flex-col sm:flex-row items-center gap-2 text-base sm:text-lg text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
-              className="w-12 h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
             >
               <svg
-                className="w-6 h-6 text-primary-orange"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-primary-orange"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -307,20 +307,20 @@ export function HeroSection() {
                 />
               </svg>
             </motion.div>
-            <span className="font-semibold">CA Licensed</span>
+            <span className="font-semibold text-center">CA Licensed</span>
           </motion.div>
 
           {/* Insured badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } } : undefined}
-            className="flex items-center gap-2 text-sm sm:text-base text-white font-semibold"
+            className="flex flex-col sm:flex-row items-center gap-2 text-base sm:text-lg text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
-              className="w-12 h-12 rounded-full bg-primary-teal/20 border-2 border-white flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-teal/20 border-2 border-white flex items-center justify-center mx-auto"
             >
               <svg
-                className="w-6 h-6 text-white"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -333,20 +333,20 @@ export function HeroSection() {
                 />
               </svg>
             </motion.div>
-            <span className="font-semibold">Fully Insured</span>
+            <span className="font-semibold text-center">Fully Insured</span>
           </motion.div>
 
           {/* 24/7 Support badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } } : undefined}
-            className="flex items-center gap-2 text-sm sm:text-base text-white font-semibold"
+            className="flex flex-col sm:flex-row items-center gap-2 text-base sm:text-lg text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
-              className="w-12 h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
             >
               <svg
-                className="w-6 h-6 text-primary-orange"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-primary-orange"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -359,7 +359,7 @@ export function HeroSection() {
                 />
               </svg>
             </motion.div>
-            <span className="font-semibold">24/7 Support</span>
+            <span className="font-semibold text-center">24/7 Support</span>
           </motion.div>
         </motion.div>
       </div>
