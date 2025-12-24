@@ -153,41 +153,6 @@ a:hover {
   color: var(--color-text-secondary);
 }
 
-/* Dark / navy theme helpers */
-.bg-brand-dark {
-  background-color: var(--color-navy-950);
-}
-
-.bg-brand-dark-gradient {
-  background: var(--gradient-navy);
-}
-
-.section-dark {
-  background-color: var(--color-navy-950);
-  color: var(--color-text-inverse);
-}
-
-.section-dark h1,
-.section-dark h2,
-.section-dark h3,
-.section-dark h4,
-.section-dark h5,
-.section-dark h6 {
-  color: var(--color-text-inverse);
-}
-
-.section-dark p {
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.section-dark a {
-  color: var(--color-text-inverse);
-}
-
-.section-dark a:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
-
 /* Background colors */
 .bg-primary-orange {
   background-color: var(--color-orange-500);
@@ -228,10 +193,6 @@ a:hover {
 
 .gradient-hero {
   background: var(--gradient-hero);
-}
-
-.gradient-navy {
-  background: var(--gradient-navy);
 }
 
 /* Healthcare-themed overlays */

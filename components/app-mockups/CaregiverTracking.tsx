@@ -25,12 +25,12 @@ export default function CaregiverTracking() {
       {/* Map Background */}
       <div className="pt-11 h-full relative">
         {/* Simulated Map */}
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-gray-50 to-blue-50">
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-warm-50 to-orange-50">
           {/* Map Grid Pattern */}
           <div
             className="absolute inset-0 opacity-20"
             style={{
-              backgroundImage: 'linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(rgba(0,116,134,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,134,0.18) 1px, transparent 1px)',
               backgroundSize: '40px 40px'
             }}
           />
