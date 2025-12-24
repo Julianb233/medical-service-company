@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Home Health Care Locations Across San Diego County",
   description:
-    "Medical Service Company serves 15+ locations across San Diego County including La Jolla, Del Mar, Encinitas, Carlsbad, Oceanside, Escondido, Chula Vista, and more. Find home health care services near you.",
+    "Happy Home Care serves 15+ locations across San Diego County including La Jolla, Del Mar, Encinitas, Carlsbad, Oceanside, Escondido, Chula Vista, and more. Find home health care services near you.",
   keywords: [
     "San Diego home health care",
     "La Jolla home care",

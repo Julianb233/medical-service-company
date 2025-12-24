@@ -7,7 +7,7 @@ import { contactInfo, locations } from "@/lib/content-data";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Medical Service Company for home health care services in San Diego County. Call us 24/7 or schedule a free consultation online.",
+    "Get in touch with Happy Home Care for home health care services in San Diego County. Call us 24/7 or schedule a free consultation online.",
 };
 
 export default function ContactPage() {
@@ -174,7 +174,7 @@ export default function ContactPage() {
             "@type": "ContactPage",
             mainEntity: {
               "@type": "MedicalBusiness",
-              name: "Medical Service Company",
+              name: "Happy Home Care",
               telephone: contactInfo.phone,
               email: contactInfo.email,
               address: {

@@ -44,7 +44,7 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-              About Medical Service Company
+              About Happy Home Care
             </h1>
             <p className="text-xl text-white/90">
               Licensed and accredited provider of affordable and trustworthy home care
@@ -65,7 +65,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Medical Service Company provides the best solutions for affordable
+                  Happy Home Care provides the best solutions for affordable
                   and trustworthy home care in San Diego County. We are licensed and
                   accredited by the Accreditation Commission for Health Care (ACHC),
                   a voluntary extra step that demonstrates our commitment to meeting
@@ -166,7 +166,7 @@ export default function AboutPage() {
       <section className="section-padding">
         <div className="container-custom text-center">
           <h2 className="text-3xl font-bold mb-6">
-            Join the Medical Service Company Family
+            Join the Happy Home Care Family
           </h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             Whether you&apos;re looking for care for a loved one or a career in

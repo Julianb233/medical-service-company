@@ -14,7 +14,7 @@ import { contactInfo } from "@/lib/content-data";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join the Medical Service Company team. We're hiring compassionate caregivers, nurses, and healthcare professionals in San Diego County.",
+    "Join the Happy Home Care team. We're hiring compassionate caregivers, nurses, and healthcare professionals in San Diego County.",
 };
 
 const benefits = [
@@ -258,7 +258,7 @@ export default function CareersPage() {
             "@type": "JobPosting",
             hiringOrganization: {
               "@type": "MedicalBusiness",
-              name: "Medical Service Company",
+              name: "Happy Home Care",
               sameAs: "https://medicalservicecompany.com",
             },
             jobLocation: {

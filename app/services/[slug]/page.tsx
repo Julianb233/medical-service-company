@@ -51,7 +51,7 @@ export async function generateMetadata({
     title: `${service.title} Services`,
     description: service.fullDescription,
     openGraph: {
-      title: `${service.title} Services | Medical Service Company`,
+      title: `${service.title} Services | Happy Home Care`,
       description: service.shortDescription,
     },
   };
@@ -413,7 +413,7 @@ export default async function ServicePage({
             description: service.fullDescription,
             provider: {
               "@type": "MedicalBusiness",
-              name: "Medical Service Company",
+              name: "Happy Home Care",
               telephone: contactInfo.phone,
               address: {
                 "@type": "PostalAddress",

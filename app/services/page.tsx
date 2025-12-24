@@ -86,7 +86,7 @@ export default function ServicesPage() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Why Choose Medical Service Company?
+            Why Choose Happy Home Care?
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

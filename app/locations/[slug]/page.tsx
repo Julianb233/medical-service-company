@@ -32,7 +32,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `Home Health Care in ${location.name} | Medical Service Company`,
+    title: `Home Health Care in ${location.name} | Happy Home Care`,
     description: `Compassionate home health care services in ${location.name}, ${location.region}. Serving ${location.neighborhoods.join(", ")}. Skilled nursing, personal care, respite care, and more. Call (619) 555-0100.`,
     keywords: [
       `home health care ${location.name}`,
@@ -70,7 +70,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `https://medicalservicecompany.com/locations/${location.slug}`,
-    name: `Medical Service Company - ${location.name}`,
+    name: `Happy Home Care - ${location.name}`,
     description: location.description,
     url: `https://medicalservicecompany.com/locations/${location.slug}`,
     telephone: contactInfo.phone,

@@ -16,8 +16,8 @@ export default function Footer() {
           {/* Company Info Column */}
           <div className="space-y-4">
             <div>
-              <h3 className="text-2xl font-bold mb-1">Medical Service</h3>
-              <h4 className="text-xl font-semibold text-orange-light">Company</h4>
+              <h3 className="text-2xl font-bold mb-1">Happy Home</h3>
+              <h4 className="text-xl font-semibold text-orange-light">Care</h4>
             </div>
             <p className="text-teal-light text-sm leading-relaxed">
               Providing compassionate, professional home health care services throughout San Diego County.
@@ -202,7 +202,7 @@ export default function Footer() {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p className="text-teal-light text-sm text-center md:text-left">
-              &copy; {currentYear} Medical Service Company. All rights reserved.
+              &copy; {currentYear} Happy Home Care. All rights reserved.
             </p>
             <div className="flex items-center space-x-6">
               <Link

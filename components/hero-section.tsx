@@ -44,7 +44,7 @@ export function HeroSection() {
             "max-w-5xl mx-auto"
           )}
         >
-          San Diego &amp; Los Angeles Home Health Care
+          San Diego & Los Angeles Home Health Care
         </motion.h1>
 
         <motion.p
