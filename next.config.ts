@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
+  // Vercel handles images natively, no need for static export
   images: {
-    unoptimized: true,
+    remotePatterns: [],
   },
 };
 
