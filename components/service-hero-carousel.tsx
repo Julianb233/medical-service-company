@@ -51,7 +51,7 @@ export function ServiceHeroCarousel({
       };
 
   return (
-    <section className="relative h-[55svh] sm:h-[50vh] min-h-[340px] sm:min-h-[400px] max-h-[640px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[55svh] sm:h-[50vh] min-h-[340px] sm:min-h-[400px] max-h-[640px] flex items-end sm:items-center justify-center overflow-hidden pb-10 sm:pb-0">
       {/* Carousel Background Images */}
       <div className="absolute inset-0">
         <AnimatePresence mode="sync">
@@ -73,8 +73,8 @@ export function ServiceHeroCarousel({
               animate={kenBurnsAnimation}
             />
 
-            {/* Lighter overlay so photos stay visible */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/55 via-primary-teal/45 to-primary-teal/40" />
+            {/* Lighter overlay: mostly clear at top, stronger behind text */}
+            <div className="absolute inset-0 bg-gradient-to-t from-teal-900/55 via-primary-teal/25 to-transparent" />
           </motion.div>
         </AnimatePresence>
       </div>

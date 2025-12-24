@@ -129,7 +129,7 @@ export function HeroSection() {
       };
 
   return (
-    <section className="relative h-[78svh] sm:h-[70vh] min-h-[520px] sm:min-h-[600px] max-h-[820px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[78svh] sm:h-[70vh] min-h-[520px] sm:min-h-[600px] max-h-[820px] flex items-end sm:items-center justify-center overflow-hidden pb-14 sm:pb-0">
       {/* Carousel Background Images */}
       <div ref={backgroundRef} className="absolute inset-0">
         <AnimatePresence mode="sync">
@@ -151,20 +151,20 @@ export function HeroSection() {
               animate={kenBurnsAnimation}
             />
 
-            {/* Lighter overlay so photos stay visible */}
-            <div className="absolute inset-0 bg-teal-600/45" />
+            {/* Lighter overlay: mostly clear at top, stronger behind text */}
+            <div className="absolute inset-0 bg-gradient-to-t from-teal-900/55 via-teal-700/25 to-transparent" />
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* Additional gradient overlays for depth */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-t from-teal-dark/45 via-transparent to-teal-900/20"
+        className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent"
         style={{ y: bgParallaxY * 0.5 }}
       />
 
       <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"
         style={{ y: overlayParallaxY }}
       />
 
