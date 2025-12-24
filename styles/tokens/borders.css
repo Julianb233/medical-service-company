@@ -1,0 +1,195 @@
+/* =============================================================================
+   HAPPY HOME CARE - BORDER TOKEN SYSTEM
+   Consistent border radii, widths, and styles
+   ============================================================================= */
+
+:root {
+  /* === BORDER RADIUS SCALE === */
+  --radius-none: 0;
+  --radius-xs: 0.125rem;    /* 2px */
+  --radius-sm: 0.25rem;     /* 4px */
+  --radius-md: 0.375rem;    /* 6px */
+  --radius-lg: 0.5rem;      /* 8px */
+  --radius-xl: 0.75rem;     /* 12px */
+  --radius-2xl: 1rem;       /* 16px */
+  --radius-3xl: 1.5rem;     /* 24px */
+  --radius-4xl: 2rem;       /* 32px */
+  --radius-full: 9999px;
+
+  /* === SEMANTIC RADII === */
+  --radius-button: var(--radius-lg);
+  --radius-button-sm: var(--radius-md);
+  --radius-button-lg: var(--radius-xl);
+  --radius-button-pill: var(--radius-full);
+
+  --radius-card: var(--radius-xl);
+  --radius-card-sm: var(--radius-lg);
+  --radius-card-lg: var(--radius-2xl);
+
+  --radius-input: var(--radius-lg);
+  --radius-badge: var(--radius-full);
+  --radius-avatar: var(--radius-full);
+  --radius-tag: var(--radius-md);
+  --radius-tooltip: var(--radius-md);
+  --radius-modal: var(--radius-2xl);
+
+  /* === BORDER WIDTHS === */
+  --border-0: 0;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-3: 3px;
+  --border-4: 4px;
+  --border-6: 6px;
+  --border-8: 8px;
+
+  /* === FOCUS RING === */
+  --ring-width: 3px;
+  --ring-offset: 2px;
+  --ring-color: var(--color-focus-ring);
+
+  /* === DIVIDER STYLES === */
+  --divider-color: var(--color-border);
+  --divider-width: var(--border-1);
+
+  /* === OUTLINE === */
+  --outline-width: 2px;
+  --outline-offset: 2px;
+}
+
+/* === BORDER UTILITIES === */
+.border {
+  border: var(--border-1) solid var(--color-border);
+}
+
+.border-subtle {
+  border: var(--border-1) solid var(--color-border-subtle);
+}
+
+.border-strong {
+  border: var(--border-1) solid var(--color-border-strong);
+}
+
+.border-teal {
+  border-color: var(--color-teal-500);
+}
+
+.border-orange {
+  border-color: var(--color-orange-500);
+}
+
+/* Border left accent */
+.border-l-accent {
+  border-left: var(--border-4) solid var(--color-teal-500);
+}
+
+.border-l-accent-orange {
+  border-left: var(--border-4) solid var(--color-orange-500);
+}
+
+/* === RADIUS UTILITIES === */
+.rounded-card {
+  border-radius: var(--radius-card);
+}
+
+.rounded-button {
+  border-radius: var(--radius-button);
+}
+
+.rounded-input {
+  border-radius: var(--radius-input);
+}
+
+.rounded-pill {
+  border-radius: var(--radius-full);
+}
+
+/* === DIVIDER === */
+.divider {
+  height: var(--divider-width);
+  background-color: var(--divider-color);
+  border: none;
+  margin: var(--space-8) 0;
+}
+
+.divider-vertical {
+  width: var(--divider-width);
+  height: 100%;
+  background-color: var(--divider-color);
+}
+
+/* === FOCUS RING UTILITIES === */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--ring-offset) var(--color-surface),
+              0 0 0 calc(var(--ring-offset) + var(--ring-width)) var(--ring-color);
+}
+
+.focus-ring-orange:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 var(--ring-offset) var(--color-surface),
+              0 0 0 calc(var(--ring-offset) + var(--ring-width)) var(--color-focus-ring-orange);
+}
+
+/* === ANIMATED BORDERS === */
+.border-gradient {
+  position: relative;
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+}
+
+.border-gradient::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--color-teal-500), var(--color-orange-500));
+  z-index: -1;
+}
+
+/* Animated gradient border */
+@keyframes borderGradientRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.border-gradient-animated::before {
+  background: linear-gradient(
+    90deg,
+    var(--color-teal-500),
+    var(--color-orange-500),
+    var(--color-teal-300),
+    var(--color-orange-300),
+    var(--color-teal-500)
+  );
+  background-size: 300% 100%;
+  animation: borderGradientRotate 4s ease infinite;
+}
+
+/* Scale-up bottom border accent */
+.border-accent-scale {
+  position: relative;
+}
+
+.border-accent-scale::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--border-4);
+  background: var(--gradient-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.border-accent-scale:hover::after {
+  transform: scaleX(1);
+}

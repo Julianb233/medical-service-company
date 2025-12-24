@@ -57,10 +57,10 @@ export default function Header() {
           >
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-primary-teal">
-                Medical Service
+                Happy Home
               </span>
               <span className="text-lg font-semibold text-primary-orange -mt-1">
-                Company
+                Care
               </span>
             </div>
           </Link>

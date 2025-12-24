@@ -91,7 +91,7 @@ export const services = [
     shortDescription:
       "Specialized care for Alzheimer's, dementia, Parkinson's, stroke recovery, and VA community support.",
     fullDescription:
-      "Medical Service Company specializes in providing Alzheimer's care, dementia care, and more in the familiar surroundings and comfort of your loved one's own home. We also offer Parkinson's disease support, stroke rehabilitation, geriatric care management, and are proud to serve our nation's veterans as a credentialed member of the VA Community Care Network (CCN).",
+      "Happy Home Care specializes in providing Alzheimer's care, dementia care, and more in the familiar surroundings and comfort of your loved one's own home. We also offer Parkinson's disease support, stroke rehabilitation, geriatric care management, and are proud to serve our nation's veterans as a credentialed member of the VA Community Care Network (CCN).",
     icon: "brain",
     features: [
       "Alzheimer's and dementia certified care",
@@ -279,7 +279,7 @@ export const testimonials = [
   },
   {
     id: 5,
-    quote: "Finding reliable respite care seemed impossible until we found Medical Service Company. Now I can take breaks knowing Dad is in good hands.",
+    quote: "Finding reliable respite care seemed impossible until we found Happy Home Care. Now I can take breaks knowing Dad is in good hands.",
     author: "Sarah M.",
     role: "Family Caregiver",
     location: "La Jolla",
@@ -287,7 +287,7 @@ export const testimonials = [
   },
   {
     id: 6,
-    quote: "Professional, compassionate, and reliable. The 24-hour care has allowed my mother to stay in her own home safely. I recommend Medical Service Company to everyone.",
+    quote: "Professional, compassionate, and reliable. The 24-hour care has allowed my mother to stay in her own home safely. I recommend Happy Home Care to everyone.",
     author: "David P.",
     role: "Family Member",
     location: "San Diego",
@@ -306,7 +306,7 @@ export const stats = [
 // Contact information
 export const contactInfo = {
   phone: "(619) 555-0100",
-  email: "info@medicalservicecompany.com",
+  email: "info@happyhomecare.com",
   address: {
     street: "123 Healthcare Drive",
     suite: "Suite 200",

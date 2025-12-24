@@ -17,9 +17,10 @@ const abeezee = ABeeZee({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://happyhomecare.com"),
   title: {
-    default: "Medical Service Company | Home Health Care in San Diego",
-    template: "%s | Medical Service Company",
+    default: "Happy Home Care | Home Health Care in San Diego",
+    template: "%s | Happy Home Care",
   },
   description:
     "Compassionate home health care services in San Diego County. We provide skilled nursing, personal care, respite care, and hospice support. Serving La Jolla, Del Mar, Encinitas, and all of San Diego.",
@@ -33,18 +34,19 @@ export const metadata: Metadata = {
     "La Jolla home health",
     "Del Mar nursing care",
     "Encinitas home care",
+    "Happy Home Care",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Medical Service Company",
-    title: "Medical Service Company | Home Health Care in San Diego",
+    siteName: "Happy Home Care",
+    title: "Happy Home Care | Home Health Care in San Diego",
     description:
       "Compassionate home health care services in San Diego County. Skilled nursing, personal care, respite, and hospice support.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Medical Service Company | Home Health Care in San Diego",
+    title: "Happy Home Care | Home Health Care in San Diego",
     description:
       "Compassionate home health care services in San Diego County.",
   },
@@ -68,10 +70,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "MedicalBusiness",
-              name: "Medical Service Company",
+              name: "Happy Home Care",
               description:
                 "Compassionate home health care services in San Diego County",
-              url: "https://medicalservicecompany.com",
+              url: "https://happyhomecare.com",
               telephone: "+1-619-555-0100",
               address: {
                 "@type": "PostalAddress",

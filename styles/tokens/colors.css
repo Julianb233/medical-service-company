@@ -1,0 +1,120 @@
+/* =============================================================================
+   HAPPY HOME CARE - COLOR TOKEN SYSTEM
+   Healthcare-appropriate palette with warmth and trust
+   ============================================================================= */
+
+:root {
+  /* === PRIMARY TEAL (Trust, Healthcare, Calm) === */
+  --color-teal-50: #e6f4f6;
+  --color-teal-100: #b3dfe5;
+  --color-teal-200: #80cad4;
+  --color-teal-300: #4db5c3;
+  --color-teal-400: #26a5b5;
+  --color-teal-500: #007486;  /* Primary brand */
+  --color-teal-600: #005c6b;  /* Dark variant */
+  --color-teal-700: #004a56;
+  --color-teal-800: #003841;
+  --color-teal-900: #00262c;
+
+  /* === ACCENT ORANGE (Warmth, Energy, Action) === */
+  --color-orange-50: #fef4e6;
+  --color-orange-100: #fce3b8;
+  --color-orange-200: #f9d18a;
+  --color-orange-300: #f5b84d;  /* Light variant */
+  --color-orange-400: #f2a62a;
+  --color-orange-500: #eb981c;  /* Primary accent */
+  --color-orange-600: #d4860a;  /* Dark variant */
+  --color-orange-700: #b06d00;
+  --color-orange-800: #8c5500;
+  --color-orange-900: #683d00;
+
+  /* === NEUTRAL GRAYS === */
+  --color-gray-25: #fcfcfd;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+
+  /* === WARM NEUTRALS (Healthcare-friendly backgrounds) === */
+  --color-warm-50: #fefdfb;
+  --color-warm-100: #fdfbf7;
+  --color-warm-200: #f9f5ed;
+  --color-warm-300: #f3ede1;
+  --color-warm-400: #e8dfd0;
+  --color-warm-500: #ddd1bc;
+
+  /* === SEMANTIC COLORS === */
+  /* Success */
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+
+  /* Warning */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+
+  /* Error */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+
+  /* Info */
+  --color-info-50: #eff6ff;
+  --color-info-100: #dbeafe;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+
+  /* === SEMANTIC MAPPINGS === */
+  --color-background: var(--color-warm-50);
+  --color-background-alt: var(--color-gray-50);
+  --color-background-subtle: var(--color-warm-100);
+  --color-background-muted: var(--color-warm-200);
+
+  --color-surface: #ffffff;
+  --color-surface-raised: #ffffff;
+  --color-surface-overlay: rgba(255, 255, 255, 0.95);
+
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-muted: var(--color-gray-500);
+  --color-text-inverse: #ffffff;
+  --color-text-link: var(--color-teal-500);
+  --color-text-link-hover: var(--color-teal-600);
+
+  --color-border: var(--color-gray-200);
+  --color-border-subtle: var(--color-gray-100);
+  --color-border-strong: var(--color-gray-300);
+  --color-border-focus: var(--color-teal-500);
+
+  --color-focus-ring: rgba(0, 116, 134, 0.4);
+  --color-focus-ring-orange: rgba(235, 152, 28, 0.4);
+
+  /* === GRADIENT DEFINITIONS === */
+  --gradient-teal: linear-gradient(135deg, var(--color-teal-500) 0%, var(--color-teal-700) 100%);
+  --gradient-orange: linear-gradient(135deg, var(--color-orange-500) 0%, var(--color-orange-600) 100%);
+  --gradient-warm: linear-gradient(135deg, var(--color-warm-100) 0%, var(--color-warm-200) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--color-teal-600) 0%, var(--color-teal-800) 100%);
+  --gradient-cta: linear-gradient(135deg, var(--color-orange-500) 0%, var(--color-orange-700) 100%);
+
+  /* Subtle overlays */
+  --gradient-overlay-dark: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+  --gradient-overlay-light: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  --gradient-overlay-teal: linear-gradient(135deg, rgba(0, 116, 134, 0.9) 0%, rgba(0, 74, 86, 0.95) 100%);
+}

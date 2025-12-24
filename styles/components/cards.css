@@ -1,0 +1,381 @@
+/* =============================================================================
+   HAPPY HOME CARE - CARD COMPONENT SYSTEM
+   Professional card patterns with hover effects and 3D transforms
+   ============================================================================= */
+
+/* === BASE CARD === */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  border: var(--border-1) solid var(--color-border-subtle);
+  overflow: hidden;
+  transition: var(--transition-transform), var(--transition-shadow), border-color var(--duration-normal) var(--ease-out);
+}
+
+/* === CARD VARIANTS === */
+
+/* Elevated card with shadow */
+.card-elevated {
+  border-color: transparent;
+  box-shadow: var(--shadow-card);
+}
+
+.card-elevated:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+}
+
+/* Interactive/Clickable card */
+.card-interactive {
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  border-color: var(--color-teal-200);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.card-interactive:active {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Highlight card with left border */
+.card-highlight {
+  border-left: var(--border-4) solid var(--color-teal-500);
+}
+
+.card-highlight-orange {
+  border-left: var(--border-4) solid var(--color-orange-500);
+}
+
+/* === 3D CARD EFFECT === */
+.card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(-2deg) rotateY(2deg) translateY(-8px);
+  box-shadow: var(--shadow-2xl);
+}
+
+/* More dramatic 3D tilt - use with JS for mouse tracking */
+.card-3d-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-out);
+}
+
+.card-3d-tilt:hover {
+  box-shadow: var(--shadow-2xl);
+}
+
+/* === CARD WITH ACCENT BORDER === */
+.card-accent {
+  position: relative;
+}
+
+.card-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--border-4);
+  background: var(--gradient-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-moderate) var(--ease-spring);
+}
+
+.card-accent:hover::after {
+  transform: scaleX(1);
+}
+
+/* Top accent variant */
+.card-accent-top::after {
+  top: 0;
+  bottom: auto;
+}
+
+/* === CARD WITH GLOW === */
+.card-glow {
+  transition: var(--transition-shadow), var(--transition-transform);
+}
+
+.card-glow:hover {
+  box-shadow: var(--shadow-lg), var(--glow-teal);
+  transform: translateY(-4px);
+}
+
+.card-glow-orange:hover {
+  box-shadow: var(--shadow-lg), var(--glow-orange);
+}
+
+/* === CARD SECTIONS === */
+.card-header {
+  padding: var(--card-padding-md);
+  border-bottom: var(--border-1) solid var(--color-border-subtle);
+}
+
+.card-body {
+  padding: var(--card-padding-md);
+}
+
+.card-footer {
+  padding: var(--card-padding-md);
+  border-top: var(--border-1) solid var(--color-border-subtle);
+  background-color: var(--color-gray-50);
+}
+
+/* Compact spacing */
+.card-compact .card-header,
+.card-compact .card-body,
+.card-compact .card-footer {
+  padding: var(--card-padding-sm);
+}
+
+/* Large spacing */
+.card-spacious .card-header,
+.card-spacious .card-body,
+.card-spacious .card-footer {
+  padding: var(--card-padding-lg);
+}
+
+/* === FEATURE CARD (for services/features) === */
+.card-feature {
+  padding: var(--card-padding-lg);
+  text-align: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-feature-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xl);
+  background: var(--gradient-teal);
+  color: var(--color-text-inverse);
+  margin-bottom: var(--space-6);
+  transition: transform var(--duration-normal) var(--ease-spring);
+  flex-shrink: 0;
+}
+
+.card-feature:hover .card-feature-icon {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.card-feature-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.card-feature-description {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  flex-grow: 1;
+}
+
+.card-feature-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-teal-500);
+  font-weight: var(--font-medium);
+  margin-top: var(--space-4);
+  transition: var(--transition-colors), gap var(--duration-normal) var(--ease-spring);
+}
+
+.card-feature-link:hover {
+  color: var(--color-teal-600);
+  gap: var(--space-3);
+}
+
+/* === TESTIMONIAL CARD === */
+.card-testimonial {
+  padding: var(--card-padding-lg);
+  position: relative;
+}
+
+.card-testimonial-quote {
+  font-size: var(--text-5xl);
+  color: var(--color-teal-200);
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.card-testimonial-content {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  font-style: italic;
+  margin-bottom: var(--space-6);
+  padding-top: var(--space-6);
+}
+
+.card-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.card-testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.card-testimonial-name {
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.card-testimonial-role {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* === STAT CARD === */
+.card-stat {
+  padding: var(--card-padding-lg);
+  text-align: center;
+}
+
+.card-stat-value {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--color-teal-500);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.card-stat-label {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
+}
+
+/* === LOCATION CARD === */
+.card-location {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-location-image {
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card-location-content {
+  padding: var(--card-padding-md);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-location-name {
+  font-family: var(--font-family-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.card-location-meta {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* === CARD GRID === */
+.card-grid {
+  display: grid;
+  gap: var(--grid-gap-md);
+}
+
+.card-grid-2 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.card-grid-3 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.card-grid-4 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+  .card-grid-2,
+  .card-grid-3,
+  .card-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* === SKELETON CARD === */
+.card-skeleton {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.card-skeleton-image {
+  aspect-ratio: 16/10;
+  background: var(--color-gray-200);
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-200) 25%,
+    var(--color-gray-100) 50%,
+    var(--color-gray-200) 75%
+  );
+  background-size: 200% 100%;
+}
+
+.card-skeleton-line {
+  height: 1em;
+  background: var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-200) 25%,
+    var(--color-gray-100) 50%,
+    var(--color-gray-200) 75%
+  );
+  background-size: 200% 100%;
+}
+
+.card-skeleton-line:last-child {
+  width: 60%;
+}
