@@ -3,6 +3,7 @@ import { ServicesGrid } from "@/components/services-grid";
 import { StatsSection } from "@/components/stats-section";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import { CTASection } from "@/components/cta-section";
+import AppMockupsShowcase from "@/components/app-mockups/AppMockupsShowcase";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,9 @@ export default function HomePage() {
       <HeroSection />
       <ServicesGrid />
       <StatsSection />
+
+      {/* App Highlight / User Screens */}
+      <AppMockupsShowcase />
       
       {/* Testimonials Section */}
       <section className="section-padding bg-gray-50">

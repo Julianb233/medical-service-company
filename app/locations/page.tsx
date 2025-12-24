@@ -120,7 +120,7 @@ export default function LocationsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Parallax */}
-      <section className="relative bg-gradient-to-br from-teal-50 to-teal-100 py-16 md:py-24 mt-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-teal-50 to-teal-100 py-16 md:py-24 overflow-hidden">
         {/* Parallax background pattern */}
         <motion.div
           ref={parallaxRef}

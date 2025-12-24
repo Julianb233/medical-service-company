@@ -129,7 +129,7 @@ export default function SubareaPageClient({
   return (
     <div className="min-h-screen">
       {/* Hero Section with Parallax Background */}
-      <section className="relative bg-gradient-to-br from-teal-50 via-teal-100 to-primary-teal py-24 md:py-32 mt-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-teal-50 via-teal-100 to-primary-teal py-24 md:py-32 overflow-hidden">
         {/* Parallax background pattern */}
         <motion.div
           ref={parallaxRef}

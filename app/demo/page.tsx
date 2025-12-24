@@ -3,7 +3,7 @@ import { ContactForm } from "@/components/contact-form";
 
 export default function DemoPage() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-gray-50">
       {/* Testimonials Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">

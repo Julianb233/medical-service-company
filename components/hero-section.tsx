@@ -129,7 +129,7 @@ export function HeroSection() {
       };
 
   return (
-    <section className="relative h-[70vh] min-h-[600px] max-h-[800px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[78svh] sm:h-[70vh] min-h-[520px] sm:min-h-[600px] max-h-[820px] flex items-center justify-center overflow-hidden">
       {/* Carousel Background Images */}
       <div ref={backgroundRef} className="absolute inset-0">
         <AnimatePresence mode="sync">
@@ -151,7 +151,7 @@ export function HeroSection() {
               animate={kenBurnsAnimation}
             />
 
-            {/* Teal Overlay for Text Readability */}
+            {/* Teal overlay for text readability (original) */}
             <div className="absolute inset-0 bg-teal-600/70" />
           </motion.div>
         </AnimatePresence>
@@ -369,7 +369,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.4 }}
-        className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-10 sm:bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 z-20"
       >
         <div className="flex gap-3">
           {HERO_IMAGES.map((_, index) => (

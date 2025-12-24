@@ -91,7 +91,7 @@ export default function LocationHero({ locationName, description }: LocationHero
   const motionProps = useMotionProps();
 
   return (
-    <section className="relative bg-gradient-to-br from-teal-50 to-teal-100 py-16 md:py-24 mt-20 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-teal-50 to-teal-100 py-16 md:py-24 overflow-hidden">
       {/* Animated background pattern with parallax */}
       <motion.div
         ref={parallaxRef}

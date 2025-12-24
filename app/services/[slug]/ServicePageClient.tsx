@@ -357,7 +357,7 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
       />
 
       {/* Breadcrumb Navigation */}
-      <section className="bg-gray-50 py-4">
+      <section className="bg-brand-dark py-4">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -366,7 +366,7 @@ export default function ServicePageClient({ slug }: ServicePageClientProps) {
           >
             <Link
               href="/services"
-              className="inline-flex items-center text-gray-600 hover:text-primary-teal transition-colors"
+              className="inline-flex items-center text-white/80 hover:text-white transition-colors"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Services

@@ -40,7 +40,7 @@ export default function ContactPage() {
       {/* Hero Section with Parallax */}
       <section
         ref={heroRef}
-        className="bg-primary-teal text-white section-padding relative overflow-hidden"
+        className="bg-brand-dark text-white section-padding relative overflow-hidden"
       >
         {/* Parallax background decoration */}
         <motion.div

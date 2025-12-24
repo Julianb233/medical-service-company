@@ -92,7 +92,7 @@ export default function RootLayout({
         <SmoothScroll>
           <Header />
           <PageTransition>
-            <main>{children}</main>
+            <main className="pt-20">{children}</main>
           </PageTransition>
           <Footer />
         </SmoothScroll>
