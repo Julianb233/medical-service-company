@@ -92,7 +92,7 @@ export default function CareersPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-primary-teal text-white section-padding">
+      <section className="bg-primary-teal text-white section-padding pt-32">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">

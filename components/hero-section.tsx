@@ -7,14 +7,15 @@ import { cn } from "@/lib/utils";
 export function HeroSection() {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background with gradient fallback */}
+      {/* Background with gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-teal-dark via-primary-teal to-teal-light">
-        {/* Image overlay - replace with actual background image URL when available */}
+        {/* SVG pattern overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 opacity-30"
           style={{
-            backgroundImage: "url('/images/hero-bg.jpg')",
-            backgroundBlendMode: "overlay",
+            backgroundImage: "url('/images/caregiver-hero.svg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         />
       </div>

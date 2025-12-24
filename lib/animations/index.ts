@@ -25,4 +25,4 @@ export {
 } from "./hooks/useStaggerReveal";
 
 // Re-export types
-export type { Variants, Transition, AnimationProps } from "framer-motion";
+export type { Variants, Transition } from "framer-motion";

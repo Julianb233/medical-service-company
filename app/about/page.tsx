@@ -40,7 +40,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-primary-teal text-white section-padding">
+      <section className="bg-primary-teal text-white section-padding pt-32">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -86,13 +86,13 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative h-80 md:h-96 rounded-lg overflow-hidden bg-gray-200">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                <div className="text-center">
-                  <Users className="w-16 h-16 mx-auto mb-4" />
-                  <p>Team Photo</p>
-                </div>
-              </div>
+            <div className="relative h-80 md:h-96 rounded-lg overflow-hidden bg-gradient-to-br from-teal-50 to-teal-100">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/images/team-photo.svg" 
+                alt="Our compassionate care team" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

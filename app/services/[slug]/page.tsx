@@ -75,7 +75,7 @@ export default async function ServicePage({
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-primary-teal text-white section-padding">
+      <section className="bg-primary-teal text-white section-padding pt-32">
         <div className="container-custom">
           <Link
             href="/services"
