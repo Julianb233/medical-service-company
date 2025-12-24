@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useTransform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { useReducedMotion } from "@/lib/animations/hooks/useReducedMotion";
 import { useSimpleParallax } from "@/lib/animations/hooks/useParallax";
@@ -11,9 +11,43 @@ import { heroSubtitleReveal } from "@/lib/animations/variants";
 import { easings } from "@/lib/animations/easings";
 import { durations } from "@/lib/animations/transitions";
 
+// Hero carousel images
+const HERO_IMAGES = [
+  {
+    src: "/images/hero/san-diego-skyline.jpg",
+    alt: "San Diego skyline with beautiful waterfront"
+  },
+  {
+    src: "/images/hero/family-with-senior.jpg",
+    alt: "Happy family with senior loved one"
+  },
+  {
+    src: "/images/hero/caregiver-caring.jpg",
+    alt: "Professional caregiver providing compassionate care"
+  },
+  {
+    src: "/images/hero/happy-senior-home.jpg",
+    alt: "Senior smiling at home with caregiver"
+  }
+];
+
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
   const backgroundRef = useRef<HTMLDivElement>(null);
+
+  // Carousel state
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-rotate carousel every 5.5 seconds
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 5500);
+
+    return () => clearInterval(interval);
+  }, [prefersReducedMotion]);
 
   // Parallax for background layers
   const bgParallaxY = useSimpleParallax(0.15);
@@ -95,35 +129,43 @@ export function HeroSection() {
       };
 
   return (
-    <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background with Ken Burns effect and parallax */}
-      <motion.div
-        ref={backgroundRef}
-        className="absolute inset-0 bg-gradient-to-br from-teal-dark via-primary-teal to-teal-light"
-        style={{ y: bgParallaxY }}
-      >
-        {/* Image overlay with Ken Burns effect */}
-        <motion.div
-          className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{
-            backgroundImage: "url('/images/hero/san-diego-home-care.jpg')",
-            backgroundBlendMode: "overlay",
-            transformOrigin: "center center",
-          }}
-          animate={kenBurnsAnimation}
-        />
-      </motion.div>
+    <section className="relative h-[70vh] min-h-[600px] max-h-[800px] flex items-center justify-center overflow-hidden">
+      {/* Carousel Background Images */}
+      <div ref={backgroundRef} className="absolute inset-0">
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={currentImageIndex}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          >
+            {/* Background Image with Ken Burns Effect */}
+            <motion.div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `url('${HERO_IMAGES[currentImageIndex].src}')`,
+                transformOrigin: "center center",
+              }}
+              animate={kenBurnsAnimation}
+            />
 
-      {/* Parallax overlay for depth */}
+            {/* Teal Overlay for Text Readability */}
+            <div className="absolute inset-0 bg-teal-600/70" />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Additional gradient overlays for depth */}
       <motion.div
-        className="absolute inset-0 overlay-dark"
-        style={{ y: overlayParallaxY }}
+        className="absolute inset-0 bg-gradient-to-t from-teal-dark/60 via-transparent to-teal-900/30"
+        style={{ y: bgParallaxY * 0.5 }}
       />
 
-      {/* Gradient accent overlay with parallax */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-t from-teal-dark/40 via-transparent to-transparent"
-        style={{ y: bgParallaxY * 0.5 }}
+        className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent"
+        style={{ y: overlayParallaxY }}
       />
 
       {/* Content */}
@@ -322,12 +364,37 @@ export function HeroSection() {
         </motion.div>
       </div>
 
+      {/* Carousel Navigation Dots */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.4 }}
+        className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20"
+      >
+        <div className="flex gap-3">
+          {HERO_IMAGES.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={cn(
+                "transition-all duration-300",
+                "hover:scale-110",
+                currentImageIndex === index
+                  ? "w-8 h-2 bg-primary-orange rounded-full"
+                  : "w-2 h-2 bg-white/60 rounded-full hover:bg-white/80"
+              )}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </motion.div>
+
       {/* Scroll indicator with enhanced animation */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5, ease: easings.spring }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:block"
       >
         <motion.div
           animate={prefersReducedMotion ? {} : { y: [0, 10, 0] }}

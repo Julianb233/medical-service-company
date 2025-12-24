@@ -11,69 +11,69 @@ export default function Footer() {
   return (
     <footer className="gradient-teal text-white">
       {/* Main Footer Content */}
-      <div className="container-custom py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="container-custom py-8 md:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {/* Company Info Column */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div>
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-xl font-bold">
                 <span className="text-white">Happy</span>
                 <span className="text-white">Home</span>
                 <span className="text-orange-light">Care</span>
               </h3>
             </div>
-            <p className="text-teal-100 text-sm leading-relaxed">
+            <p className="text-white/90 text-sm leading-relaxed">
               Providing compassionate, professional home health care services throughout San Diego County.
               Your trusted partner in quality care.
             </p>
-            <div className="flex space-x-4 pt-2">
+            <div className="flex space-x-3 pt-1">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-4 h-4" />
               </a>
               <a
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter className="w-5 h-5" />
+                <Twitter className="w-4 h-4" />
               </a>
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4" />
               </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-orange-light">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-base font-bold mb-3 text-orange-light">Quick Links</h3>
+            <ul className="space-y-1.5">
               <li>
                 <Link
                   href="/about"
-                  className="text-teal-100 hover:text-white transition-colors text-sm"
+                  className="text-white/90 hover:text-white transition-colors text-sm"
                 >
                   About Us
                 </Link>
@@ -81,7 +81,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-teal-100 hover:text-white transition-colors text-sm"
+                  className="text-white/90 hover:text-white transition-colors text-sm"
                 >
                   Our Services
                 </Link>
@@ -89,7 +89,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/locations"
-                  className="text-teal-100 hover:text-white transition-colors text-sm"
+                  className="text-white/90 hover:text-white transition-colors text-sm"
                 >
                   Service Areas
                 </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/careers"
-                  className="text-teal-100 hover:text-white transition-colors text-sm"
+                  className="text-white/90 hover:text-white transition-colors text-sm"
                 >
                   Careers
                 </Link>
@@ -105,7 +105,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-teal-100 hover:text-white transition-colors text-sm"
+                  className="text-white/90 hover:text-white transition-colors text-sm"
                 >
                   Contact Us
                 </Link>
@@ -113,7 +113,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-teal-100 hover:text-white transition-colors text-sm"
+                  className="text-white/90 hover:text-white transition-colors text-sm"
                 >
                   Privacy Policy
                 </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terms"
-                  className="text-teal-100 hover:text-white transition-colors text-sm"
+                  className="text-white/90 hover:text-white transition-colors text-sm"
                 >
                   Terms of Service
                 </Link>
@@ -131,13 +131,13 @@ export default function Footer() {
 
           {/* Services Column */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-orange-light">Our Services</h3>
-            <ul className="space-y-2">
+            <h3 className="text-base font-bold mb-3 text-orange-light">Our Services</h3>
+            <ul className="space-y-1.5">
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="text-teal-100 hover:text-white transition-colors text-sm"
+                    className="text-white/90 hover:text-white transition-colors text-sm"
                   >
                     {service.title}
                   </Link>
@@ -148,13 +148,13 @@ export default function Footer() {
 
           {/* Locations & Contact Column */}
           <div>
-            <h3 className="text-lg font-bold mb-4 text-orange-light">Service Locations</h3>
-            <ul className="space-y-2 mb-6">
+            <h3 className="text-base font-bold mb-3 text-orange-light">Service Locations</h3>
+            <ul className="space-y-1.5 mb-4">
               {firstSixLocations.map((location) => (
                 <li key={location.slug}>
                   <Link
                     href={`/locations/${location.slug}`}
-                    className="text-teal-100 hover:text-white transition-colors text-sm"
+                    className="text-white/90 hover:text-white transition-colors text-sm"
                   >
                     {location.name}
                   </Link>
@@ -162,12 +162,12 @@ export default function Footer() {
               ))}
             </ul>
 
-            <h3 className="text-lg font-bold mb-4 text-orange-light">Contact Us</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base font-bold mb-3 text-orange-light">Contact Us</h3>
+            <ul className="space-y-2">
               <li>
                 <a
                   href={`tel:${contactInfo.phone}`}
-                  className="flex items-start space-x-2 text-teal-100 hover:text-white transition-colors group"
+                  className="flex items-start space-x-2 text-white hover:text-white transition-colors group"
                 >
                   <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-orange-light" />
                   <span className="text-sm">{contactInfo.phone}</span>
@@ -176,14 +176,14 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="flex items-start space-x-2 text-teal-100 hover:text-white transition-colors group"
+                  className="flex items-start space-x-2 text-white hover:text-white transition-colors group"
                 >
                   <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-orange-light" />
                   <span className="text-sm break-all">{contactInfo.email}</span>
                 </a>
               </li>
               <li>
-                <div className="flex items-start space-x-2 text-teal-100">
+                <div className="flex items-start space-x-2 text-white">
                   <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
                     <p>{contactInfo.address.street}</p>
@@ -202,27 +202,27 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/20">
-        <div className="container-custom py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <p className="text-teal-100 text-sm text-center md:text-left">
+        <div className="container-custom py-4">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
+            <p className="text-white text-xs text-center md:text-left">
               &copy; {currentYear} HappyHomeCare. All rights reserved.
             </p>
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-4">
               <Link
                 href="/privacy"
-                className="text-teal-100 hover:text-white transition-colors text-sm"
+                className="text-white/90 hover:text-white transition-colors text-xs"
               >
                 Privacy
               </Link>
               <Link
                 href="/terms"
-                className="text-teal-100 hover:text-white transition-colors text-sm"
+                className="text-white/90 hover:text-white transition-colors text-xs"
               >
                 Terms
               </Link>
               <Link
                 href="/accessibility"
-                className="text-teal-100 hover:text-white transition-colors text-sm"
+                className="text-white/90 hover:text-white transition-colors text-xs"
               >
                 Accessibility
               </Link>
