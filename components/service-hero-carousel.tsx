@@ -73,8 +73,8 @@ export function ServiceHeroCarousel({
               animate={kenBurnsAnimation}
             />
 
-            {/* Dark blue overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#07162b]/85 via-[#0b1f3b]/75 to-[#0b1f3b]/65" />
+            {/* Gradient Teal Overlay for Text Readability (original) */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/80 via-primary-teal/70 to-primary-teal/60" />
           </motion.div>
         </AnimatePresence>
       </div>

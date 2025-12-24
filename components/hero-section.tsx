@@ -151,15 +151,15 @@ export function HeroSection() {
               animate={kenBurnsAnimation}
             />
 
-            {/* Dark blue overlay for text readability */}
-            <div className="absolute inset-0 bg-[#07162b]/75" />
+            {/* Teal overlay for text readability (original) */}
+            <div className="absolute inset-0 bg-teal-600/70" />
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* Additional gradient overlays for depth */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-t from-[#07162b]/85 via-transparent to-[#0b1f3b]/40"
+        className="absolute inset-0 bg-gradient-to-t from-teal-dark/60 via-transparent to-teal-900/30"
         style={{ y: bgParallaxY * 0.5 }}
       />
 

@@ -91,7 +91,7 @@ export default function LocationHero({ locationName, description }: LocationHero
   const motionProps = useMotionProps();
 
   return (
-    <section className="relative bg-brand-dark py-14 md:py-20 overflow-hidden">
+    <section className="relative bg-gradient-to-br from-teal-50 to-teal-100 py-16 md:py-24 overflow-hidden">
       {/* Animated background pattern with parallax */}
       <motion.div
         ref={parallaxRef}
@@ -101,7 +101,7 @@ export default function LocationHero({ locationName, description }: LocationHero
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.35) 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(20, 184, 166, 0.4) 1px, transparent 0)`,
             backgroundSize: "48px 48px",
           }}
         />
@@ -109,7 +109,7 @@ export default function LocationHero({ locationName, description }: LocationHero
 
       {/* Floating gradient orbs */}
       <motion.div
-        className="absolute top-20 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-64 h-64 bg-primary-teal/20 rounded-full blur-3xl"
         animate={{
           y: [0, -30, 0],
           x: [0, 20, 0],
@@ -145,9 +145,9 @@ export default function LocationHero({ locationName, description }: LocationHero
             animate="visible"
             {...motionProps}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
               Home Health Care in{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-orange to-orange-light">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-teal to-teal-dark">
                 {locationName}
               </span>
             </h1>
@@ -155,7 +155,7 @@ export default function LocationHero({ locationName, description }: LocationHero
 
           {/* Subtitle with blur reveal */}
           <motion.p
-            className="text-xl md:text-2xl text-white/85 mb-8 leading-relaxed"
+            className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
             variants={subtitleVariants}
             initial="hidden"
             animate="visible"
@@ -208,7 +208,7 @@ export default function LocationHero({ locationName, description }: LocationHero
 
           {/* Animated accent line */}
           <motion.div
-            className="mt-12 h-1 bg-gradient-to-r from-primary-orange via-orange-light to-transparent rounded-full"
+            className="mt-12 h-1 bg-gradient-to-r from-primary-teal via-teal-light to-transparent rounded-full"
             initial={{ scaleX: 0, originX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{

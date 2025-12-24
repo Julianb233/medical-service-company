@@ -166,7 +166,7 @@ export default function LocationServiceClient({
   return (
     <div className="min-h-screen">
       {/* Hero Section with Parallax Background */}
-      <section className="relative bg-brand-dark py-16 md:py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-teal-50 via-teal-100 to-primary-teal py-24 md:py-32 overflow-hidden">
         {/* Parallax background pattern */}
         <motion.div
           ref={parallaxRef}
@@ -176,7 +176,7 @@ export default function LocationServiceClient({
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.35) 1px, transparent 0)`,
+              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(20, 184, 166, 0.5) 1px, transparent 0)`,
               backgroundSize: "48px 48px",
             }}
           />
@@ -201,19 +201,19 @@ export default function LocationServiceClient({
           <div className="max-w-5xl mx-auto text-center">
             {/* Breadcrumb */}
             <motion.div
-              className="flex items-center justify-center gap-2 text-sm text-white/80 mb-6 flex-wrap"
+              className="flex items-center justify-center gap-2 text-sm text-gray-700 mb-6 flex-wrap"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               {...motionProps}
             >
-              <Link href="/locations" className="hover:text-white transition-colors">
+              <Link href="/locations" className="hover:text-primary-teal transition-colors">
                 Locations
               </Link>
               <span>/</span>
               <Link
                 href={`/locations/${location.slug}`}
-                className="hover:text-white transition-colors"
+                className="hover:text-primary-teal transition-colors"
               >
                 {location.name}
               </Link>
@@ -222,14 +222,14 @@ export default function LocationServiceClient({
                   <span>/</span>
                   <Link
                     href={`/locations/${location.slug}/${subarea.slug}`}
-                    className="hover:text-white transition-colors"
+                    className="hover:text-primary-teal transition-colors"
                   >
                     {subarea.name}
                   </Link>
                 </>
               )}
               <span>/</span>
-              <span className="font-semibold text-primary-orange">{service.title}</span>
+              <span className="font-semibold text-primary-teal">{service.title}</span>
             </motion.div>
 
             {/* Service Badge */}

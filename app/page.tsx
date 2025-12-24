@@ -16,13 +16,13 @@ export default function HomePage() {
       <AppMockupsShowcase />
       
       {/* Testimonials Section */}
-      <section className="section-padding bg-brand-dark section-dark">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               What Our Clients Say
             </h2>
-            <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Hear from families who trust us with their loved ones&apos; care
             </p>
           </div>

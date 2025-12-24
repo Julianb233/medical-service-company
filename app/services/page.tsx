@@ -101,7 +101,7 @@ function AnimatedStat({ value, label, index }: { value: string; label: string; i
       >
         {value}
       </motion.div>
-      <p className="text-white/80">{label}</p>
+      <p className="text-gray-600">{label}</p>
     </motion.div>
   );
 }
@@ -124,7 +124,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-brand-dark text-white section-padding">
+      <section className="bg-primary-teal text-white section-padding">
         <div className="container-custom">
           <motion.div
             className="max-w-3xl mx-auto text-center"
@@ -171,10 +171,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Animated Stats Section */}
-      <section className="section-padding bg-brand-dark section-dark">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <motion.h2
-            className="text-3xl md:text-4xl font-bold text-center mb-12 text-white"
+            className="text-3xl md:text-4xl font-bold text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

@@ -120,7 +120,7 @@ export default function LocationsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Parallax */}
-      <section className="relative bg-brand-dark py-14 md:py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-teal-50 to-teal-100 py-16 md:py-24 overflow-hidden">
         {/* Parallax background pattern */}
         <motion.div
           ref={parallaxRef}
@@ -130,7 +130,7 @@ export default function LocationsPage() {
           <div
             className="absolute inset-0"
             style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.35) 1px, transparent 0)`,
+              backgroundImage: `radial-gradient(circle at 2px 2px, rgba(20, 184, 166, 0.4) 1px, transparent 0)`,
               backgroundSize: "40px 40px",
             }}
           />
@@ -138,7 +138,7 @@ export default function LocationsPage() {
 
         {/* Floating gradient orbs */}
         <motion.div
-          className="absolute top-10 right-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"
+          className="absolute top-10 right-20 w-72 h-72 bg-primary-teal/20 rounded-full blur-3xl"
           animate={{
             y: [0, -40, 0],
             x: [0, 30, 0],
@@ -162,10 +162,10 @@ export default function LocationsPage() {
               {...motionProps}
             >
               <div className="relative">
-                <MapPin className="w-16 h-16 text-white" />
+                <MapPin className="w-16 h-16 text-primary-teal" />
                 {/* Ping effect */}
                 <motion.div
-                  className="absolute inset-0 rounded-full border-2 border-white/70"
+                  className="absolute inset-0 rounded-full border-2 border-primary-teal"
                   animate={{
                     scale: [1, 2, 2],
                     opacity: [0.5, 0, 0],
@@ -181,21 +181,21 @@ export default function LocationsPage() {
 
             {/* Main heading */}
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900"
               variants={heroTextVariants}
               initial="hidden"
               animate="visible"
               {...motionProps}
             >
               Home Health Care Across{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-orange to-orange-light">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-teal to-teal-dark">
                 San Diego County
               </span>
             </motion.h1>
 
             {/* Subtitle */}
             <motion.p
-              className="text-xl md:text-2xl text-white/85 mb-8 leading-relaxed"
+              className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed"
               variants={heroSubtitleVariants}
               initial="hidden"
               animate="visible"

@@ -48,8 +48,9 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
         style={tiltStyle}
         className={cn(
           "group relative h-full",
-          "bg-white rounded-xl p-6 md:p-8",
-          "border border-gray-200",
+          // Light blue card background (mobile-friendly contrast)
+          "bg-teal-50 rounded-xl p-5 sm:p-6 md:p-8",
+          "border border-teal-100",
           "cursor-pointer overflow-hidden",
           "card-3d-tilt" // Apply CSS class for base 3D styling
         )}
@@ -104,12 +105,12 @@ function ServiceCard({ service }: { service: typeof services[0] }) {
         </div>
 
         {/* Title */}
-        <h3 className="text-xl md:text-2xl font-accent font-bold text-gray-900 mb-3 relative z-10 text-center sm:text-left">
+        <h3 className="text-xl md:text-2xl font-accent font-bold text-teal-900 mb-3 relative z-10 text-center sm:text-left">
           {service.title}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-4 relative z-10 text-center sm:text-left">
+        <p className="text-teal-900/70 text-sm md:text-base leading-relaxed mb-4 relative z-10 text-center sm:text-left">
           {service.shortDescription}
         </p>
 
@@ -191,7 +192,7 @@ export function ServicesGrid() {
   });
 
   return (
-    <section className="section-padding bg-brand-dark section-dark">
+    <section className="section-padding bg-gray-50">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -201,10 +202,10 @@ export function ServicesGrid() {
           transition={{ duration: 0.6, ease: easings.spring }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-accent font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-accent font-bold text-gray-900 mb-4">
             Our Services
           </h2>
-          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive home health care solutions tailored to your unique needs
           </p>
         </motion.div>
