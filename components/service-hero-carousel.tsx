@@ -73,8 +73,8 @@ export function ServiceHeroCarousel({
               animate={kenBurnsAnimation}
             />
 
-            {/* Gradient Teal Overlay for Text Readability (original) */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/80 via-primary-teal/70 to-primary-teal/60" />
+            {/* Lighter overlay so photos stay visible */}
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-teal/55 via-primary-teal/45 to-primary-teal/40" />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -88,7 +88,8 @@ export function ServiceHeroCarousel({
           className={cn(
             "font-accent font-bold tracking-tight mb-4",
             "text-4xl sm:text-5xl md:text-6xl",
-            "max-w-4xl"
+            "max-w-4xl",
+            "drop-shadow-[0_3px_18px_rgba(0,0,0,0.35)]"
           )}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -101,7 +102,7 @@ export function ServiceHeroCarousel({
           className={cn(
             "text-lg sm:text-xl md:text-2xl",
             "max-w-3xl leading-relaxed",
-            "text-gray-100"
+            "text-gray-100 drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
           )}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

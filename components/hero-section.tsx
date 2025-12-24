@@ -151,15 +151,15 @@ export function HeroSection() {
               animate={kenBurnsAnimation}
             />
 
-            {/* Teal overlay for text readability (original) */}
-            <div className="absolute inset-0 bg-teal-600/70" />
+            {/* Lighter overlay so photos stay visible */}
+            <div className="absolute inset-0 bg-teal-600/45" />
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* Additional gradient overlays for depth */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-t from-teal-dark/60 via-transparent to-teal-900/30"
+        className="absolute inset-0 bg-gradient-to-t from-teal-dark/45 via-transparent to-teal-900/20"
         style={{ y: bgParallaxY * 0.5 }}
       />
 
@@ -175,7 +175,7 @@ export function HeroSection() {
           variants={heroSubtitleReveal}
           initial="hidden"
           animate="visible"
-          className="text-sm sm:text-base uppercase tracking-widest mb-4 text-primary-orange font-semibold"
+          className="text-sm sm:text-base uppercase tracking-widest mb-4 text-primary-orange font-semibold drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
         >
           California Home Care You Can Trust
         </motion.p>
@@ -185,7 +185,8 @@ export function HeroSection() {
           className={cn(
             "font-accent font-bold tracking-tight mb-6",
             "text-4xl sm:text-5xl md:text-6xl lg:text-7xl",
-            "max-w-5xl mx-auto"
+            "max-w-5xl mx-auto",
+            "leading-tight sm:leading-tight drop-shadow-[0_3px_18px_rgba(0,0,0,0.35)]"
           )}
           style={{ perspective: "1000px" }}
         >
@@ -196,7 +197,7 @@ export function HeroSection() {
               variants={wordReveal}
               initial="hidden"
               animate="visible"
-              className="inline-block mr-3 md:mr-4"
+              className="inline-block mr-2 sm:mr-3 md:mr-4"
               style={{ transformStyle: "preserve-3d" }}
             >
               {word}
@@ -212,7 +213,7 @@ export function HeroSection() {
           className={cn(
             "text-lg sm:text-xl md:text-2xl mb-10",
             "max-w-3xl mx-auto leading-relaxed",
-            "text-white font-medium"
+            "text-white font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]"
           )}
         >
           The best solutions for affordable and trustworthy home care. Free in-home needs evaluation available.
@@ -287,7 +288,7 @@ export function HeroSection() {
           {/* Licensed badge */}
           <motion.div
             animate={floatingAnimation}
-            className="flex flex-col sm:flex-row items-center gap-2 text-base sm:text-lg text-white font-semibold"
+            className="flex flex-row items-center gap-3 text-sm sm:text-lg text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
@@ -307,13 +308,13 @@ export function HeroSection() {
                 />
               </svg>
             </motion.div>
-            <span className="font-semibold text-center">CA Licensed</span>
+            <span className="font-semibold text-left">CA Licensed</span>
           </motion.div>
 
           {/* Insured badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } } : undefined}
-            className="flex flex-col sm:flex-row items-center gap-2 text-base sm:text-lg text-white font-semibold"
+            className="flex flex-row items-center gap-3 text-sm sm:text-lg text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
@@ -333,13 +334,13 @@ export function HeroSection() {
                 />
               </svg>
             </motion.div>
-            <span className="font-semibold text-center">Fully Insured</span>
+            <span className="font-semibold text-left">Fully Insured</span>
           </motion.div>
 
           {/* 24/7 Support badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } } : undefined}
-            className="flex flex-col sm:flex-row items-center gap-2 text-base sm:text-lg text-white font-semibold"
+            className="flex flex-row items-center gap-3 text-sm sm:text-lg text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
@@ -359,7 +360,7 @@ export function HeroSection() {
                 />
               </svg>
             </motion.div>
-            <span className="font-semibold text-center">24/7 Support</span>
+            <span className="font-semibold text-left">24/7 Support</span>
           </motion.div>
         </motion.div>
       </div>

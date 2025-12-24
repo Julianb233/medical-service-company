@@ -165,7 +165,7 @@ export default function LocationHero({ locationName, description }: LocationHero
           </motion.p>
 
           {/* CTA buttons with staggered elastic entrance */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4">
             <motion.a
               href="tel:(619) 555-0100"
               custom={0}
@@ -178,10 +178,11 @@ export default function LocationHero({ locationName, description }: LocationHero
             >
               <motion.div
                 variants={buttonHoverVariants}
-                className="btn-primary inline-flex items-center gap-2"
+                className="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 <Phone className="w-5 h-5" />
-                Call Now: (619) 555-0100
+                <span className="hidden sm:inline">Call Now: (619) 555-0100</span>
+                <span className="sm:hidden">Call Now</span>
               </motion.div>
             </motion.a>
 
@@ -197,7 +198,7 @@ export default function LocationHero({ locationName, description }: LocationHero
               >
                 <motion.div
                   variants={buttonHoverVariants}
-                  className="btn-outline inline-flex items-center gap-2"
+                  className="btn-outline inline-flex items-center justify-center gap-2 w-full sm:w-auto"
                 >
                   <MessageSquare className="w-5 h-5" />
                   Request Consultation
