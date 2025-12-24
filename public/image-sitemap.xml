@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home Page Images -->
+  <url>
+    <loc>https://happyhomecare.com/</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/hero-home.jpg</image:loc>
+      <image:title>Happy Home Care Professional Caregivers</image:title>
+      <image:caption>Compassionate home health care services for seniors in San Diego County</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/home-care-service.jpg</image:loc>
+      <image:title>Home Care Service</image:title>
+      <image:caption>Professional caregivers providing home care assistance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/team-caring.jpg</image:loc>
+      <image:title>Happy Home Care Team</image:title>
+      <image:caption>Licensed and insured caregiving professionals</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Page Images -->
+  <url>
+    <loc>https://happyhomecare.com/about</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/about-hero.jpg</image:loc>
+      <image:title>About Happy Home Care</image:title>
+      <image:caption>Trusted home health care provider in San Diego</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/team-group.jpg</image:loc>
+      <image:title>Happy Home Care Leadership Team</image:title>
+      <image:caption>Experienced professionals dedicated to patient care</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Page Images -->
+  <url>
+    <loc>https://happyhomecare.com/services</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/services-hero.jpg</image:loc>
+      <image:title>Home Health Care Services</image:title>
+      <image:caption>Comprehensive care services for seniors and patients</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Home Care Service Page -->
+  <url>
+    <loc>https://happyhomecare.com/services/home-care</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/home-care-hero.jpg</image:loc>
+      <image:title>Home Care Services</image:title>
+      <image:caption>Non-medical home care assistance for daily living activities</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/home-care-bathing.jpg</image:loc>
+      <image:title>Bathing and Dressing Assistance</image:title>
+      <image:caption>Professional support with personal hygiene and dressing</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/home-care-meals.jpg</image:loc>
+      <image:title>Meal Preparation Service</image:title>
+      <image:caption>Nutritious meal preparation and assistance with eating</image:caption>
+    </image:image>
+  </url>
+
+  <!-- 24-Hour Personal Care Service Page -->
+  <url>
+    <loc>https://happyhomecare.com/services/personal-care</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/24hour-care-hero.jpg</image:loc>
+      <image:title>24-Hour Home Care Services</image:title>
+      <image:caption>Round-the-clock care and supervision for seniors</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/overnight-care.jpg</image:loc>
+      <image:title>Overnight Care Support</image:title>
+      <image:caption>Night supervision and care assistance</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/safety-monitoring.jpg</image:loc>
+      <image:title>Safety Monitoring</image:title>
+      <image:caption>Constant supervision and fall prevention</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Respite Care Service Page -->
+  <url>
+    <loc>https://happyhomecare.com/services/respite-care</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/respite-care-hero.jpg</image:loc>
+      <image:title>Respite Care Services</image:title>
+      <image:caption>Temporary care relief for family caregivers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/caregiver-support.jpg</image:loc>
+      <image:title>Family Caregiver Support</image:title>
+      <image:caption>Professional caregivers providing temporary relief</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Hospice Support Service Page -->
+  <url>
+    <loc>https://happyhomecare.com/services/hospice-support</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/hospice-care-hero.jpg</image:loc>
+      <image:title>Hospice Support Services</image:title>
+      <image:caption>Compassionate end-of-life care and family support</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/compassionate-care.jpg</image:loc>
+      <image:title>Compassionate Hospice Care</image:title>
+      <image:caption>Comfort-focused care for patients and families</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Skilled Nursing Service Page -->
+  <url>
+    <loc>https://happyhomecare.com/services/skilled-nursing</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/skilled-nursing-hero.jpg</image:loc>
+      <image:title>Skilled Nursing Care</image:title>
+      <image:caption>Professional registered nurses providing medical care</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/nurse-care.jpg</image:loc>
+      <image:title>Registered Nurse Care</image:title>
+      <image:caption>Medication management and wound care services</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Specialty Services Page -->
+  <url>
+    <loc>https://happyhomecare.com/services/specialty-services</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/specialty-care-hero.jpg</image:loc>
+      <image:title>Specialty Care Services</image:title>
+      <image:caption>Specialized care for Alzheimer's, dementia, and other conditions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/dementia-care.jpg</image:loc>
+      <image:title>Alzheimer's and Dementia Care</image:title>
+      <image:caption>Certified specialists in memory care</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/stroke-recovery.jpg</image:loc>
+      <image:title>Stroke Recovery Support</image:title>
+      <image:caption>Rehabilitation and recovery assistance</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Locations Page Images -->
+  <url>
+    <loc>https://happyhomecare.com/locations</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/locations-hero.jpg</image:loc>
+      <image:title>Service Locations in San Diego County</image:title>
+      <image:caption>Home care services available throughout San Diego region</image:caption>
+    </image:image>
+  </url>
+
+  <!-- San Diego Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/san-diego</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/san-diego-location.jpg</image:loc>
+      <image:title>San Diego Home Care Services</image:title>
+      <image:caption>Professional care services serving Central San Diego</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/downtown-san-diego.jpg</image:loc>
+      <image:title>Downtown San Diego Care</image:title>
+      <image:caption>Home health services in downtown and surrounding neighborhoods</image:caption>
+    </image:image>
+  </url>
+
+  <!-- La Jolla Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/la-jolla</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/la-jolla-location.jpg</image:loc>
+      <image:title>La Jolla Home Care Services</image:title>
+      <image:caption>Premium care services for La Jolla community</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Del Mar Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/del-mar</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/del-mar-location.jpg</image:loc>
+      <image:title>Del Mar Home Care Services</image:title>
+      <image:caption>Compassionate care serving Del Mar residents</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Encinitas Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/encinitas</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/encinitas-location.jpg</image:loc>
+      <image:title>Encinitas Home Care Services</image:title>
+      <image:caption>Expert care for Encinitas families</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Carlsbad Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/carlsbad</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/carlsbad-location.jpg</image:loc>
+      <image:title>Carlsbad Home Care Services</image:title>
+      <image:caption>Quality care throughout Carlsbad and surrounding areas</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Oceanside Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/oceanside</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/oceanside-location.jpg</image:loc>
+      <image:title>Oceanside Home Care Services</image:title>
+      <image:caption>Dedicated care providers serving Oceanside families</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Solana Beach Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/solana-beach</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/solana-beach-location.jpg</image:loc>
+      <image:title>Solana Beach Home Care Services</image:title>
+      <image:caption>Premium care in Solana Beach</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Escondido Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/escondido</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/escondido-location.jpg</image:loc>
+      <image:title>Escondido Home Care Services</image:title>
+      <image:caption>Trusted care for Escondido residents</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Rancho Bernardo Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/rancho-bernardo</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/rancho-bernardo-location.jpg</image:loc>
+      <image:title>Rancho Bernardo Home Care Services</image:title>
+      <image:caption>Quality care for Rancho Bernardo seniors</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Rancho Santa Fe Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/rancho-santa-fe</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/rancho-santa-fe-location.jpg</image:loc>
+      <image:title>Rancho Santa Fe Home Care Services</image:title>
+      <image:caption>Exclusive care for Rancho Santa Fe families</image:caption>
+    </image:image>
+  </url>
+
+  <!-- San Marcos Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/san-marcos</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/san-marcos-location.jpg</image:loc>
+      <image:title>San Marcos Home Care Services</image:title>
+      <image:caption>Reliable care in San Marcos</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Vista Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/vista</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/vista-location.jpg</image:loc>
+      <image:title>Vista Home Care Services</image:title>
+      <image:caption>Caring providers serving Vista</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Poway Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/poway</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/poway-location.jpg</image:loc>
+      <image:title>Poway Home Care Services</image:title>
+      <image:caption>Professional care for Poway community</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Chula Vista Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/chula-vista</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/chula-vista-location.jpg</image:loc>
+      <image:title>Chula Vista Home Care Services</image:title>
+      <image:caption>Comprehensive care serving Chula Vista families</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Coronado Location Page -->
+  <url>
+    <loc>https://happyhomecare.com/locations/coronado</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/coronado-location.jpg</image:loc>
+      <image:title>Coronado Home Care Services</image:title>
+      <image:caption>Elite care for Coronado Island residents</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Page Images -->
+  <url>
+    <loc>https://happyhomecare.com/contact</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/contact-hero.jpg</image:loc>
+      <image:title>Contact Happy Home Care</image:title>
+      <image:caption>Get in touch with our home care team</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Careers Page Images -->
+  <url>
+    <loc>https://happyhomecare.com/careers</loc>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/careers-hero.jpg</image:loc>
+      <image:title>Careers at Happy Home Care</image:title>
+      <image:caption>Join our team of passionate caregivers</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://happyhomecare.com/images/team-training.jpg</image:loc>
+      <image:title>Staff Training and Development</image:title>
+      <image:caption>Ongoing professional development and support</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

@@ -1,0 +1,49 @@
+# Happy Home Care - robots.txt
+# This file tells search engines how to crawl and index the website
+
+# Allow all user agents to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow private and admin paths
+Disallow: /admin
+Disallow: /admin/
+Disallow: /private
+Disallow: /private/
+Disallow: /.next
+Disallow: /.next/
+Disallow: /api/
+Disallow: /api
+Disallow: /_next
+Disallow: /_next/
+
+# Disallow development/test pages
+Disallow: /test
+Disallow: /test/
+Disallow: /dev
+Disallow: /dev/
+
+# Disallow sensitive user paths
+Disallow: /account
+Disallow: /account/
+Disallow: /user
+Disallow: /user/
+Disallow: /dashboard
+Disallow: /dashboard/
+
+# Disallow temporary/draft content
+Disallow: /draft
+Disallow: /draft/
+
+# Reference to primary sitemap
+Sitemap: https://happyhomecare.com/sitemap.xml
+
+# Reference to image sitemap
+Sitemap: https://happyhomecare.com/image-sitemap.xml
+
+# Crawl delay (optional, in seconds)
+# Adjust if server resources are limited
+# Crawl-delay: 1
+
+# Request rate limit (optional, pages per 10 seconds)
+# Request-rate: 30/10s
