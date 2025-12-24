@@ -212,7 +212,7 @@ export function HeroSection() {
           className={cn(
             "text-lg sm:text-xl md:text-2xl mb-10",
             "max-w-3xl mx-auto leading-relaxed",
-            "text-gray-100"
+            "text-white font-medium"
           )}
         >
           The best solutions for affordable and trustworthy home care. Free in-home needs evaluation available.
@@ -287,7 +287,7 @@ export function HeroSection() {
           {/* Licensed badge */}
           <motion.div
             animate={floatingAnimation}
-            className="flex items-center gap-2 text-sm sm:text-base text-white/90"
+            className="flex items-center gap-2 text-sm sm:text-base text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
@@ -313,7 +313,7 @@ export function HeroSection() {
           {/* Insured badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } } : undefined}
-            className="flex items-center gap-2 text-sm sm:text-base text-white/90"
+            className="flex items-center gap-2 text-sm sm:text-base text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
@@ -339,7 +339,7 @@ export function HeroSection() {
           {/* 24/7 Support badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } } : undefined}
-            className="flex items-center gap-2 text-sm sm:text-base text-white/90"
+            className="flex items-center gap-2 text-sm sm:text-base text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}

@@ -324,7 +324,7 @@ function TestimonialCard({
         <AnimatePresence mode="wait">
           {isActive && (
             <motion.p
-              className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 italic"
+              className="text-lg md:text-xl text-gray-900 font-medium leading-relaxed mb-6 italic"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}

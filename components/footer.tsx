@@ -34,7 +34,7 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="w-4 h-4" />
+                <Facebook className="w-4 h-4 text-white" />
               </a>
               <a
                 href="https://twitter.com"
@@ -43,7 +43,7 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter className="w-4 h-4" />
+                <Twitter className="w-4 h-4 text-white" />
               </a>
               <a
                 href="https://linkedin.com"
@@ -52,7 +52,7 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-4 h-4 text-white" />
               </a>
               <a
                 href="https://instagram.com"
@@ -61,7 +61,7 @@ export default function Footer() {
                 className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-4 h-4" />
+                <Instagram className="w-4 h-4 text-white" />
               </a>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function Footer() {
                   href={`tel:${contactInfo.phone}`}
                   className="flex items-start space-x-2 text-white hover:text-white transition-colors group"
                 >
-                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-white" />
+                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-white" />
                   <span className="text-sm">{contactInfo.phone}</span>
                 </a>
               </li>
@@ -178,13 +178,13 @@ export default function Footer() {
                   href={`mailto:${contactInfo.email}`}
                   className="flex items-start space-x-2 text-white hover:text-white transition-colors group"
                 >
-                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 group-hover:text-white" />
+                  <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-white" />
                   <span className="text-sm break-all">{contactInfo.email}</span>
                 </a>
               </li>
               <li>
                 <div className="flex items-start space-x-2 text-white">
-                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-white" />
                   <div className="text-sm">
                     <p>{contactInfo.address.street}</p>
                     <p>{contactInfo.address.suite}</p>
