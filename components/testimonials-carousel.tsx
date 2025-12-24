@@ -115,7 +115,7 @@ export function TestimonialsCarousel() {
     const z = -distance * (prefersReducedMotion ? 0 : 150); // Depth (closer cards are forward)
     const rotateY = position * (prefersReducedMotion ? 0 : 15); // Y-axis rotation
     const scale = 1 - distance * (prefersReducedMotion ? 0 : 0.15); // Scale down side cards
-    const opacity = Math.max(0.3, 1 - distance * 0.25); // Fade side cards
+    const opacity = 1; // Keep all cards fully visible
 
     return { x, z, rotateY, scale, opacity };
   };
@@ -259,14 +259,14 @@ function TestimonialCard({
   return (
     <motion.article
       className={cn(
-        "card-testimonial card-elevated card-3d-tilt bg-white rounded-xl shadow-lg relative overflow-hidden",
+        "card-testimonial card-elevated card-3d-tilt bg-white rounded-xl relative overflow-hidden",
         "p-8 md:p-12 h-full min-h-[400px] flex flex-col justify-between"
       )}
       initial={false}
       animate={{
         boxShadow: isActive
-          ? "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-          : "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+          ? "0 25px 50px -12px rgba(0, 0, 0, 0.3), 0 10px 20px -5px rgba(0, 0, 0, 0.2)"
+          : "0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1)",
       }}
       transition={{
         duration: prefersReducedMotion ? 0.01 : durations.normal,
@@ -274,35 +274,25 @@ function TestimonialCard({
       }}
       style={{
         pointerEvents: isActive ? "auto" : "none",
+        backgroundColor: "#FFFFFF",
       }}
     >
       {/* Quote Icon Background */}
-      <div className="absolute top-6 left-6 text-primary-orange opacity-10 pointer-events-none">
+      <div className="absolute top-6 left-6 text-primary-orange opacity-[0.08] pointer-events-none">
         <Quote size={64} fill="currentColor" aria-hidden="true" />
       </div>
 
       {/* Star Rating with Reveal Animation */}
       <div className="flex items-center gap-1 mb-6 relative z-10">
         {testimonial.rating && (
-          <motion.div
-            className="flex gap-1"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{
-              opacity: isActive ? 1 : 0.7,
-              y: 0
-            }}
-            transition={{
-              duration: prefersReducedMotion ? 0.01 : durations.normal,
-              staggerChildren: prefersReducedMotion ? 0 : 0.05,
-            }}
-          >
+          <div className="flex gap-1">
             {[...Array(testimonial.rating)].map((_, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, scale: 0, rotate: -180 }}
+                initial={{ opacity: 1, scale: 1, rotate: 0 }}
                 animate={{
                   opacity: 1,
-                  scale: isActive ? 1 : 0.9,
+                  scale: 1,
                   rotate: 0
                 }}
                 transition={{
@@ -318,44 +308,20 @@ function TestimonialCard({
                 />
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         )}
         <span className="sr-only">{testimonial.rating} out of 5 stars</span>
       </div>
 
-      {/* Quote Text with Fade-in Animation */}
+      {/* Quote Text */}
       <blockquote className="relative z-10 flex-grow">
-        <motion.p
-          className="text-lg md:text-xl text-gray-900 font-medium leading-relaxed mb-6 italic"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{
-            opacity: isActive ? 1 : 0.6,
-            y: 0
-          }}
-          transition={{
-            duration: prefersReducedMotion ? 0.01 : durations.slow,
-            delay: prefersReducedMotion ? 0 : 0.1,
-            ease: easings.smooth,
-          }}
-        >
+        <p className="text-lg md:text-xl text-gray-900 font-semibold leading-relaxed mb-6 italic">
           &ldquo;{testimonial.quote}&rdquo;
-        </motion.p>
+        </p>
       </blockquote>
 
-      {/* Author Info with Avatar and Slide-up Animation */}
-      <motion.div
-        className="flex items-center gap-4 pt-6 border-t border-gray-200 relative z-10"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{
-          opacity: isActive ? 1 : 0.6,
-          y: 0
-        }}
-        transition={{
-          duration: prefersReducedMotion ? 0.01 : durations.normal,
-          delay: prefersReducedMotion ? 0 : 0.2,
-          ease: easings.spring,
-        }}
-      >
+      {/* Author Info with Avatar */}
+      <div className="flex items-center gap-4 pt-6 border-t border-gray-200 relative z-10">
         {/* Avatar */}
         {testimonial.avatar && (
           <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden ring-2 ring-primary-teal/20">
@@ -391,13 +357,7 @@ function TestimonialCard({
             <span className="truncate">{testimonial.location}</span>
           </p>
         </div>
-      </motion.div>
-
-      {/* Decorative Gradient Overlay for Depth */}
-      <div
-        className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary-teal/5 pointer-events-none"
-        aria-hidden="true"
-      />
+      </div>
     </motion.article>
   );
 }

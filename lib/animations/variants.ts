@@ -219,9 +219,9 @@ export const heroTextReveal: Variants = {
 
 export const heroSubtitleReveal: Variants = {
   hidden: {
-    opacity: 0,
-    y: 30,
-    filter: "blur(10px)",
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
   },
   visible: {
     opacity: 1,

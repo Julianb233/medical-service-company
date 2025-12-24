@@ -209,7 +209,7 @@ export default function CareersPage() {
               variants={heroSubtitleReveal}
               initial="hidden"
               animate="visible"
-              className="text-xl text-white/90"
+              className="text-xl text-white"
             >
               Build a rewarding career making a difference in people&apos;s lives.
               We&apos;re hiring compassionate healthcare professionals across San Diego

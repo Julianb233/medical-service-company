@@ -149,7 +149,7 @@ export default function AboutPage() {
               About Happy Home Care
             </motion.h1>
             <motion.p
-              className="text-xl text-white/90"
+              className="text-xl text-white"
               variants={heroSubtitleReveal}
             >
               Licensed and accredited provider of affordable and trustworthy home

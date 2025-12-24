@@ -76,10 +76,11 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50",
         scrolled
-          ? "bg-teal-600 shadow-lg"
-          : "bg-teal-600/95 backdrop-blur-sm"
+          ? "shadow-lg"
+          : "backdrop-blur-sm"
       )}
       style={{
+        backgroundColor: scrolled ? "#0D9488" : "rgba(13, 148, 136, 0.95)",
         transition: scrolled
           ? "background-color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)"
           : "background-color 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)"
@@ -106,7 +107,7 @@ export default function Header() {
                 {item.children ? (
                   <>
                     <motion.button
-                      className="flex items-center space-x-1 text-white/90 hover:text-white font-semibold relative"
+                      className="flex items-center space-x-1 text-white hover:text-white font-semibold relative"
                       onMouseEnter={() => setOpenDropdown(item.name)}
                       onMouseLeave={() => setOpenDropdown(null)}
                       whileHover={prefersReducedMotion ? {} : { y: -1 }}
@@ -134,7 +135,8 @@ export default function Header() {
                           initial="hidden"
                           animate="visible"
                           exit="exit"
-                          className="absolute top-full left-0 mt-2 w-56 bg-teal-600 rounded-lg shadow-2xl overflow-hidden border border-white/10"
+                          className="absolute top-full left-0 mt-2 w-56 rounded-lg shadow-2xl overflow-hidden border border-white/10"
+                          style={{ backgroundColor: "#0D9488" }}
                           onMouseEnter={() => setOpenDropdown(item.name)}
                           onMouseLeave={() => setOpenDropdown(null)}
                         >
@@ -147,7 +149,7 @@ export default function Header() {
                               >
                                 <Link
                                   href={child.href}
-                                  className="block px-4 py-2 text-white/90 hover:bg-white/10 hover:text-white transition-colors"
+                                  className="block px-4 py-2 text-white hover:bg-white/10 hover:text-white transition-colors"
                                 >
                                   {child.name}
                                 </Link>
@@ -180,7 +182,7 @@ export default function Header() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-white/90 hover:text-white font-semibold relative"
+                        className="text-white hover:text-white font-semibold relative"
                       >
                         {item.name}
                         {/* Hover underline */}
@@ -220,7 +222,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white hover:text-white/90 transition-colors"
+            className="lg:hidden p-2 text-white hover:text-white transition-colors"
             aria-label="Toggle menu"
             whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
           >
@@ -262,7 +264,8 @@ export default function Header() {
                 duration: prefersReducedMotion ? durations.instant : durations.moderate,
                 ease: easings.dramatic
               }}
-              className="fixed top-20 right-0 bottom-0 w-80 bg-teal-600 shadow-2xl lg:hidden overflow-y-auto border-l border-white/10"
+              className="fixed top-20 right-0 bottom-0 w-80 shadow-2xl lg:hidden overflow-y-auto border-l border-white/10"
+              style={{ backgroundColor: "#0D9488" }}
             >
               <motion.div
                 variants={staggerContainer}
@@ -337,7 +340,7 @@ export default function Header() {
                                     >
                                       <Link
                                         href={child.href}
-                                        className="block py-2 text-white/80 hover:text-white transition-colors"
+                                        className="block py-2 text-white hover:text-white transition-colors"
                                         onClick={() => setIsOpen(false)}
                                       >
                                         {child.name}
@@ -356,7 +359,7 @@ export default function Header() {
                             "block font-semibold text-lg transition-colors",
                             item.href === "/app"
                               ? "px-4 py-3 rounded-xl bg-primary-orange text-white font-bold hover:bg-orange-dark"
-                              : "text-white hover:text-white/90"
+                              : "text-white hover:text-white"
                           )}
                           onClick={() => setIsOpen(false)}
                         >
@@ -372,10 +375,10 @@ export default function Header() {
                   variants={fadeInDown}
                   className="pt-6 border-t border-white/10"
                 >
-                  <p className="text-sm text-white/70 mb-2">Contact Us</p>
+                  <p className="text-sm text-white mb-2">Contact Us</p>
                   <a
                     href={`mailto:${contactInfo.email}`}
-                    className="text-white hover:text-white/90 transition-colors text-sm"
+                    className="text-white hover:text-white transition-colors text-sm"
                   >
                     {contactInfo.email}
                   </a>

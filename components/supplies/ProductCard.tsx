@@ -35,7 +35,7 @@ export function ProductCard({ product, onAddToQuote, isInQuote }: ProductCardPro
             priority="normal"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             objectFit="cover"
-            fallbackSrc="/images/supplies/placeholder.jpg"
+            fallbackSrc="/images/supplies/placeholder.svg"
             context={{
               service: product.category,
               description: product.description,

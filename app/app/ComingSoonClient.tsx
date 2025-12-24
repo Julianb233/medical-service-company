@@ -200,22 +200,22 @@ function IPhoneMockup() {
           </div>
 
           {/* App content preview */}
-          <div className="px-6 pt-4">
-            <div className="text-white text-center mb-6">
+          <div className="px-4 pt-2">
+            <div className="text-white text-center mb-4">
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
               >
-                <Smartphone className="w-12 h-12 mx-auto mb-3" />
-                <h2 className="text-2xl font-bold mb-2">Welcome</h2>
-                <p className="text-teal-100 text-sm">Your care, connected</p>
+                <Smartphone className="w-8 h-8 mx-auto mb-2" />
+                <h2 className="text-lg font-bold mb-1">Welcome</h2>
+                <p className="text-teal-100 text-xs">Your care, connected</p>
               </motion.div>
             </div>
 
             {/* Mock appointment card */}
             <motion.div
-              className="bg-white rounded-2xl p-4 shadow-xl mb-4"
+              className="bg-white rounded-xl p-3 shadow-xl mb-3"
               animate={{
                 scale: [1, 1.02, 1],
               }}
@@ -225,20 +225,20 @@ function IPhoneMockup() {
                 ease: "easeInOut",
               }}
             >
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-2xl">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center text-base">
                   👨‍⚕️
                 </div>
                 <div className="flex-1">
-                  <div className="text-sm font-semibold text-gray-900">
+                  <div className="text-xs font-semibold text-gray-900">
                     Today&apos;s Appointment
                   </div>
-                  <div className="text-xs text-gray-500">2:00 PM - 3:00 PM</div>
+                  <div className="text-[10px] text-gray-500">2:00 PM - 3:00 PM</div>
                 </div>
               </div>
-              <div className="flex items-center gap-2 text-xs text-primary-teal font-medium">
+              <div className="flex items-center gap-1 text-[10px] text-primary-teal font-medium">
                 <motion.div
-                  className="w-2 h-2 bg-primary-teal rounded-full"
+                  className="w-1.5 h-1.5 bg-primary-teal rounded-full"
                   animate={{ opacity: [1, 0.3, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
@@ -247,22 +247,22 @@ function IPhoneMockup() {
             </motion.div>
 
             {/* Mock buttons */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2">
               <motion.div
-                className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center"
+                className="bg-white/20 backdrop-blur-sm rounded-lg p-2 text-center"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <MapPin className="w-6 h-6 mx-auto mb-1 text-white" />
-                <div className="text-xs text-white">Track</div>
+                <MapPin className="w-4 h-4 mx-auto mb-0.5 text-white" />
+                <div className="text-[10px] text-white">Track</div>
               </motion.div>
               <motion.div
-                className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center"
+                className="bg-white/20 backdrop-blur-sm rounded-lg p-2 text-center"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
-                <Users className="w-6 h-6 mx-auto mb-1 text-white" />
-                <div className="text-xs text-white">Family</div>
+                <Users className="w-4 h-4 mx-auto mb-0.5 text-white" />
+                <div className="text-[10px] text-white">Family</div>
               </motion.div>
             </div>
           </div>
@@ -370,25 +370,25 @@ export default function ComingSoonClient() {
       {/* Hero Section with Parallax */}
       <section
         ref={heroRef}
-        className="relative bg-brand-dark text-white section-padding overflow-hidden"
+        className="relative bg-gradient-to-br from-white via-teal-50 to-teal-100 section-padding overflow-hidden"
       >
         {/* Parallax background elements */}
         <motion.div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-20"
           style={{
             transform: prefersReducedMotion ? "none" : transform,
             backgroundImage:
-              "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.2) 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 50%, rgba(20,184,166,0.1) 0%, transparent 50%)",
           }}
         />
         <motion.div
-          className="absolute top-20 right-20 w-72 h-72 bg-white/10 rounded-full blur-3xl"
+          className="absolute top-20 right-20 w-72 h-72 bg-teal-200/30 rounded-full blur-3xl"
           animate={
             prefersReducedMotion
               ? {}
               : {
                   scale: [1, 1.2, 1],
-                  opacity: [0.1, 0.2, 0.1],
+                  opacity: [0.3, 0.4, 0.3],
                 }
           }
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
@@ -401,22 +401,22 @@ export default function ComingSoonClient() {
             animate="visible"
           >
             <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-teal-600/20 backdrop-blur-sm rounded-full mb-6 border border-teal-300"
               variants={fadeInUp}
             >
-              <Smartphone className="w-4 h-4" />
-              <span className="text-sm font-medium">Coming Soon</span>
+              <Smartphone className="w-4 h-4 text-teal-700" />
+              <span className="text-sm font-medium text-teal-800">Coming Soon</span>
             </motion.div>
 
             <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-6 text-white"
+              className="text-4xl md:text-6xl font-bold mb-6 text-gray-900"
               variants={heroTextReveal}
             >
               HappyHomeCare Connect
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-white/90 mb-4"
+              className="text-xl md:text-2xl text-gray-700 mb-4"
               variants={heroSubtitleReveal}
             >
               Track your caregiver in real-time. Stay connected with family. Never
@@ -424,7 +424,7 @@ export default function ComingSoonClient() {
             </motion.p>
 
             <motion.p
-              className="text-lg text-white/80"
+              className="text-lg text-gray-600"
               variants={heroCTAReveal}
             >
               The future of home healthcare coordination is almost here.

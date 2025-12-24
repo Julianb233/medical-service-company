@@ -67,11 +67,11 @@ export default function ComingSoonContent() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-warm-50 to-orange-50 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-teal-500 via-teal-600 to-teal-700 overflow-hidden">
       {/* Animated background elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-teal-200/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-300/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
         <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-teal-300/10 rounded-full blur-3xl animate-pulse" />
       </div>
 
@@ -85,17 +85,18 @@ export default function ComingSoonContent() {
               }`}
             >
               <div className="inline-block mb-4">
-                <span className="inline-flex items-center px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">
-                  🚀 Coming Soon
+                <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold shadow-md border border-white/30">
+                  <span className="text-base">🚀</span>
+                  <span>Coming Soon</span>
                 </span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-600 to-teal-800 bg-clip-text text-transparent">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 text-white leading-tight drop-shadow-lg px-4">
                 HappyHomeCare Connect
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto mb-4 sm:mb-6 font-medium drop-shadow-md px-4">
                 Track your caregiver in real-time. Stay connected with family. Never miss an update.
               </p>
-              <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md px-4">
                 The future of home healthcare coordination is almost here.
               </p>
             </div>
@@ -114,21 +115,21 @@ export default function ComingSoonContent() {
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-7 bg-gray-900 rounded-b-3xl z-10" />
 
                 {/* Screen */}
-                <div className="relative w-full h-full bg-gradient-to-br from-teal-500 to-teal-700 rounded-[40px] overflow-hidden">
+                <div className="relative w-full h-full bg-gradient-to-br from-white via-teal-50 to-teal-100 rounded-[40px] overflow-hidden">
                   {/* Status bar */}
-                  <div className="flex justify-between items-center px-8 pt-8 pb-4 text-white text-xs">
+                  <div className="flex justify-between items-center px-8 pt-8 pb-4 text-gray-700 text-xs">
                     <span>9:41</span>
                     <div className="flex gap-1">
-                      <div className="w-4 h-3 border border-white rounded-sm" />
-                      <div className="w-1 h-3 bg-white rounded-sm" />
+                      <div className="w-4 h-3 border border-gray-700 rounded-sm" />
+                      <div className="w-1 h-3 bg-gray-700 rounded-sm" />
                     </div>
                   </div>
 
                   {/* App content preview */}
                   <div className="px-6 pt-4">
-                    <div className="text-white text-center mb-6">
+                    <div className="text-gray-900 text-center mb-6">
                       <h2 className="text-2xl font-bold mb-2">Welcome</h2>
-                      <p className="text-teal-100 text-sm">Your care, connected</p>
+                      <p className="text-teal-700 text-sm">Your care, connected</p>
                     </div>
 
                     {/* Mock appointment card */}
@@ -150,13 +151,13 @@ export default function ComingSoonContent() {
 
                     {/* Mock buttons */}
                     <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center">
+                      <div className="bg-teal-500 rounded-xl p-3 text-center shadow-md">
                         <div className="text-2xl mb-1">📍</div>
-                        <div className="text-xs text-white">Track</div>
+                        <div className="text-xs text-white font-semibold">Track</div>
                       </div>
-                      <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 text-center">
+                      <div className="bg-orange-500 rounded-xl p-3 text-center shadow-md">
                         <div className="text-2xl mb-1">👨‍👩‍👧</div>
-                        <div className="text-xs text-white">Family</div>
+                        <div className="text-xs text-white font-semibold">Family</div>
                       </div>
                     </div>
                   </div>
@@ -179,13 +180,13 @@ export default function ComingSoonContent() {
       </section>
 
       {/* Features Section */}
-      <section className="relative section-padding bg-white/50 backdrop-blur-sm">
+      <section className="relative section-padding bg-white/80 backdrop-blur-sm">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Everything You Need
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto">
               Powerful features designed to keep you and your loved ones connected and informed.
             </p>
           </div>
@@ -194,14 +195,16 @@ export default function ComingSoonContent() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ${
+                className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-teal-100 ${
                   isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{ animationDelay: `${feature.delay}s` }}
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <div className="flex items-center justify-center w-14 h-14 bg-teal-50 rounded-xl mb-4">
+                  <span className="text-3xl">{feature.icon}</span>
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -209,13 +212,19 @@ export default function ComingSoonContent() {
       </section>
 
       {/* Phone Mockups Section */}
-      <section className="relative section-padding">
+      <section className="relative section-padding bg-gradient-to-br from-white via-teal-50 to-teal-100">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <div className="inline-block mb-4">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-semibold border border-teal-200">
+                <span className="text-base">📱</span>
+                <span>Interactive Preview</span>
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               See It In Action
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto">
               A glimpse into the HappyHomeCare Connect experience.
             </p>
           </div>
@@ -223,7 +232,7 @@ export default function ComingSoonContent() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* Mockup 1: Home Screen */}
             <div className={`transform transition-all duration-1000 delay-100 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-[40px] p-4 shadow-2xl border-4 border-gray-700">
+              <div className="bg-white rounded-[40px] p-4 shadow-2xl border-2 border-teal-200">
                 <div className="bg-white rounded-[30px] p-4 h-[500px] overflow-hidden">
                   <div className="text-center mb-4">
                     <div className="text-xs text-gray-400 mb-2">Today</div>
@@ -284,12 +293,17 @@ export default function ComingSoonContent() {
                   </div>
                 </div>
               </div>
-              <p className="text-center text-sm text-gray-600 mt-3 font-medium">Home Screen</p>
+              <div className="flex items-center justify-center gap-2 mt-3">
+                <p className="text-center text-sm text-gray-800 font-semibold">Home Screen</p>
+                <span className="inline-flex items-center px-2 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">
+                  Tap to explore
+                </span>
+              </div>
             </div>
 
             {/* Mockup 2: Map View */}
             <div className={`transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-[40px] p-4 shadow-2xl border-4 border-gray-700">
+              <div className="bg-white rounded-[40px] p-4 shadow-2xl border-2 border-teal-200">
                 <div className="bg-teal-100 rounded-[30px] p-4 h-[500px] overflow-hidden relative">
                   {/* Map background pattern */}
                   <div className="absolute inset-0 opacity-20">
@@ -364,12 +378,17 @@ export default function ComingSoonContent() {
                   </div>
                 </div>
               </div>
-              <p className="text-center text-sm text-gray-600 mt-3 font-medium">Live Tracking</p>
+              <div className="flex items-center justify-center gap-2 mt-3">
+                <p className="text-center text-sm text-gray-800 font-semibold">Live Tracking</p>
+                <span className="inline-flex items-center px-2 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">
+                  Real-time GPS
+                </span>
+              </div>
             </div>
 
             {/* Mockup 3: Family Sharing */}
             <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-[40px] p-4 shadow-2xl border-4 border-gray-700">
+              <div className="bg-white rounded-[40px] p-4 shadow-2xl border-2 border-teal-200">
                 <div className="bg-white rounded-[30px] p-4 h-[500px] overflow-hidden">
                   <div className="text-center mb-4">
                     <h3 className="text-lg font-bold text-gray-900">Family Circle</h3>
@@ -456,12 +475,17 @@ export default function ComingSoonContent() {
                   </div>
                 </div>
               </div>
-              <p className="text-center text-sm text-gray-600 mt-3 font-medium">Family Updates</p>
+              <div className="flex items-center justify-center gap-2 mt-3">
+                <p className="text-center text-sm text-gray-800 font-semibold">Family Updates</p>
+                <span className="inline-flex items-center px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
+                  Stay connected
+                </span>
+              </div>
             </div>
 
             {/* Mockup 4: History */}
             <div className={`transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-[40px] p-4 shadow-2xl border-4 border-gray-700">
+              <div className="bg-white rounded-[40px] p-4 shadow-2xl border-2 border-teal-200">
                 <div className="bg-white rounded-[30px] p-4 h-[500px] overflow-hidden">
                   <div className="text-center mb-4">
                     <h3 className="text-lg font-bold text-gray-900">Visit History</h3>
@@ -527,7 +551,12 @@ export default function ComingSoonContent() {
                   </div>
                 </div>
               </div>
-              <p className="text-center text-sm text-gray-600 mt-3 font-medium">Visit History</p>
+              <div className="flex items-center justify-center gap-2 mt-3">
+                <p className="text-center text-sm text-gray-800 font-semibold">Visit History</p>
+                <span className="inline-flex items-center px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
+                  Track progress
+                </span>
+              </div>
             </div>
           </div>
         </div>

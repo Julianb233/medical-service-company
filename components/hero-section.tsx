@@ -85,10 +85,10 @@ export function HeroSection() {
   // Word reveal variant
   const wordReveal = {
     hidden: {
-      opacity: 0,
-      y: 50,
-      rotateX: -15,
-      filter: "blur(8px)",
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      filter: "blur(0px)",
     },
     visible: (i: number) => ({
       opacity: 1,
@@ -175,7 +175,8 @@ export function HeroSection() {
           variants={heroSubtitleReveal}
           initial="hidden"
           animate="visible"
-          className="text-xs sm:text-sm md:text-base uppercase tracking-wider sm:tracking-widest mb-3 sm:mb-4 text-primary-orange font-semibold"
+          className="text-xs sm:text-sm md:text-base uppercase tracking-wider sm:tracking-widest mb-3 sm:mb-4 text-white font-semibold"
+          style={{ opacity: 1 }}
         >
           California Home Care You Can Trust
         </motion.p>
@@ -184,8 +185,9 @@ export function HeroSection() {
         <h1
           className={cn(
             "font-accent font-bold tracking-tight mb-4 sm:mb-6",
-            "text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
-            "max-w-5xl mx-auto leading-tight"
+            "text-xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
+            "max-w-5xl mx-auto leading-tight",
+            "text-white"
           )}
           style={{ perspective: "1000px" }}
         >
@@ -196,8 +198,8 @@ export function HeroSection() {
               variants={wordReveal}
               initial="hidden"
               animate="visible"
-              className="inline-block mr-2 sm:mr-3 md:mr-4"
-              style={{ transformStyle: "preserve-3d" }}
+              className="inline-block mr-2 sm:mr-3 md:mr-4 text-white"
+              style={{ transformStyle: "preserve-3d", opacity: 1 }}
             >
               {word}
             </motion.span>
@@ -214,6 +216,7 @@ export function HeroSection() {
             "max-w-3xl mx-auto leading-relaxed",
             "text-white font-medium px-2"
           )}
+          style={{ opacity: 1 }}
         >
           The best solutions for affordable and trustworthy home care. Free in-home needs evaluation available.
         </motion.p>
@@ -282,19 +285,19 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2, ease: easings.spring }}
-          className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8"
+          className="flex flex-row flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8"
         >
           {/* Licensed badge */}
           <motion.div
             animate={floatingAnimation}
-            className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg text-white font-semibold"
+            className="flex flex-col items-center gap-2 text-xs sm:text-sm md:text-base text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
+              className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center"
             >
               <svg
-                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-orange"
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary-orange"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -313,14 +316,14 @@ export function HeroSection() {
           {/* Insured badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 0.5 } } : undefined}
-            className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg text-white font-semibold"
+            className="flex flex-col items-center gap-2 text-xs sm:text-sm md:text-base text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-primary-teal/20 border-2 border-white flex items-center justify-center mx-auto"
+              className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-primary-teal/20 border-2 border-white flex items-center justify-center"
             >
               <svg
-                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white"
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -339,14 +342,14 @@ export function HeroSection() {
           {/* 24/7 Support badge */}
           <motion.div
             animate={floatingAnimation ? { ...floatingAnimation, transition: { ...floatingAnimation.transition, delay: 1 } } : undefined}
-            className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-2 text-xs sm:text-sm md:text-base lg:text-lg text-white font-semibold"
+            className="flex flex-col items-center gap-2 text-xs sm:text-sm md:text-base text-white font-semibold"
           >
             <motion.div
               animate={pulseGlowAnimation}
-              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center mx-auto"
+              className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-primary-orange/20 border-2 border-primary-orange flex items-center justify-center"
             >
               <svg
-                className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-primary-orange"
+                className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary-orange"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

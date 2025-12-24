@@ -33,7 +33,7 @@ export const products: Product[] = [
       "Ergonomic soft-grip handle reduces hand fatigue",
       "Non-slip rubber tip for traction on various surfaces"
     ],
-    image: "/images/supplies/cane.jpg",
+    image: "/images/supplies/mobility/cane.jpg",
     priceRange: "$25-45",
     popular: true
   },
@@ -50,7 +50,7 @@ export const products: Product[] = [
       "Anti-shock design reduces joint impact",
       "Wrist strap for added security"
     ],
-    image: "/images/supplies/walking-stick.jpg",
+    image: "/images/supplies/mobility/walking-stick.jpg",
     priceRange: "$35-55",
     popular: false
   },
@@ -67,7 +67,7 @@ export const products: Product[] = [
       "Height adjustable with easy push-button mechanism",
       "Can stand upright on its own"
     ],
-    image: "/images/supplies/quad-cane.jpg",
+    image: "/images/supplies/mobility/quad-cane.jpg",
     priceRange: "$40-65",
     popular: true
   },
@@ -86,7 +86,7 @@ export const products: Product[] = [
       "Height adjustable for users 5'4\" to 6'2\"",
       "Non-marring rubber tips protect floors"
     ],
-    image: "/images/supplies/standard-walker.jpg",
+    image: "/images/supplies/walkers/standard-walker.jpg",
     priceRange: "$60-95",
     popular: true
   },
@@ -103,7 +103,7 @@ export const products: Product[] = [
       "Easy-pull loop brakes with locking mechanism",
       "Removable storage basket and backrest"
     ],
-    image: "/images/supplies/rollator.jpg",
+    image: "/images/supplies/walkers/rollator.jpg",
     priceRange: "$150-250",
     popular: true
   },
@@ -120,7 +120,7 @@ export const products: Product[] = [
       "Dual hand brakes for precise control",
       "Folds for transport and storage"
     ],
-    image: "/images/supplies/knee-walker.jpg",
+    image: "/images/supplies/walkers/knee-walker.jpg",
     priceRange: "$120-200",
     popular: false
   },
@@ -139,7 +139,7 @@ export const products: Product[] = [
       "Quick-release 24\" rear wheels",
       "Desk-length padded armrests flip back"
     ],
-    image: "/images/supplies/manual-wheelchair.jpg",
+    image: "/images/supplies/wheelchairs/manual-wheelchair.jpg",
     priceRange: "$250-450",
     popular: true
   },
@@ -156,7 +156,7 @@ export const products: Product[] = [
       "Companion-controlled hand brakes",
       "Folds compactly for car storage"
     ],
-    image: "/images/supplies/transport-chair.jpg",
+    image: "/images/supplies/wheelchairs/transport-chair.jpg",
     priceRange: "$180-280",
     popular: false
   },
@@ -173,7 +173,7 @@ export const products: Product[] = [
       "Adjustable seat, armrests, and footrests",
       "Supports up to 350 lbs"
     ],
-    image: "/images/supplies/electric-scooter.jpg",
+    image: "/images/supplies/wheelchairs/electric-scooter.jpg",
     priceRange: "Call for pricing",
     popular: true
   },

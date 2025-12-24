@@ -65,7 +65,7 @@ export default function ContactPage() {
               variants={heroSubtitleReveal}
               initial="hidden"
               animate="visible"
-              className="text-xl text-white/90"
+              className="text-xl text-white"
             >
               Ready to learn more about our services? Get in touch with our care
               coordinators today.

@@ -101,7 +101,7 @@ export function ServiceHeroCarousel({
           className={cn(
             "text-lg sm:text-xl md:text-2xl",
             "max-w-3xl leading-relaxed",
-            "text-gray-100"
+            "text-white"
           )}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
