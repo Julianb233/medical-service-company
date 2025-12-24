@@ -184,7 +184,7 @@ export default function CareersPage() {
       {/* Hero Section with Parallax */}
       <section
         ref={heroRef}
-        className="bg-brand-dark text-white section-padding relative overflow-hidden"
+        className="bg-primary-teal text-white section-padding relative overflow-hidden"
       >
         {/* Parallax background decoration */}
         <motion.div

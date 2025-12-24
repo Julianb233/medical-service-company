@@ -9,7 +9,7 @@ export default function Footer() {
   const firstSixLocations = locations.slice(0, 6);
 
   return (
-    <footer className="bg-brand-dark text-white">
+    <footer className="gradient-teal text-white">
       {/* Main Footer Content */}
       <div className="container-custom py-8 md:py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">

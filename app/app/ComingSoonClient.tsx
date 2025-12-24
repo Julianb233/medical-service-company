@@ -370,7 +370,7 @@ export default function ComingSoonClient() {
       {/* Hero Section with Parallax */}
       <section
         ref={heroRef}
-        className="relative bg-brand-dark text-white section-padding overflow-hidden"
+        className="relative bg-gradient-to-br from-primary-teal via-teal-600 to-teal-700 text-white section-padding overflow-hidden"
       >
         {/* Parallax background elements */}
         <motion.div
